@@ -1,5 +1,48 @@
 .App {
     font-family: 'Comfortaa', cursive;
-    background-color: #e0f2df;
+    /* background-color: #e0f2df; */
+    /* background-color: #EDF6E7; */
+    color: #414141;
+    background-color: #E7F4E3;
     min-height: 100vh;
 }
+
+.Main {
+    padding-top: 81px;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+a {
+    color: #ff6a5c !important;
+    transition: color ease-in-out 0.3s;
+}
+
+a:hover {
+    color: #FDFCF8 !important;
+    background-color: #ff6a5c;
+    transition: color ease-in-out 0.3s;
+    /* padding: -10px; */
+    border-radius: 5px;
+}
+  
+a:hover i {
+    color: #FDFCF8;
+    background-color: #ff6a5c;
+    transition: color ease-in-out 0.3s;
+}
+  
+i {
+    color: #ff6a5c;
+    font-size: 1.6rem;
+    padding: 7px;
+    vertical-align: middle;
+}
+  
+/* i:hover {
+    cursor: pointer;
+    transition: color ease-in-out 0.3s;
+    color: #2142b2;
+} */

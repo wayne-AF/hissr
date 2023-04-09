@@ -1,5 +1,6 @@
 .NavBar {
-    background-color: #ffffff;
+    background-color: #FDFCF8;
+    /* background-color: #f7f5e7; */
 }
 
 .navbarName {
@@ -8,6 +9,19 @@
     font-size: 2rem;
 }
 
-.linkText {
-    color: #ff6a5c !important;
+.NavLink {
+    padding: 5px;
 }
+
+.Active {
+    text-decoration: underline;
+}
+
+.navbarLogo:hover {
+    background-color: #ff6a5c;
+    border-radius: 5px;
+
+}
+/* .linkText {
+    color: #ff6a5c !important;
+} */
