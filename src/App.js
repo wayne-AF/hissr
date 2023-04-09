@@ -12,7 +12,11 @@ function App() {
           <Route exact path="/" render={()=> <h1>Home page</h1>} />
           <Route exact path="/signin" render={()=> <h1>Sign in</h1>} />
           <Route exact path="/signup" render={()=> <h1>Sign up</h1>} />
-          <Route render={()=><p><i class="fa-solid fa-face-sad-cry"></i> Page not found <i class="fa-solid fa-face-sad-cry"></i></p>} />
+          <Route render={()=><p>
+            <i class="fa-solid fa-face-sad-cry">
+              </i> Page not found <i class="fa-solid fa-face-sad-cry">
+              </i></p>} 
+          />
         </Switch>
         
         
