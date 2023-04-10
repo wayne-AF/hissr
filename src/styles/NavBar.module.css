@@ -20,7 +20,28 @@
 .navbarLogo:hover {
     background-color: #ff6a5c;
     border-radius: 5px;
+}
 
+.NavBarDropDown {
+    color: #ff6a5c !important;
+    background-color: #FDFCF8;
+    border: none;
+    border-radius: 5px;
+}
+
+.NavBarDropDown:hover {
+    color: #FDFCF8 !important;
+    background-color: #ff6a5c;
+    border: 1px solid #ff6a5c;
+}
+
+.btn-light:active {
+    /* color: #FDFCF8 !important;
+    background-color: #ff6a5c !important;
+    border: 1px solid #ff6a5c !important; */
+    --bs-btn-active-bg:#ff6a5c;
+    --bs-btn-active-border-color: #ff6a5c;
+    --bs-btn-active-color: #FDFCF8;
 }
 /* .linkText {
     color: #ff6a5c !important;
