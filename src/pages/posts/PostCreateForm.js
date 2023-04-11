@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import CountrySelect from 'react-bootstrap-country-select'
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -92,7 +92,7 @@ function PostCreateForm() {
 
       <Form.Group>
         <Form.Label>Country <small>(optional)</small></Form.Label>
-        <Form.Control
+        {/* <Form.Control
             type="text"
             // as="select"
             placeholder="enter your city"
@@ -101,8 +101,17 @@ function PostCreateForm() {
             value={country}
             onChange={handleChange}
         >
-            {/* <option>Choose...</option> */}
-        </Form.Control>    
+            
+        </Form.Control>     */}
+        
+        <CountrySelect
+          as="select"
+          name="country"
+          
+          value={country}
+          flags={false}
+          onChange={handleChange}
+        />    
       </Form.Group>
       {errors?.country?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
@@ -168,19 +177,16 @@ function PostCreateForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-          <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-          >
-            
-            <div className="d-md-none">{textFields}</div>
-          </Container>
-        </Col>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+      <Container>
+        <Row>
+        <Col xs={12} md={8} lg={6} className="d-none d-md-block p-0 p-md-2">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
-      </Row>
+        </Row>
+      </Container>
+        
+        
+      
     </Form>
   );
 }
