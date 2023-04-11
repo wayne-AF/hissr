@@ -9,6 +9,8 @@ import Container from "react-bootstrap/Container";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
@@ -18,9 +20,33 @@ function PostCreateForm() {
     content: '',
     city: '',
     country: '',
-    category:''
+    category: '',
   })
   const { title, content, city, country, category } = postData
+
+  const history = useHistory()
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const formData = new FormData()
+
+    formData.append('title', title)
+    formData.append('content', content)
+    formData.append('city', city)
+    formData.append('country', country)
+    formData.append('category', category)
+
+    try {
+        const {data} = await axiosReq.post('/posts/', formData)
+        history.push(`/posts/${data.id}`)
+    } catch(err){
+        console.log(err)
+        if (err.response?.status !== 401){
+            setErrors(err.response?.data)
+        }
+    }
+  }
+
 
   const handleChange = (event) => {
     setPostData({
@@ -56,26 +82,39 @@ function PostCreateForm() {
       <Form.Group>
         <Form.Label>Country <small>(optional)</small></Form.Label>
         <Form.Control
-            as="select"
-            placeholder="Choose..."
-            defaultValue="Choose..."
+            type="text"
+            // as="select"
+            placeholder="enter your city"
+            
             name="country"
             value={country}
             onChange={handleChange}
         >
-            <option>Choose...</option>
+            {/* <option>Choose...</option> */}
         </Form.Control>    
       </Form.Group>
-
+        
       <Form.Group>
         <Form.Label>Category <small>(optional)</small></Form.Label>
-        <Form.Check
-            type="checkbox" 
-            name="category"
-            value={category}
-            onChange={handleChange}
-        />
+
+        <Form.Control
+          as="select"
+          name="category"
+          className={appStyles.Input}
+          value={category}
+          onChange={handleChange}
+        >
+          <option>select a topic</option>
+          <option value="hangout">hang out</option>
+          <option value="groupchat">group chat</option>
+          <option value="groomingparty">grooming party</option>
+          <option value="birdwatching">bird watching</option>
+          <option value="newfriends">new friends</option>
+          <option value="dogbullying">dog bullying</option>
+          <option value="stupidhumans">stupid humans</option>
+        </Form.Control>
       </Form.Group>
+      
       
       <Form.Group>
         <Form.Label>Content</Form.Label>
@@ -89,7 +128,10 @@ function PostCreateForm() {
         />
       </Form.Group>
 
-      <Button className={`${btnStyles.Button} `} onClick={() => {}}>
+      <Button 
+        className={`${btnStyles.Button} `} 
+        onClick={() => history.goBack()}
+      >
         cancel
       </Button>
       <Button className={`${btnStyles.Button} `} type="submit">
@@ -99,7 +141,7 @@ function PostCreateForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
