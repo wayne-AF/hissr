@@ -11,6 +11,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
+import { Alert } from "bootstrap";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
@@ -67,6 +68,11 @@ function PostCreateForm() {
             onChange={handleChange}
         />
       </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group>
         <Form.Label>City <small>(optional)</small></Form.Label>
@@ -78,6 +84,11 @@ function PostCreateForm() {
             onChange={handleChange}
         />
       </Form.Group>
+      {errors?.city?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group>
         <Form.Label>Country <small>(optional)</small></Form.Label>
@@ -93,6 +104,11 @@ function PostCreateForm() {
             {/* <option>Choose...</option> */}
         </Form.Control>    
       </Form.Group>
+      {errors?.country?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
         
       <Form.Group>
         <Form.Label>Category <small>(optional)</small></Form.Label>
@@ -114,6 +130,11 @@ function PostCreateForm() {
           <option value="stupidhumans">stupid humans</option>
         </Form.Control>
       </Form.Group>
+      {errors?.category?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       
       
       <Form.Group>
@@ -127,6 +148,11 @@ function PostCreateForm() {
             onChange={handleChange}
         />
       </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button 
         className={`${btnStyles.Button} `} 
