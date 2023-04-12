@@ -36,7 +36,7 @@ const NavBar = () => {
             // activeClassName={styles.Active}
             to="/posts/create"
           >
-            <i class="fa-solid fa-file-circle-plus"></i>post
+            <i className="fa-solid fa-file-circle-plus"></i>post
           </NavLink>
         </Dropdown.Item>
         <Dropdown.Item>
@@ -45,7 +45,7 @@ const NavBar = () => {
             // activeClassName={styles.Active}
             to="/personals/create"
           >
-            <i class="fa-solid fa-heart-circle-plus"></i>personal
+            <i className="fa-solid fa-heart-circle-plus"></i>personal
           </NavLink>
         </Dropdown.Item>
       </Dropdown.Menu>
@@ -91,14 +91,14 @@ const NavBar = () => {
         activeClassName={styles.Active}
         to="/signin"
       >
-        <i class="fa-solid fa-right-to-bracket"></i>Sign in
+        <i className="fa-solid fa-right-to-bracket"></i>Sign in
       </NavLink>
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/signup"
       >
-        <i class="fa-solid fa-user-plus"></i>Sign up
+        <i className="fa-solid fa-user-plus"></i>Sign up
       </NavLink>
     </>
   );
@@ -129,7 +129,7 @@ const NavBar = () => {
               activeClassName={styles.Active} 
               to="/"
             >
-              <i class="fa-solid fa-house"></i>Home
+              <i className="fa-solid fa-house"></i>Home
             </NavLink>
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
