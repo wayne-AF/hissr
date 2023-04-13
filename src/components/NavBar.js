@@ -32,7 +32,7 @@ const NavBar = () => {
       <Dropdown.Menu>
         <Dropdown.Item>
           <NavLink
-            className={styles.NavLink}
+            // className={styles.NavLink}
             // activeClassName={styles.Active}
             to="/posts/create"
           >
@@ -41,7 +41,7 @@ const NavBar = () => {
         </Dropdown.Item>
         <Dropdown.Item>
           <NavLink
-            className={styles.NavLink}
+            // className={styles.NavLink}
             // activeClassName={styles.Active}
             to="/personals/create"
           >
