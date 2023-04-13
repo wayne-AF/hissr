@@ -177,12 +177,25 @@ function PostCreateForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Container>
+      {/* <Container>
         <Row>
         <Col xs={12} md={8} lg={6} className="d-none d-md-block p-0 p-md-2">
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
         </Row>
+      </Container> */}
+      <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
+        <Row>
+          <Col className="text-center pb-2"><h3>Create a post</h3></Col>
+          
+        </Row>
+        {/* <Row>
+          <Col classname="text-center"><h4></h4></Col>
+        </Row> */}
+        <Row className={`${styles.Row} `}>
+          <Col>{textFields}</Col>
+          </Row>
+        
       </Container>
         
         
