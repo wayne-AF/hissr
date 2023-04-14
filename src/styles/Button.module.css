@@ -2,7 +2,9 @@
     font-size: 1.5rem;
     align-self: center;
     border-radius: 100px;
-    border-color: transparent;
+    background-color: #FDFCF8;
+    border-color: #fe4c3a;
+    color: #fe4c3a;
     /* padding: 2px 10px; */
     margin-left: 2px;
     margin-right: 2px;
@@ -10,21 +12,22 @@
 }
 
 .Button:hover {
-    opacity: 0.8;
     border-color: transparent;
     cursor: pointer;
+    color: #FDFCF8;
+    background-color: #fe4c3a;
 }
 
 .Button:hover:active {
-    background-color: #ff6a5c !important;
+    background-color: #fe4c3a !important;
 }
 
 .Button:active {
-    background-color: #ff6a5c !important;
+    background-color: #fe4c3a !important;
 }
 
 .Button:focus {
-    background-color: #ff6a5c;
+    background-color: #fe4c3a;
 }
 
 .Wide {
@@ -32,38 +35,38 @@
     width: 100%;
 }
 
-.Blue,
+/* .Blue,
 .BlueOutline:hover,
 .Bright:hover {
-    background-color: #ff6a5c;
+    background-color: #fe4c3a;
     color: #ffffff;
-}
+} */
 
-.BlueOutline,
+/* .BlueOutline,
 .Blue:hover {
-    /* border: 1px solid #ff6a5c; */
+    border: 1px solid #ff6a5c;
     background-color: #ffffff;
     color: #ff6a5c;
-}
+} */
 
-.Black,
+/* .Black,
 .BlackOutline:hover {
-    /* background-color: #242a3d;
-    color: white; */
+    background-color: #242a3d;
+    color: white;
     background-color: #242a3d;
     color: aliceblue;
-}
+} */
 
-.Black:hover,
+/* .Black:hover,
 .BlackOutline {
-    /* background-color: #dadadf;
+    background-color: #dadadf;
     color: #242a3d;
-    border-color: #242a3d; */
+    border-color: #242a3d;
     background-color: aliceblue;
     color: #242a3d;
-}
+} */
 
-.Bright {
-    background-color: #ff6a5c;
+/* .Bright {
+    background-color: #fe4c3a;
     color: #FDFCF8;
-}
+} */
