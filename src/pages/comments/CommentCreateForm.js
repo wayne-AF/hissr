@@ -67,11 +67,6 @@ function CommentCreateForm(props) {
       >
         post
       </Button>
-      <Button 
-                className={`${btnStyles.Button} ${btnStyles.Wide}`} 
-                type="submit">
-              Sign in!
-            </Button>
     </Form>
   );
 }
