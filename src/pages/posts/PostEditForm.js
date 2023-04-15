@@ -5,13 +5,13 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import CountrySelect from 'react-bootstrap-country-select'
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Alert } from "bootstrap";
+import { countries } from "../../components/Countries";
 
 function PostEditForm() {
   const [errors, setErrors] = useState({});
@@ -108,26 +108,20 @@ function PostEditForm() {
 
       <Form.Group>
         <Form.Label>Country <small>(optional)</small></Form.Label>
-        {/* <Form.Control
-            type="text"
-            // as="select"
-            placeholder="enter your city"
-            
+        <Form.Control
+            as="select"
             name="country"
+            className={appStyles.Input}
             value={country}
             onChange={handleChange}
         >
-            
-        </Form.Control>     */}
+          {/* <option>{postData.country}</option> */}
+          {countries.map((countrySelect) => <option value={countrySelect.code}>
+                {countrySelect.name}
+              </option>
+              )}
+        </Form.Control>    
         
-        <CountrySelect
-          as="select"
-          name="country"
-          
-          value={country}
-          flags={false}
-          onChange={handleChange}
-        />    
       </Form.Group>
       {errors?.country?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
@@ -137,7 +131,6 @@ function PostEditForm() {
         
       <Form.Group>
         <Form.Label>Category <small>(optional)</small></Form.Label>
-
         <Form.Control
           as="select"
           name="category"

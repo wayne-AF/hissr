@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import CountrySelect from 'react-bootstrap-country-select'
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -13,6 +12,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Alert } from "bootstrap";
 import { useRedirect } from "../../hooks/useRedirect";
+import { countries } from "../../components/Countries"; 
 
 function PostCreateForm() {
   useRedirect('loggedOut')
@@ -28,6 +28,7 @@ function PostCreateForm() {
   const { title, content, city, country, category } = postData
 
   const history = useHistory()
+
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -50,13 +51,13 @@ function PostCreateForm() {
     }
   }
 
-
   const handleChange = (event) => {
     setPostData({
         ...postData,
         [event.target.name]: event.target.value
     })
   }
+
 
   const textFields = (
     <div className="text-center">
@@ -94,26 +95,20 @@ function PostCreateForm() {
 
       <Form.Group>
         <Form.Label>Country <small>(optional)</small></Form.Label>
-        {/* <Form.Control
-            type="text"
-            // as="select"
-            placeholder="enter your city"
-            
+        <Form.Control
+            as="select"
             name="country"
+            className={appStyles.Input}
             value={country}
             onChange={handleChange}
         >
-            
-        </Form.Control>     */}
+          <option>choose your country</option>
+          {countries.map((country) => <option value={country.name}>
+                {country.name}
+              </option>
+              )}
+        </Form.Control>    
         
-        <CountrySelect
-          as="select"
-          name="country"
-          
-          value={country}
-          flags={false}
-          onChange={handleChange}
-        />    
       </Form.Group>
       {errors?.country?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
@@ -123,7 +118,6 @@ function PostCreateForm() {
         
       <Form.Group>
         <Form.Label>Category <small>(optional)</small></Form.Label>
-
         <Form.Control
           as="select"
           name="category"
