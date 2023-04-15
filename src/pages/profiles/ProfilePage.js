@@ -66,6 +66,8 @@ function ProfilePage() {
         </Col>
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
+          { profile?.city && profile?.country && <Col>{profile.city}, {profile.country}</Col>}
+          <hr />
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
                 <div>{profile?.posts_count}</div>
@@ -99,7 +101,28 @@ function ProfilePage() {
                     </Button>
                 ))}
         </Col>
-        { profile?.about && <Col className="p-3">{profile.about}</Col>}
+        <Row><small>About</small></Row>
+        <Row>
+        { profile?.about && <Col className="pt-3">{profile.about}</Col>}
+        </Row>
+        
+        <Row className="pl-3"><small>Ask me</small></Row>
+        <Row>
+        { profile?.ask_me && <Row className="pt-3">{profile.ask_me}</Row>}
+        </Row>
+        
+        <Row className="pl-3"><small>Tell me</small></Row>
+        { profile?.tell_me && <Col className="pt-3">{profile.tell_me}</Col>}
+        
+
+        <hr />
+        <Row></Row>
+
+        {}
+        {/* <Row>{profile.about}</Row>
+        <Row>{profile.ask_me}</Row>
+        <Row>{profile.tell_me}</Row> */}
+        {/* { profile?.about && <Col className="p-3">{profile.about}</Col>} */}
       </Row>
     </>
   );
