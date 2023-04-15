@@ -8,7 +8,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-
+import styles from "../../styles/PostCreateEditForm.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import {
   useCurrentUser,
@@ -27,10 +27,14 @@ const ProfileEditForm = () => {
 
   const [profileData, setProfileData] = useState({
     name: "",
-    content: "",
+    about: "",
     image: "",
+    country: "",
+    city: "",
+    tell_me: "",
+    ask_me: ""
   });
-  const { name, content, image } = profileData;
+  const { name, about, image, country, city, tell_me, ask_me } = profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -39,8 +43,8 @@ const ProfileEditForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, content, image } = data;
-          setProfileData({ name, content, image });
+          const { name, about, image, country, city, tell_me, ask_me } = data;
+          setProfileData({ name, about, image, country, city, tell_me, ask_me });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -64,7 +68,11 @@ const ProfileEditForm = () => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("name", name);
-    formData.append("content", content);
+    formData.append("about", about);
+    formData.append("country", country);
+    formData.append("city", city);
+    formData.append("tell me", tell_me);
+    formData.append("aske me", ask_me);
 
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
@@ -86,21 +94,68 @@ const ProfileEditForm = () => {
   const textFields = (
     <>
       <Form.Group>
-        <Form.Label>Bio</Form.Label>
-        <Form.Control
-          as="textarea"
-          value={content}
-          onChange={handleChange}
-          name="content"
-          rows={7}
-        />
+        <Form.Label>City</Form.Label>
+        <Form.Control 
+            placeholder="enter your city"
+            type="text"
+            name="city"
+            value={city}
+            onChange={handleChange}
+            />
       </Form.Group>
 
-      {errors?.content?.map((message, idx) => (
+      <Form.Group>
+        <Form.Label>Country</Form.Label>
+        <Form.Control 
+            placeholder="choose your country"
+            type="text"
+            name="country"
+            value={country}
+            onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>About</Form.Label>
+        <Form.Control
+            placeholder="what do you want to say about yourself?"
+          as="textarea"
+          value={about}
+          onChange={handleChange}
+          name="about"
+          rows={4}
+        />
+      </Form.Group>
+      {errors?.about?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
+      <Form.Group>
+        <Form.Label>Tell me</Form.Label>
+        <Form.Control 
+            placeholder="what do you want kitties to tell you?"
+            type="text"
+            name="tell me"
+            value={tell_me}
+            onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Ask me</Form.Label>
+        <Form.Control 
+            placeholder="what do you want kitties to ask you?"
+            type="text"
+            name="ask me"
+            value={ask_me}
+            onChange={handleChange}
+        />
+      </Form.Group>
+      
+      
+      
+
+      
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
@@ -134,7 +189,7 @@ const ProfileEditForm = () => {
                   className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
                   htmlFor="image-upload"
                 >
-                  Change the image
+                  Change your profile pic
                 </Form.Label>
               </div>
               <Form.File
@@ -151,12 +206,28 @@ const ProfileEditForm = () => {
                 }}
               />
             </Form.Group>
-            <div className="d-md-none">{textFields}</div>
+            {/* <div className="d-md-none">{textFields}</div> */}
           </Container>
         </Col>
-        <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
+        {/* <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
           <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
+        </Col> */}
+      </Row>
+      <Row>
+
+      <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
+        <Row>
+          <Col className="text-center pb-2"><h5>Edit your profile</h5></Col>
+          
+        </Row>
+        {/* <Row>
+          <Col classname="text-center"><h4></h4></Col>
+        </Row> */}
+        <Row className={`${styles.Row} `}>
+          <Col>{textFields}</Col>
+          </Row>
+        
+      </Container>
       </Row>
     </Form>
   );
