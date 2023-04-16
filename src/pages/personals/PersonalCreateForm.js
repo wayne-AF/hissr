@@ -64,7 +64,7 @@ function PersonalCreateForm() {
         <Form.Control
             className={appStyles.Input}
             placeholder="enter a title"
-            required="true"
+            required={true}
             type="text"
             name="title"
             value={title}
@@ -82,7 +82,7 @@ function PersonalCreateForm() {
         <Form.Control 
             className={appStyles.Input}
             placeholder="enter your city"
-            required="true"
+            required={true}
             type="text"
             name="city"
             value={city}
@@ -98,7 +98,7 @@ function PersonalCreateForm() {
       <Form.Group>
         <Form.Label>Country</Form.Label>
         <Form.Control
-            required="true"
+            required={true}
             as="select"
             name="country"
             className={appStyles.Input}
@@ -106,8 +106,8 @@ function PersonalCreateForm() {
             onChange={handleChange}
         >
           <option value="">choose your country</option>
-          {countries.map((country) => <option value={country.name}>
-                {country.name}
+          {countries.map((countrySelect) => <option value={countrySelect.code} key={countrySelect.code}>
+                {countrySelect.name}
               </option>
               )}
         </Form.Control>    
@@ -124,7 +124,7 @@ function PersonalCreateForm() {
         <Form.Control
             className={appStyles.Input}
             placeholder="what do you want to say?"
-            required="true"
+            required={true}
             as="textarea"
             rows={6}
             name="content"
@@ -140,7 +140,7 @@ function PersonalCreateForm() {
 
       <Button
         className={`${btnStyles.Button}`}
-        onClick={() => {}}
+        onClick={() => history.goBack()}
       >
         cancel
       </Button>
