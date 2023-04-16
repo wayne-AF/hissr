@@ -9,18 +9,96 @@ import Container from "react-bootstrap/Container";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import { countries } from "../../components/Countries";
 
 function PersonalCreateForm() {
 
   const [errors, setErrors] = useState({});
 
+  const [personalData, setPersonalData] = useState({
+    title: '',
+    content: '',
+    city: '',
+    country: ''
+  })
+
+  const { title, content, city, country } = personalData
+
 
   const textFields = (
     <div className="text-center">
-      {/* Add your form fields here */}
+      <Form.Group>
+        <Form.Label>Title</Form.Label>
+        <Form.Control
+            placeholder="enter a title"
+            type="text"
+            name="title"
+            value={title}
+            onChange={() => {}}
+        />
+      </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
-    
-    
+      <Form.Group>
+        <Form.Label>City <small>(optional)</small></Form.Label>
+        <Form.Control 
+            placeholder="enter your city"
+            type="text"
+            name="city"
+            value={city}
+            onChange={() => {}}
+        />
+      </Form.Group>
+      {errors?.city?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group>
+        <Form.Label>Country <small>(optional)</small></Form.Label>
+        <Form.Control
+            as="select"
+            name="country"
+            className={appStyles.Input}
+            value={country}
+            onChange={() => {}}
+        >
+          <option>choose your country</option>
+          {countries.map((country) => <option value={country.name}>
+                {country.name}
+              </option>
+              )}
+        </Form.Control>    
+      </Form.Group>
+      {errors?.country?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      
+      
+      <Form.Group>
+        <Form.Label>Content</Form.Label>
+        <Form.Control
+            placeholder="what do you want to say?"
+            as="textarea"
+            rows={6}
+            name="content"
+            value={content}
+            onChange={() => {}}
+        />
+      </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Button
         className={`${btnStyles.Button}`}
         onClick={() => {}}
@@ -28,7 +106,7 @@ function PersonalCreateForm() {
         cancel
       </Button>
       <Button className={`${btnStyles.Button}`} type="submit">
-        create
+        upload
       </Button>
     </div>
   );
