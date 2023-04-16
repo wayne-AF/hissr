@@ -185,6 +185,7 @@ function PostCreateForm() {
           <Col className="text-center pb-2"><h3>Create a post</h3></Col>
           
         </Row>
+        <hr />
         {/* <Row>
           <Col classname="text-center"><h4></h4></Col>
         </Row> */}
