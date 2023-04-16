@@ -115,7 +115,6 @@ function PostEditForm() {
             value={country}
             onChange={handleChange}
         >
-          {/* <option>{postData.country}</option> */}
           {countries.map((countrySelect) => <option value={countrySelect.code}>
                 {countrySelect.name}
               </option>

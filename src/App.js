@@ -14,6 +14,7 @@ import ProfilePage from './pages/profiles/ProfilePage';
 import UsernameForm from './pages/profiles/UsernameForm';
 import UserPasswordForm from './pages/profiles/UserPasswordForm';
 import ProfileEditForm from './pages/profiles/ProfileEditForm';
+import PersonalCreateForm from './pages/personals/PersonalCreateForm';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -49,6 +50,7 @@ function App() {
               <Route exact path="/posts/create" render={() => <PostCreateForm />} />
               <Route exact path="/posts/:id" render={() => <PostPage />} />
               <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+              <Route exact path="/personals/create" render={() => <PersonalCreateForm />} />
               <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
               <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
               <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
