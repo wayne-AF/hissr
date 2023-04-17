@@ -16,6 +16,7 @@ import UserPasswordForm from './pages/profiles/UserPasswordForm';
 import ProfileEditForm from './pages/profiles/ProfileEditForm';
 import PersonalCreateForm from './pages/personals/PersonalCreateForm';
 import PersonalPage from './pages/personals/PersonalPage';
+import PersonalsPage from './pages/personals/PersonalsPage';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -25,27 +26,43 @@ function App() {
           <NavBar />
           <Container className={styles.Main}>
             <Switch>
-              <Route exact path="/" render={() => <PostsPage message="No results found! Adjust the keyword?" />} />
+              {/* How can I render both PostsPage and PersonalsPage here? */}
+              <Route 
+                exact 
+                path="/" 
+                render={() => 
+                  <PostsPage message="No results found! Adjust the keyword?" />
+                } 
+              />
               <Route 
                 exact 
                 path="/feed" 
                 render={() => 
+                  // How can I render PostsPage and PersonalsPage here?
                   <PostsPage 
                     message="No results found! Adjust the keyword or try following someone." 
                     filter={`owner__followed__owner__profile=${profile_id}&`}
                   />
                 } 
               />
-              {/* <Route 
+              <Route 
+                exact 
+                path="/personals" 
+                render={() => 
+                  <PersonalsPage 
+                    message="No results found! Adjust the keyword?" 
+                    filter={`owner__followed__owner__profile=${profile_id}&`}/>
+                 } />
+              <Route 
                 exact 
                 path="/liked" 
                 render={() => 
-                  <PostsPage 
-                    message="No results found! Adjust the keyword or try liking a personal." 
+                  <PersonalsPage 
+                    message="No results found! Adjust the keyword or try liking a tale." 
                     filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
                   />
                 } 
-              /> */}
+              />
               <Route exact path="/signin" render={() => <SignInForm />} />
               <Route exact path="/signup" render={() => <SignUpForm />} />
               <Route exact path="/posts/create" render={() => <PostCreateForm />} />

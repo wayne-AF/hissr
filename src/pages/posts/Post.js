@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Post.module.css'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
-import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { Card, Media } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Avatar from '../../components/Avatar'
 import { axiosRes } from '../../api/axiosDefaults'

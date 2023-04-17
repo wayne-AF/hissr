@@ -106,14 +106,6 @@ function ProfilePage() {
         { profile?.about && <Col className="pt-3">{profile.about}</Col>}
         </Row>
         
-        <Row className="pl-3"><small>Ask me</small></Row>
-        <Row>
-        { profile?.ask_me && <Row className="pt-3">{profile.ask_me}</Row>}
-        </Row>
-        
-        <Row className="pl-3"><small>Tell me</small></Row>
-        { profile?.tell_me && <Col className="pt-3">{profile.tell_me}</Col>}
-        
 
         <hr />
         <Row></Row>

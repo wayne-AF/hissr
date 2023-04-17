@@ -121,11 +121,6 @@ const Personal = (props) => {
             )}
             {likes_count}
         </div>
-        <Button 
-            className={`${btnStyles.Button} ml-auto m-3`}
-            onClick={() => {}}>
-        reply
-      </Button>
     </Card>
   )
 }

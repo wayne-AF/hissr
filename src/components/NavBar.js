@@ -45,7 +45,7 @@ const NavBar = () => {
             // activeClassName={styles.Active}
             to="/personals/create"
           >
-            <i className="fa-solid fa-heart-circle-plus"></i>personal
+            <i class="fa-solid fa-feather-pointed"></i>tale
           </NavLink>
         </Dropdown.Item>
       </Dropdown.Menu>
@@ -71,9 +71,9 @@ const NavBar = () => {
         <NavLink
             className={styles.NavLink}
             activeClassName={styles.Active}
-            to="/liked"
+            to="/personals"
         >
-            <i className="fa-solid fa-envelope"></i>Messages
+            <i class="fa-solid fa-feather-pointed"></i>Tales
         </NavLink>
         
         <NavLink
