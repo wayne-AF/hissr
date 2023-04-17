@@ -14,8 +14,6 @@ const Post = (props) => {
     profile_id,
     profile_image,
     comments_count,
-    // likes_count,
-    // like_id,
     title,
     city,
     country,
@@ -40,38 +38,6 @@ const Post = (props) => {
       console.log(err);
     }
   };
-
-  // const handleLike = async () => {
-  //     try {
-  //       const { data } = await axiosRes.post("/likes/", { post: id });
-  //       setPosts((prevPosts) => ({
-  //         ...prevPosts,
-  //         results: prevPosts.results.map((post) => {
-  //           return post.id === id
-  //             ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-  //             : post;
-  //         }),
-  //       }));
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-
-  //   const handleUnlike = async () => {
-  //     try {
-  //       await axiosRes.delete(`/likes/${like_id}/`);
-  //       setPosts((prevPosts) => ({
-  //         ...prevPosts,
-  //         results: prevPosts.results.map((post) => {
-  //           return post.id === id
-  //             ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-  //             : post;
-  //         }),
-  //       }));
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
 
   return (
     <Card className={styles.Post}>

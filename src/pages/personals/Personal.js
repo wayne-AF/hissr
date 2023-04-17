@@ -4,7 +4,7 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { Button, Card, Media, OverlayTrigger } from 'react-bootstrap'
-import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Avatar from '../../components/Avatar'
 import { MoreDropdown } from '../../components/MoreDropdown'
 import { Tooltip } from 'bootstrap';
@@ -28,6 +28,20 @@ const Personal = (props) => {
 
     const currentUser = useCurrentUser()
     const is_owner = currentUser?.username === owner
+    const history = useHistory()
+
+    const handleEdit = () => {
+        history.push(`/personals/${id}/edit`)
+    }
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/personals/${id}/`)
+            history.goBack()
+        } catch(err){
+            console.log(err)
+        }
+    }
 
     const handleLike = async () => {
       try {
@@ -73,8 +87,8 @@ const Personal = (props) => {
               <span>{updated_at}</span>
               {is_owner && personalPage && 
                 <MoreDropdown 
-                //   handleEdit={handleEdit} 
-                //   handleDelete={handleDelete}
+                  handleEdit={handleEdit} 
+                  handleDelete={handleDelete}
                 />}
             </div>
           </Media>

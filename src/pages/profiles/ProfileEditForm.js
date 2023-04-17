@@ -32,10 +32,8 @@ const ProfileEditForm = () => {
     image: "",
     city: "",
     country: "",
-    tell_me: "",
-    ask_me: ""
   });
-  const { name, about, image, city, country, tell_me, ask_me } = profileData;
+  const { name, about, image, city, country } = profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -44,8 +42,8 @@ const ProfileEditForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, about, image, city, country, tell_me, ask_me } = data;
-          setProfileData({ name, about, image, city, country, tell_me, ask_me });
+          const { name, about, image, city, country } = data;
+          setProfileData({ name, about, image, city, country });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -73,8 +71,6 @@ const ProfileEditForm = () => {
     formData.append("about", about);
     formData.append("city", city);
     formData.append("country", country)
-    formData.append("tell_me", tell_me)
-    formData.append("ask_me", ask_me)
 
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
@@ -150,37 +146,6 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
 
-      <Form.Group>
-         <Form.Label>Tell me</Form.Label>
-         <Form.Control 
-             as="textarea"
-             rows={1}
-             name="tell_me"
-             value={tell_me}
-             onChange={handleChange}
-         />
-       </Form.Group>
-       {errors?.tell_me?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Form.Group>
-         <Form.Label>Ask me</Form.Label>
-         <Form.Control 
-             as="textarea"
-             rows={1}
-             name="ask_me"
-             value={ask_me}
-             onChange={handleChange}
-         />
-       </Form.Group>
-       {errors?.ask_me?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
