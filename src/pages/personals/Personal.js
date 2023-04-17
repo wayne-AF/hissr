@@ -15,10 +15,11 @@ const Personal = (props) => {
         owner,
         profile_id,
         profile_image,
+        likes_count,
+        like_id,
         title,
         content,
-        city,
-        country,
+        category,
         updated_at,
         personalPage
     } = props
@@ -34,9 +35,6 @@ const Personal = (props) => {
               <Avatar src={profile_image} height={55} />
               { owner }
             </Link>
-            <p>
-              {city}, {country}
-            </p>
             <div className="d-flex align-items-center">
               <span>{updated_at}</span>
               {is_owner && personalPage && 
@@ -52,28 +50,29 @@ const Personal = (props) => {
                 <Card.Title>{title}</Card.Title>
             </Link> 
             }
+            {category && <p>{category}</p>}
             {content && <Card.Text>{content}</Card.Text>}
         </Card.Body>
-        {/* {is_owner ? (
-            <OverlayTrigger placement="top" overlay={<Tooltip>You can't reply to your own persona!</Tooltip>}>
-                <p>some symbol here</p>
-            </OverlayTrigger>
-        ) : currentUser ? (
-                <Button 
-                    className={`${btnStyles.Button} ml-auto m-3`}
-                    onClick={() => {}}
-                >
-                    reply
-                </Button>
-        ) : (
-            <OverlayTrigger placement="top" overlay={<Tooltip>Log in to reply to this personal!</Tooltip>}>
-                <Button 
-                    className={`${btnStyles.Button} ml-auto m-3`}
-                >
-                    reply
-                </Button>
-            </OverlayTrigger>
-        )} */}
+        <div className={styles.PostBar}>
+            {is_owner ? (
+                <OverlayTrigger placement="top" overlay={<Tooltip>You can't like your own personal!</Tooltip>}>
+                    <i className="fas fa-paw" />
+                </OverlayTrigger>
+            ) : like_id ? (
+                <span onClick={() =>{}}>
+                    <i className="fas fa-paw" />
+                </span>
+            ) : currentUser ? (
+                <span onClick={() => {}}>
+                    <i className="fas fa-paw" />
+                </span>
+            ) : (
+                <OverlayTrigger placement="top" overlay={<Tooltip>Log in to like, meow!</Tooltip>}>
+                    <i className="fas fa-paw" />
+                </OverlayTrigger>
+            )}
+            {likes_count}
+        </div>
         <Button 
             className={`${btnStyles.Button} ml-auto m-3`}
             onClick={() => {}}>
