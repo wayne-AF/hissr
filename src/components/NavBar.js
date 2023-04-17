@@ -70,11 +70,12 @@ const NavBar = () => {
         </NavLink>
         <NavLink
             className={styles.NavLink}
-            to="/"
-            onClick={handleSignOut}
+            activeClassName={styles.Active}
+            to="/liked"
         >
-            <i className="fas fa-sign-out-alt"></i>Sign out
+            <i className="fa-solid fa-envelope"></i>Messages
         </NavLink>
+        
         <NavLink
             className={styles.NavLink}
             to={`/profiles/${currentUser?.profile_id}`}
@@ -82,6 +83,13 @@ const NavBar = () => {
             <Avatar 
               
               src={currentUser?.profile_image} text="Profile" height={40} />
+        </NavLink>
+        <NavLink
+            className={styles.NavLink}
+            to="/"
+            onClick={handleSignOut}
+        >
+            <i className="fas fa-sign-out-alt"></i>Sign out
         </NavLink>
     </>)
   const loggedOutIcons = (

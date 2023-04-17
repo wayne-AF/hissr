@@ -22,11 +22,10 @@ function PersonalCreateForm() {
   const [personalData, setPersonalData] = useState({
     title: '',
     content: '',
-    city: '',
-    country: ''
+    category: ''
   })
 
-  const { title, content, city, country } = personalData
+  const { title, content, category } = personalData
 
   const history = useHistory()
   
@@ -36,8 +35,7 @@ function PersonalCreateForm() {
 
     formData.append('title', title)
     formData.append('content', content)
-    formData.append('city', city)
-    formData.append('country', country)
+    formData.append('category', category)
 
     try  {
         const {data} = await axiosReq.post('/personals/', formData)
@@ -78,46 +76,28 @@ function PersonalCreateForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>City</Form.Label>
-        <Form.Control 
-            className={appStyles.Input}
-            placeholder="enter your city"
-            required={true}
-            type="text"
-            name="city"
-            value={city}
-            onChange={handleChange}
-        />
-      </Form.Group>
-      {errors?.city?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Form.Group>
-        <Form.Label>Country</Form.Label>
+        <Form.Label>Category <small>(optional)</small></Form.Label>
         <Form.Control
-            required={true}
-            as="select"
-            name="country"
-            className={appStyles.Input}
-            value={country}
-            onChange={handleChange}
+          as="select"
+          name="category"
+          className={appStyles.Input}
+          value={category}
+          onChange={handleChange}
         >
-          <option value="">choose your country</option>
-          {countries.map((countrySelect) => <option value={countrySelect.code} key={countrySelect.code}>
-                {countrySelect.name}
-              </option>
-              )}
-        </Form.Control>    
+          <option>select a topic</option>
+          <option value="thoughtoftheday">thought of the day</option>
+          <option value="grooming">grooming</option>
+          <option value="birdwatching">bird watching</option>
+          <option value="newfriends">new friends</option>
+          <option value="dogbullying">dog bullying</option>
+          <option value="stupidhumans">stupid humans</option>
+        </Form.Control>
       </Form.Group>
-      {errors?.country?.map((message, idx) => (
+      {errors?.category?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
-      
       
       <Form.Group>
         <Form.Label>Content</Form.Label>

@@ -36,16 +36,16 @@ function App() {
                   />
                 } 
               />
-              <Route 
+              {/* <Route 
                 exact 
                 path="/liked" 
                 render={() => 
                   <PostsPage 
-                    message="No results found! Adjust the keyword or try liking a post." 
+                    message="No results found! Adjust the keyword or try liking a personal." 
                     filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
                   />
                 } 
-              />
+              /> */}
               <Route exact path="/signin" render={() => <SignInForm />} />
               <Route exact path="/signup" render={() => <SignUpForm />} />
               <Route exact path="/posts/create" render={() => <PostCreateForm />} />

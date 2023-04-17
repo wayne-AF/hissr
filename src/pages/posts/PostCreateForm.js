@@ -23,9 +23,9 @@ function PostCreateForm() {
     content: '',
     city: '',
     country: '',
-    category: '',
+    // category: '',
   })
-  const { title, content, city, country, category } = postData
+  const { title, content, city, country } = postData
 
   const history = useHistory()
 
@@ -38,7 +38,6 @@ function PostCreateForm() {
     formData.append('content', content)
     formData.append('city', city)
     formData.append('country', country)
-    formData.append('category', category)
 
     try {
         const {data} = await axiosReq.post('/posts/', formData)
@@ -116,7 +115,7 @@ function PostCreateForm() {
         </Alert>
       ))}
         
-      <Form.Group>
+      {/* <Form.Group>
         <Form.Label>Category <small>(optional)</small></Form.Label>
         <Form.Control
           as="select"
@@ -139,8 +138,7 @@ function PostCreateForm() {
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
-      ))}
-      
+      ))} */}
       
       <Form.Group>
         <Form.Label>Content</Form.Label>

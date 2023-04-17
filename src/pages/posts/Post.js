@@ -14,12 +14,11 @@ const Post = (props) => {
         profile_id, 
         profile_image,
         comments_count,
-        likes_count,
-        like_id,
+        // likes_count,
+        // like_id,
         title,
         city,
         country,
-        category,
         content,
         updated_at,
         postPage,
@@ -43,37 +42,37 @@ const Post = (props) => {
       }
     }
 
-    const handleLike = async () => {
-        try {
-          const { data } = await axiosRes.post("/likes/", { post: id });
-          setPosts((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-              return post.id === id
-                ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-                : post;
-            }),
-          }));
-        } catch (err) {
-          console.log(err);
-        }
-      };
+    // const handleLike = async () => {
+    //     try {
+    //       const { data } = await axiosRes.post("/likes/", { post: id });
+    //       setPosts((prevPosts) => ({
+    //         ...prevPosts,
+    //         results: prevPosts.results.map((post) => {
+    //           return post.id === id
+    //             ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+    //             : post;
+    //         }),
+    //       }));
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   };
     
-      const handleUnlike = async () => {
-        try {
-          await axiosRes.delete(`/likes/${like_id}/`);
-          setPosts((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-              return post.id === id
-                ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-                : post;
-            }),
-          }));
-        } catch (err) {
-          console.log(err);
-        }
-      };
+    //   const handleUnlike = async () => {
+    //     try {
+    //       await axiosRes.delete(`/likes/${like_id}/`);
+    //       setPosts((prevPosts) => ({
+    //         ...prevPosts,
+    //         results: prevPosts.results.map((post) => {
+    //           return post.id === id
+    //             ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+    //             : post;
+    //         }),
+    //       }));
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   };
   
     return (
       <Card className={styles.Post}>
@@ -81,6 +80,7 @@ const Post = (props) => {
           <Media className="align-items-center justify-content-between">
             <Link to={`/profiles/${profile_id}`}>
               <Avatar src={profile_image} height={55} />
+              { owner }
             </Link>
             <p>
               {city}, {country}
@@ -100,10 +100,10 @@ const Post = (props) => {
             <Card.Title>{title}</Card.Title>
           </Link> 
             }
-          <p>{category}</p>
+          
           {content && <Card.Text>{content}</Card.Text>}
           <div className={styles.PostBar}>
-                    {is_owner ? (
+                    {/* {is_owner ? (
                         <OverlayTrigger placement="top" overlay={<Tooltip>You can't like your own post!</Tooltip>}>
                             <i className="fas fa-paw" />
                         </OverlayTrigger>
@@ -120,7 +120,7 @@ const Post = (props) => {
                             <i className="fas fa-paw" />
                         </OverlayTrigger>
                     )}
-                    {likes_count}
+                    {likes_count} */}
                     <Link to={`/posts/${id}`}>
                         <i className="far fa-comments" />
                     </Link>

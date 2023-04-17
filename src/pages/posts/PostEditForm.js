@@ -21,9 +21,9 @@ function PostEditForm() {
     content: '',
     city: '',
     country: '',
-    category: '',
+    // category: '',
   })
-  const { title, content, city, country, category } = postData
+  const { title, content, city, country } = postData
 
   const history = useHistory()
   const { id } = useParams()
@@ -32,9 +32,9 @@ function PostEditForm() {
     const handleMount = async () => {
         try {
             const {data} = await axiosReq.get(`/posts/${id}/`)
-            const {title, content, city, country, category, is_owner} = data
+            const {title, content, city, country, is_owner} = data
 
-            is_owner ? setPostData({title, content, city, country, category}) : history.push("/")
+            is_owner ? setPostData({title, content, city, country}) : history.push("/")
         } catch (err) {
             console.log(err)
 
@@ -51,7 +51,6 @@ function PostEditForm() {
     formData.append('content', content)
     formData.append('city', city)
     formData.append('country', country)
-    formData.append('category', category)
 
     try {
         await axiosReq.put(`/posts/${id}/`, formData)
@@ -128,7 +127,7 @@ function PostEditForm() {
         </Alert>
       ))}
         
-      <Form.Group>
+      {/* <Form.Group>
         <Form.Label>Category <small>(optional)</small></Form.Label>
         <Form.Control
           as="select"
@@ -151,7 +150,7 @@ function PostEditForm() {
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
-      ))}
+      ))} */}
       
       
       <Form.Group>
