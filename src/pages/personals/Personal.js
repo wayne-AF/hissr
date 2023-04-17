@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 import Avatar from '../../components/Avatar'
 import { MoreDropdown } from '../../components/MoreDropdown'
 import { Tooltip } from 'bootstrap';
+import { axiosRes } from '../../api/axiosDefaults';
 
 const Personal = (props) => {
     const {
@@ -21,11 +22,44 @@ const Personal = (props) => {
         content,
         category,
         updated_at,
-        personalPage
+        personalPage,
+        setPersonals
     } = props
 
     const currentUser = useCurrentUser()
     const is_owner = currentUser?.username === owner
+
+    const handleLike = async () => {
+      try {
+        const { data } = await axiosRes.post('/likes/', { personal: id });
+        setPersonals((prevPersonals) => ({
+          ...prevPersonals,
+          results: prevPersonals.results.map((personal) => {
+            return personal.id === id
+              ? { ...personal, likes_count: personal.likes_count + 1, like_id: data.id }
+              : personal;
+          }),
+        }));
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    const handleUnlike = async () => {
+      try {
+        await axiosRes.delete(`/likes/${like_id}/`);
+        setPersonals((prevPersonals) => ({
+          ...prevPersonals,
+          results: prevPersonals.results.map((personal) => {
+            return personal.id === id
+              ? { ...personal, likes_count: personal.likes_count - 1, like_id: null }
+              : personal;
+          }),
+        }));
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
   return (
     <Card className={styles.Post}>
@@ -59,11 +93,11 @@ const Personal = (props) => {
                     <i className="fas fa-paw" />
                 </OverlayTrigger>
             ) : like_id ? (
-                <span onClick={() =>{}}>
+                <span onClick={handleUnlike}>
                     <i className="fas fa-paw" />
                 </span>
             ) : currentUser ? (
-                <span onClick={() => {}}>
+                <span onClick={handleLike}>
                     <i className="fas fa-paw" />
                 </span>
             ) : (
