@@ -74,6 +74,10 @@ function ProfilePage() {
                 <div>posts</div>
             </Col>
             <Col xs={3} className="my-2">
+                <div>{profile?.posts_count}</div>
+                <div>bolts</div>
+            </Col>
+            <Col xs={3} className="my-2">
                 <div>{profile?.followers_count}</div>
                 <div>followers</div>
             </Col>
@@ -101,7 +105,6 @@ function ProfilePage() {
                     </Button>
                 ))}
         </Col>
-        <Row><small>About</small></Row>
         <Row>
         { profile?.about && <Col className="pt-3">{profile.about}</Col>}
         </Row>

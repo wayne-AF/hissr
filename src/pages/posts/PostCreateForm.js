@@ -102,7 +102,7 @@ function PostCreateForm() {
             onChange={handleChange}
         >
           <option>choose your country</option>
-          {countries.map((country) => <option value={country.name}>
+          {countries.map((country) => <option key={country.code} value={country.name}>
                 {country.name}
               </option>
               )}
@@ -114,31 +114,6 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-        
-      {/* <Form.Group>
-        <Form.Label>Category <small>(optional)</small></Form.Label>
-        <Form.Control
-          as="select"
-          name="category"
-          className={appStyles.Input}
-          value={category}
-          onChange={handleChange}
-        >
-          <option>select a topic</option>
-          <option value="hangout">hang out</option>
-          <option value="groupchat">group chat</option>
-          <option value="groomingparty">grooming party</option>
-          <option value="birdwatching">bird watching</option>
-          <option value="newfriends">new friends</option>
-          <option value="dogbullying">dog bullying</option>
-          <option value="stupidhumans">stupid humans</option>
-        </Form.Control>
-      </Form.Group>
-      {errors?.category?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))} */}
       
       <Form.Group>
         <Form.Label>Content</Form.Label>
@@ -171,22 +146,14 @@ function PostCreateForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      {/* <Container>
-        <Row>
-        <Col xs={12} md={8} lg={6} className="d-none d-md-block p-0 p-md-2">
-          <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
-        </Row>
-      </Container> */}
       <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
         <Row>
           <Col className="text-center pb-2"><h3>Create a post</h3></Col>
-          
+        </Row>
+        <Row>
+          <Col className="text-center pb-2"><h6>Start a conversation</h6></Col>  
         </Row>
         <hr />
-        {/* <Row>
-          <Col classname="text-center"><h4></h4></Col>
-        </Row> */}
         <Row className={`${styles.Row} `}>
           <Col>{textFields}</Col>
           </Row>

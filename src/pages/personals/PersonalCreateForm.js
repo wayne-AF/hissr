@@ -88,7 +88,6 @@ function PersonalCreateForm() {
           <option value="thoughtoftheday">thought of the day</option>
           <option value="grooming">grooming</option>
           <option value="birdwatching">bird watching</option>
-          <option value="newfriends">new friends</option>
           <option value="dogbullying">dog bullying</option>
           <option value="stupidhumans">stupid humans</option>
         </Form.Control>
@@ -132,30 +131,18 @@ function PersonalCreateForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      {/* <Container>
-        <Row>
-        <Col xs={12} md={8} lg={6} className="d-none d-md-block p-0 p-md-2">
-          <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
-        </Row>
-      </Container> */}
       <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
         <Row>
-          <Col className="text-center pb-2"><h3>Create a personal</h3></Col>
-          
+          <Col className="text-center pb-2"><h3>Create a bolt</h3></Col>
+        </Row>
+        <Row>
+          <Col className="text-center pb-2"><h6>Something on your mind?</h6></Col>  
         </Row>
         <hr />
-        {/* <Row>
-          <Col classname="text-center"><h4></h4></Col>
-        </Row> */}
         <Row className={`${styles.Row} `}>
           <Col>{textFields}</Col>
           </Row>
-        
       </Container>
-        
-        
-      
     </Form>
   );
 }

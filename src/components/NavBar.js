@@ -46,7 +46,7 @@ const NavBar = () => {
             // activeClassName={styles.Active}
             to="/personals/create"
           >
-            <i class="fa-solid fa-bolt"></i>bolt
+            <i className="fa-solid fa-bolt"></i>bolt
           </NavLink>
         </Dropdown.Item>
       </Dropdown.Menu>
@@ -74,7 +74,7 @@ const NavBar = () => {
             activeClassName={styles.Active}
             to="/personals"
         >
-            <i class="fa-solid fa-bolt-lightning"></i>Bolts
+            <i className="fa-solid fa-bolt-lightning"></i>Bolts
         </NavLink>
         
         <NavLink

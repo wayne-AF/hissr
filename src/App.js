@@ -17,6 +17,7 @@ import ProfileEditForm from './pages/profiles/ProfileEditForm';
 import PersonalCreateForm from './pages/personals/PersonalCreateForm';
 import PersonalPage from './pages/personals/PersonalPage';
 import PersonalsPage from './pages/personals/PersonalsPage';
+import PersonalEditForm from './pages/personals/PersonalEditForm';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -59,7 +60,7 @@ function App() {
                 render={() => 
                   <PersonalsPage 
                     message="No results found! Adjust the keyword or try liking a bolt." 
-                    filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                    filter={`likes__owner__profile=${profile_id}&ordering=-personals__created_at&`}
                   />
                 } 
               />
@@ -70,6 +71,7 @@ function App() {
               <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
               <Route exact path="/personals/create" render={() => <PersonalCreateForm />} />
               <Route exact path="/personals/:id" render={() => <PersonalPage />} />
+              <Route exact path="/personals/:id/edit" render={() => <PersonalEditForm />} />
               <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
               <Route exact path="/profiles/:id/edit/username" render={() => <UsernameForm />} />
               <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
