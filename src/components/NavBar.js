@@ -26,7 +26,8 @@ const NavBar = () => {
 
   const addPostIcon = (
     <Dropdown className={styles.NavBarDropDown}>
-      <Dropdown.Toggle variant="light" className={styles.NavBarDropDown}>
+      <Dropdown.Toggle className={styles.NavBarDropDown}>
+        <i className="fa-solid fa-square-plus"></i>
         Create
       </Dropdown.Toggle>
       <Dropdown.Menu>
@@ -36,7 +37,7 @@ const NavBar = () => {
             // activeClassName={styles.Active}
             to="/posts/create"
           >
-            <i className="fa-solid fa-file-circle-plus"></i>post
+            <i className="fa-solid fa-pen"></i>post
           </NavLink>
         </Dropdown.Item>
         <Dropdown.Item>
@@ -45,7 +46,7 @@ const NavBar = () => {
             // activeClassName={styles.Active}
             to="/personals/create"
           >
-            <i class="fa-solid fa-feather-pointed"></i>tale
+            <i class="fa-solid fa-bolt"></i>bolt
           </NavLink>
         </Dropdown.Item>
       </Dropdown.Menu>
@@ -59,7 +60,7 @@ const NavBar = () => {
             activeClassName={styles.Active}
             to="/feed"
         >
-            <i className="fas fa-stream"></i>Feed
+            <i className="fas fa-list"></i>Feed
         </NavLink>
         <NavLink
             className={styles.NavLink}
@@ -73,7 +74,7 @@ const NavBar = () => {
             activeClassName={styles.Active}
             to="/personals"
         >
-            <i class="fa-solid fa-feather-pointed"></i>Tales
+            <i class="fa-solid fa-bolt-lightning"></i>Bolts
         </NavLink>
         
         <NavLink
