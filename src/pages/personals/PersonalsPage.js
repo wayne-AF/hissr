@@ -34,7 +34,13 @@ function PersonalsPage({ message, filter = "" }) {
             }
         }
         setHasLoaded(false)
-        fetchPersonals()
+        const timer = setTimeout(() => {
+            fetchPersonals()
+        }, 1000)
+        return () => {
+            clearTimeout(timer)
+        }
+        
     }, [filter, query, pathname])
   
   return (
