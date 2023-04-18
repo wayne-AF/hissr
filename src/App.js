@@ -58,7 +58,7 @@ function App() {
                 path="/liked" 
                 render={() => 
                   <PersonalsPage 
-                    message="No results found! Adjust the keyword or try liking a tale." 
+                    message="No results found! Adjust the keyword or try liking a bolt." 
                     filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
                   />
                 } 

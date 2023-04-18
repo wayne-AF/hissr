@@ -14,6 +14,7 @@ import Personal from "./Personal";
 import Asset from "../../components/Asset";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function PersonalsPage({ message, filter = "" }) {
     const [personals, setPersonals] = useState({ results: [] })
@@ -34,12 +35,25 @@ function PersonalsPage({ message, filter = "" }) {
         }
         setHasLoaded(false)
         fetchPersonals()
-    }, [filter, pathname])
+    }, [filter, query, pathname])
   
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles mobile</p>
+        <PopularProfiles mobile />
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <Form
+            className={styles.SearchBar}
+            onSubmit={(event) => event.preventDefault()}
+        >
+            <Form.Control
+                type="text"
+                className="mr-sm-2"
+                placeholder="enter your search keyword"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+            />
+        </Form>
         {hasLoaded ? (
             <>
                 {personals.results.length ? (
@@ -56,7 +70,7 @@ function PersonalsPage({ message, filter = "" }) {
                     />
                     
                 ) : (<Container className={appStyles.Content}>
-                    <Asset src={NoResults} message={message}/>    
+                    <Asset src={NoResults} message={message} />    
                 </Container>)}
             </>
         ) : (
@@ -66,7 +80,7 @@ function PersonalsPage({ message, filter = "" }) {
         )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <p>Popular profiles for desktop</p>
+        <PopularProfiles />
       </Col>
     </Row>
   );
