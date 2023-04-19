@@ -23,7 +23,6 @@ function PostCreateForm() {
     content: '',
     city: '',
     country: '',
-    // category: '',
   })
   const { title, content, city, country } = postData
 
@@ -157,11 +156,7 @@ function PostCreateForm() {
         <Row className={`${styles.Row} `}>
           <Col>{textFields}</Col>
           </Row>
-        
       </Container>
-        
-        
-      
     </Form>
   );
 }
