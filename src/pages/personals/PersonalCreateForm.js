@@ -14,9 +14,10 @@ import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "bootstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function PersonalCreateForm() {
-
+  useRedirect('loggedOut')
   const [errors, setErrors] = useState({});
 
   const [personalData, setPersonalData] = useState({
