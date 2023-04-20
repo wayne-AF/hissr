@@ -4,6 +4,8 @@
     /* background-color: #EDF6E7; */
     color: #056571;
     background-color: #E7F4E3;
+    background-image: url('/workspace/hissr/src/assets/hissr_bg.png');
+    background-repeat: repeat;
     min-height: 100vh;
 }
 
@@ -92,7 +94,7 @@ figure {
     background: #555;
 }
 
-.Outline {
-    border: solid 1px red;
-    
+.Orange {
+    color: #FF6A5C;
 }
+

@@ -42,26 +42,27 @@ const SignUpForm = () => {
 
   return (
     <Container>
-    <Row>
-        <Col className="text-center"><h2>Welcome to hissr!</h2></Col>
-        </Row>
-    <Row>
-        <Col className="text-center"><h4>Make friends with cats in your area and all over the world</h4></Col>
-    </Row>
-    <Row>
+    {/* <Row>
     <Col
         md={12}
-        className={`my-auto d-none d-sm-block p-2 text-center ${appStyles.Outline}`}
+        className={`my-auto d-none d-sm-block p-2 text-center`}
       >
         <Image className={appStyles.FillerImage}
           
           src={"https://res.cloudinary.com/dnddcsxad/image/upload/v1681055196/cats-playing_qrwiur.jpg"}
         />
       </Col>
-    </Row>
-    <Row className={`${styles.Row} ${appStyles.Outline}`}>
+    </Row> */}
+    <Row className={`${styles.Row}`}>
       <Col className="mx-auto mt-5 py-2 p-md-2" md={10}>
         <Container className={`${appStyles.Content} p-4 `}>
+        <Row>
+        <Col className={`${appStyles.Orange} text-center`}><h2>Welcome to hissr!</h2></Col>
+        </Row>
+    <Row>
+        <Col className={`${appStyles.Orange} text-center`}><h4>Chat to cats all over the world</h4></Col>
+    </Row>
+    <hr />
           <h1 className={styles.Header}>sign up</h1>
 
           <Form onSubmit={handleSubmit}>
@@ -111,7 +112,7 @@ const SignUpForm = () => {
             ))}
             
             <Button 
-                className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} 
+                className={`${btnStyles.Button} ${btnStyles.Wide}`} 
                 type="submit">
               Sign up!
             </Button>
@@ -124,7 +125,7 @@ const SignUpForm = () => {
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
-            Already have an account? <span>Sign in</span>
+            Already have an account? <span>Sign !</span>
           </Link>
         </Container>
       </Col>

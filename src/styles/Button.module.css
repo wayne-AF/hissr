@@ -1,13 +1,13 @@
 .Button {
-    font-size: 1.5rem;
+    font-size: 1rem;
     align-self: center;
     border-radius: 100px;
     background-color: #FDFCF8;
-    border-color: #fe4c3a;
-    color: #fe4c3a;
+    border-color: #ff6a5c;
+    color: #ff6a5c;
     /* padding: 2px 10px; */
-    margin-left: 2px;
-    margin-right: 2px;
+    /* margin-left: 2px;
+    margin-right: 2px; */
     min-width: 75px;
 }
 
@@ -15,24 +15,26 @@
     border-color: transparent;
     cursor: pointer;
     color: #FDFCF8;
-    background-color: #fe4c3a;
+    background-color: #ff6a5c;
 }
 
 .Button:hover:active {
-    background-color: #fe4c3a !important;
+    background-color: #ff6a5c !important;
 }
 
 .Button:active {
-    background-color: #fe4c3a !important;
+    background-color: #ff6a5c !important;
 }
 
 .Button:focus {
-    background-color: #fe4c3a;
+    background-color: #ff6a5c;
 }
 
 .Wide {
-    /* padding: 10px 50px; */
-    width: 100%;
+    padding: 10px 50px;
+    width: 80%;
+    margin-left: 10%;
+
 }
 
 /* .Blue,

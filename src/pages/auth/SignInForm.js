@@ -54,13 +54,8 @@ function SignInForm() {
 
   return (
     <Container>
-        <Row>
-        <Col className="text-center"><h2>Welcome back!</h2></Col>
-        </Row>
-    <Row>
-        <Col className="text-center"><h4>We missed you</h4></Col>
-    </Row>
-      <Row>
+       
+      {/* <Row>
         <Col
           md={12}
           className={`my-auto d-none d-sm-block p-2 text-center ${appStyles.Outline}`}
@@ -72,10 +67,17 @@ function SignInForm() {
             }
           />
         </Col>
-      </Row>
-      <Row className={`${styles.Row} ${appStyles.Outline}`}>
+      </Row> */}
+      <Row className={`${styles.Row}`}>
         <Col className="mx-auto mt-5 py-2 p-md-2" md={10}>
           <Container className={`${appStyles.Content} p-4 `}>
+          <Row>
+        <Col className={`${appStyles.Orange} text-center`}><h2>Welcome back!</h2></Col>
+        </Row>
+    <Row>
+        <Col className={`${appStyles.Orange} text-center`}><h4>We missed you</h4></Col>
+    </Row>
+    <hr />
             <h1 className={styles.Header}>sign in</h1>
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="username">
