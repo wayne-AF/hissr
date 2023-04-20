@@ -5,7 +5,6 @@ import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 
 import { Link } from "react-router-dom";
@@ -54,20 +53,6 @@ function SignInForm() {
 
   return (
     <Container>
-       
-      {/* <Row>
-        <Col
-          md={12}
-          className={`my-auto d-none d-sm-block p-2 text-center ${appStyles.Outline}`}
-        >
-          <Image
-            className={appStyles.FillerImage}
-            src={
-              "https://res.cloudinary.com/dnddcsxad/image/upload/v1681062150/cats-licking_bi6pcz.jpg"
-            }
-          />
-        </Col>
-      </Row> */}
       <Row className={`${styles.Row}`}>
         <Col className="mx-auto mt-5 py-2 p-md-2" md={10}>
           <Container className={`${appStyles.Content} p-4 `}>

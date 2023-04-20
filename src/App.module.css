@@ -26,12 +26,12 @@
 }
 
 a {
-    color: #ff6a5c !important;
+    color: #ff6a5c;
     transition: color ease-in-out 0.3s;
 }
 
 a:hover {
-    color: #FDFCF8 !important;
+    color: #FDFCF8;
     background-color: #ff6a5c;
     transition: color ease-in-out 0.3s;
     /* padding: -10px; */
@@ -51,11 +51,11 @@ i {
     vertical-align: middle;
 }
 
-/* i:hover {
+i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
     color: #ff6a5c;
-} */
+}
 
 input[type="file"] {
     display: none;
@@ -84,6 +84,6 @@ figure {
 }
 
 .Orange {
-    color: #FF6A5C !important;
+    color: #FF6A5C;
 }
 

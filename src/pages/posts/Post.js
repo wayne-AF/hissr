@@ -75,7 +75,7 @@ const Post = (props) => {
         {content && <Card.Text>{content}</Card.Text>}
         <div className={styles.PostBar}>
           <Link to={`/posts/${id}`}>
-            <i className="fa-regular fa-comment-dots" />
+            <i className={`${styles.Comment} fa-regular fa-comment-dots`} />
           </Link>
           {comments_count}
         </div>
