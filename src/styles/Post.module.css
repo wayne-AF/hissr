@@ -1,17 +1,36 @@
 .Post {
-    background-color: #FDFCF8;
-    border: 1px solid #dadadf;
-    border-radius: 5px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  
-  .Post figure,
-  h5 {
-    margin: 0 0;
-  }
-  
-  .Heart {
+  background-color: #FDFCF8;
+  border: 2px solid #bdd8cc;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.Post figure,
+h5 {
+  margin: 0 0;
+}
+
+.Personal {
+  background-color: #FDFCF8;
+  border: 1px solid #fba39b;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.Category {
+  color: #FDFCF8;
+  border: 2px solid #ff6a5c;
+  background-color: #ff6a5c;
+  border-radius: 25px;
+  width: 35%;
+  margin-left: 32.5%;
+}
+
+/* .Heart {
     color: #ff6a5c;
   }
   
@@ -22,4 +41,4 @@
   
   .HeartOutline:hover {
     color: #ff6a5c;
-  }
+  } */

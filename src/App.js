@@ -52,7 +52,7 @@ function App() {
                 render={() => 
                   <PersonalsPage 
                     message="No results found! Adjust the keyword?" 
-                    filter={`owner__followed__owner__profile=${profile_id}&`}/>
+                  />
                  } />
               <Route 
                 exact 

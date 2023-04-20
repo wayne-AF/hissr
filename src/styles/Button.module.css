@@ -1,5 +1,6 @@
 .Button {
     font-size: 1rem;
+    font-weight: 700;
     align-self: center;
     border-radius: 100px;
     background-color: #FDFCF8;

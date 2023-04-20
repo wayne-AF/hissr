@@ -76,12 +76,12 @@ const Personal = (props) => {
     };
 
   return (
-    <Card className={styles.Post}>
+    <Card className={styles.Personal}>
         <Card.Body>
         <Media className="align-items-center justify-content-between">
             <Link to={`/profiles/${profile_id}`}>
               <Avatar src={profile_image} height={55} />
-              { owner }
+              <strong>{ owner }</strong>
             </Link>
             <div className="d-flex align-items-center">
               <span>{updated_at}</span>
@@ -95,10 +95,10 @@ const Personal = (props) => {
         </Card.Body>
         <Card.Body>
             {title && <Link to={`/personals/${id}`}>
-                <Card.Title>{title}</Card.Title>
+                <Card.Title><strong>{title}</strong></Card.Title>
             </Link> 
             }
-            {category && <p>{category}</p>}
+            {category && <p className={styles.Category}>#{category}</p>}
             {content && <Card.Text>{content}</Card.Text>}
         </Card.Body>
         <div className={styles.PostBar}>

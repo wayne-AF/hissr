@@ -63,6 +63,7 @@ function PostCreateForm() {
         <Form.Label>Title</Form.Label>
         <Form.Control
             placeholder="enter a title"
+            required={true}
             type="text"
             name="title"
             value={title}
@@ -79,6 +80,7 @@ function PostCreateForm() {
         <Form.Label>City <small>(optional)</small></Form.Label>
         <Form.Control 
             placeholder="enter your city"
+            required={true}
             type="text"
             name="city"
             value={city}
@@ -96,6 +98,7 @@ function PostCreateForm() {
         <Form.Control
             as="select"
             name="country"
+            required={true}
             className={appStyles.Input}
             value={country}
             onChange={handleChange}
@@ -120,6 +123,7 @@ function PostCreateForm() {
             placeholder="what do you want to say?"
             as="textarea"
             rows={6}
+            required={true}
             name="content"
             value={content}
             onChange={handleChange}

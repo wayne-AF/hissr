@@ -47,9 +47,7 @@ const Post = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <p>
-            {city}, {country}
-          </p>
+          
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
             {is_owner && postPage && (
@@ -64,9 +62,12 @@ const Post = (props) => {
       <Card.Body>
         {title && (
           <Link to={`/posts/${id}`}>
-            <Card.Title>{title}</Card.Title>
+            <Card.Title><strong>{title}</strong></Card.Title>
           </Link>
         )}
+        <p>
+            {city}, {country}
+          </p>
 
         {content && <Card.Text>{content}</Card.Text>}
         <div className={styles.PostBar}>
