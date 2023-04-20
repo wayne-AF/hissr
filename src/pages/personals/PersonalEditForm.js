@@ -53,7 +53,7 @@ function PersonalEditForm() {
     formData.append('category', category)
 
     try  {
-        const {data} = await axiosReq.put(`/personals/${id}`, formData)
+        await axiosReq.put(`/personals/${id}`, formData)
         history.push(`/personals/${id}`)
     } catch(err){
         console.log(err)

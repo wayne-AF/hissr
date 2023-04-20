@@ -11,10 +11,17 @@
     padding: 4px 10px;
     min-width: 75px;
     margin: 5px;
+    font-weight: 600;
 }
 
 .Button:hover {
     cursor: pointer;
+    border: 2px #ff6a5c solid;
     background-color: #ff6a5c;
     color: #FDFCF8;
+    border-radius: 100px;
+    padding: 4px 10px;
+    min-width: 75px;
+    margin: 5px;
+    font-weight: 600;
 }

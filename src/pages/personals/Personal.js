@@ -107,22 +107,22 @@ const Personal = (props) => {
                   placement="top" 
                   overlay={<Tooltip>You can't like your own bolt!</Tooltip>}
                 >
-                    <i className="fas fa-paw" />
+                    <i className={`${styles.PawGrey} fas fa-paw`} />
                 </OverlayTrigger>
             ) : like_id ? (
                 <span onClick={handleUnlike}>
-                    <i className="fas fa-paw" />
+                    <i className={`${styles.PawLiked} ${styles.Paw} fas fa-paw`} />
                 </span>
             ) : currentUser ? (
                 <span onClick={handleLike}>
-                    <i className="fas fa-paw" />
+                    <i className={`${styles.PawNoLike} ${styles.Paw} fas fa-paw`} />
                 </span>
             ) : (
                 <OverlayTrigger 
                   placement="top" 
                   overlay={<Tooltip>Log in to like, meow!</Tooltip>}
                 >
-                    <i className="fas fa-paw" />
+                    <i className={`${styles.PawGrey} fas fa-paw`} />
                 </OverlayTrigger>
             )}
             {likes_count}

@@ -3,7 +3,7 @@
   border: 2px solid #bdd8cc;
   border-radius: 10px;
   margin-bottom: 16px;
-  text-align: center;
+  /* text-align: center; */
   padding-bottom: 15px;
 }
 
@@ -25,11 +25,46 @@ h5 {
   color: #FDFCF8;
   border: 2px solid #ff6a5c;
   background-color: #ff6a5c;
-  border-radius: 25px;
+  border-radius: 15px;
   width: 35%;
   margin-left: 32.5%;
 }
 
+.PawGrey {
+  color: #dadadf;
+}
+
+.PawLiked {
+  /* border: 1px solid #ff6a5c; */
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.PawLiked:hover {
+  color: #FDFCF8;
+  background-color: #fba39b;
+  border-radius: 50%;
+}
+
+.PawNoLike {
+  color: #fba39b;
+}
+
+.PawNoLike:hover{
+  color: #FDFCF8;
+  background-color: #ff6a5c;
+  border-radius: 50%;
+}
+
+.Paw {
+  margin-right: 5px;
+}
+
+/* .Paw:hover {
+  color: #FDFCF8;
+  background-color: #ff6a5c;
+  border-radius: 50%;
+} */
 /* .Heart {
     color: #ff6a5c;
   }

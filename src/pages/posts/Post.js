@@ -60,15 +60,18 @@ const Post = (props) => {
         </Media>
       </Card.Body>
       <Card.Body>
+        
         {title && (
           <Link to={`/posts/${id}`}>
             <Card.Title><strong>{title}</strong></Card.Title>
           </Link>
         )}
         <p>
+          
             {city}, {country}
+              
           </p>
-
+        
         {content && <Card.Text>{content}</Card.Text>}
         <div className={styles.PostBar}>
           <Link to={`/posts/${id}`}>
