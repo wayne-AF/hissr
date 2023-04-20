@@ -91,10 +91,11 @@ function PersonalEditForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>Category <small>(optional)</small></Form.Label>
+        <Form.Label>Category</Form.Label>
         <Form.Control
           as="select"
           name="category"
+          required={true}
           className={appStyles.Input}
           value={category}
           onChange={handleChange}
@@ -148,10 +149,10 @@ function PersonalEditForm() {
     <Form onSubmit={handleSubmit}>
       <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
         <Row>
-          <Col className="text-center pb-2"><h3>Edit your bolt</h3></Col>
+          <Col className={`${appStyles.Orange} text-center pb-2`}><h3>Edit your bolt</h3></Col>
         </Row>
         <Row>
-          <Col className="text-center pb-2"><h6>Change your mind?</h6></Col>  
+          <Col className={`${appStyles.Orange} text-center pb-2`}><h5>Change your mind?</h5></Col>  
         </Row>
         <hr />
         <Row className={`${styles.Row} `}>

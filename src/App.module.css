@@ -7,6 +7,7 @@
     background-image: url('/workspace/hissr/src/assets/hissr_bg.png');
     background-repeat: repeat;
     min-height: 100vh;
+    font-weight: 600;
 }
 
 .Main {
@@ -19,18 +20,6 @@
     border-radius: 5px;
     border: 1px solid #dadadf;
 }
-
-/* .FillerImage {
-    object-fit: cover;
-    height: 85%;
-    width: 85%;
-} */
-
-/* .Image {
-    max-height: 40vh;
-    max-width: 100%;
-    object-fit: contain;
-} */
 
 * {
     box-sizing: border-box;

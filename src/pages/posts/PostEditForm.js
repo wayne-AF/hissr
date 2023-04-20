@@ -75,6 +75,7 @@ function PostEditForm() {
         <Form.Label>Title</Form.Label>
         <Form.Control
             placeholder="enter a title"
+            required={true}
             type="text"
             name="title"
             value={title}
@@ -91,6 +92,7 @@ function PostEditForm() {
         <Form.Label>City <small>(optional)</small></Form.Label>
         <Form.Control 
             placeholder="enter your city"
+            required={true}
             type="text"
             name="city"
             value={city}
@@ -104,10 +106,11 @@ function PostEditForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>Country <small>(optional)</small></Form.Label>
+        <Form.Label>Country</Form.Label>
         <Form.Control
             as="select"
             name="country"
+            required={true}
             className={appStyles.Input}
             value={country}
             onChange={handleChange}
@@ -130,6 +133,7 @@ function PostEditForm() {
         <Form.Control
             placeholder="what do you want to say?"
             as="textarea"
+            required={true}
             rows={6}
             name="content"
             value={content}
@@ -158,7 +162,10 @@ function PostEditForm() {
     <Form onSubmit={handleSubmit}>
       <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
         <Row>
-          <Col className="text-center pb-2"><h3>Edit your post?</h3></Col>
+          <Col className={`${appStyles.Orange} text-center pb-2`}><h3>Edit your post?</h3></Col>
+        </Row>
+        <Row>
+          <Col className={`${appStyles.Orange} text-center pb-2`}><h5>Remember that your edits might affect the conversation!</h5></Col>
         </Row>
         <Row className={`${styles.Row} `}>
           <Col>{textFields}</Col>

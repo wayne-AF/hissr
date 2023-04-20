@@ -3,11 +3,11 @@ import styles from '../../styles/Post.module.css'
 import btnStyles from "../../styles/Button.module.css";
 
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
-import { Button, Card, Media, OverlayTrigger } from 'react-bootstrap'
+import { Button, Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Avatar from '../../components/Avatar'
 import { MoreDropdown } from '../../components/MoreDropdown'
-import { Tooltip } from 'bootstrap';
+// import { Tooltip } from 'bootstrap';
 import { axiosRes } from '../../api/axiosDefaults';
 
 const Personal = (props) => {
@@ -103,7 +103,10 @@ const Personal = (props) => {
         </Card.Body>
         <div className={styles.PostBar}>
             {is_owner ? (
-                <OverlayTrigger placement="top" overlay={<Tooltip>You can't like your own personal!</Tooltip>}>
+                <OverlayTrigger 
+                  placement="top" 
+                  overlay={<Tooltip>You can't like your own bolt!</Tooltip>}
+                >
                     <i className="fas fa-paw" />
                 </OverlayTrigger>
             ) : like_id ? (
@@ -115,7 +118,10 @@ const Personal = (props) => {
                     <i className="fas fa-paw" />
                 </span>
             ) : (
-                <OverlayTrigger placement="top" overlay={<Tooltip>Log in to like, meow!</Tooltip>}>
+                <OverlayTrigger 
+                  placement="top" 
+                  overlay={<Tooltip>Log in to like, meow!</Tooltip>}
+                >
                     <i className="fas fa-paw" />
                 </OverlayTrigger>
             )}

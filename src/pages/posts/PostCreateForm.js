@@ -77,7 +77,7 @@ function PostCreateForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>City <small>(optional)</small></Form.Label>
+        <Form.Label>City</Form.Label>
         <Form.Control 
             placeholder="enter your city"
             required={true}
@@ -94,7 +94,7 @@ function PostCreateForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>Country <small>(optional)</small></Form.Label>
+        <Form.Label>Country</Form.Label>
         <Form.Control
             as="select"
             name="country"
@@ -151,10 +151,10 @@ function PostCreateForm() {
     <Form onSubmit={handleSubmit}>
       <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
         <Row>
-          <Col className="text-center pb-2"><h3>Create a post</h3></Col>
+          <Col className={`${appStyles.Orange} text-center pb-2`}><h3>Create a post</h3></Col>
         </Row>
         <Row>
-          <Col className="text-center pb-2"><h6>Start a conversation</h6></Col>  
+          <Col className={`${appStyles.Orange} text-center pb-2`}><h5>Start a conversation!</h5></Col>  
         </Row>
         <hr />
         <Row className={`${styles.Row} `}>

@@ -42,17 +42,6 @@ const SignUpForm = () => {
 
   return (
     <Container>
-    {/* <Row>
-    <Col
-        md={12}
-        className={`my-auto d-none d-sm-block p-2 text-center`}
-      >
-        <Image className={appStyles.FillerImage}
-          
-          src={"https://res.cloudinary.com/dnddcsxad/image/upload/v1681055196/cats-playing_qrwiur.jpg"}
-        />
-      </Col>
-    </Row> */}
     <Row className={`${styles.Row}`}>
       <Col className="mx-auto mt-5 py-2 p-md-2" md={10}>
         <Container className={`${appStyles.Content} p-4 `}>
