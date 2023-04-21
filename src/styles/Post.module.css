@@ -60,7 +60,7 @@ h5 {
 }
 
 .Comment {
-  margin-right: 5px;
+  padding: 10px;
 }
 
 .Comment:hover {

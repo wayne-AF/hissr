@@ -89,7 +89,7 @@ function PostEditForm() {
       ))}
 
       <Form.Group>
-        <Form.Label>City <small>(optional)</small></Form.Label>
+        <Form.Label>City</Form.Label>
         <Form.Control 
             placeholder="enter your city"
             required={true}

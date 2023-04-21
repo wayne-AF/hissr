@@ -80,8 +80,10 @@ const Personal = (props) => {
         <Card.Body>
         <Media className="align-items-center justify-content-between">
             <Link to={`/profiles/${profile_id}`}>
-              <Avatar src={profile_image} height={55} />
-              <strong>{ owner }</strong>
+              <div className="d-flex align-items-center">
+                <Avatar src={profile_image} height={55} />
+                <h5 className="font-weight-bold">{ owner }</h5>
+              </div>
             </Link>
             <div className="d-flex align-items-center">
               <span>{updated_at}</span>
@@ -101,6 +103,7 @@ const Personal = (props) => {
             {category && <p className={styles.Category}>#{category}</p>}
             {content && <Card.Text>{content}</Card.Text>}
         </Card.Body>
+        
         <div className={styles.PostBar}>
             {is_owner ? (
                 <OverlayTrigger 

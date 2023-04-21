@@ -18,6 +18,7 @@ import PersonalCreateForm from './pages/personals/PersonalCreateForm';
 import PersonalPage from './pages/personals/PersonalPage';
 import PersonalsPage from './pages/personals/PersonalsPage';
 import PersonalEditForm from './pages/personals/PersonalEditForm';
+import HomeFeed from './pages/homefeed/HomeFeed';
 
 function App() {
   const currentUser = useCurrentUser()
@@ -35,6 +36,13 @@ function App() {
                   <PostsPage message="No results found! Adjust the keyword?" />
                 } 
               />
+              {/* <Route 
+                exact 
+                path="/" 
+                render={() => 
+                  <HomeFeed message="No results found! Adjust the keyword?" />
+                } 
+              /> */}
               <Route 
                 exact 
                 path="/feed" 

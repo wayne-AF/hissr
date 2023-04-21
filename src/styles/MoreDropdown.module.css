@@ -4,8 +4,23 @@
     padding: 0px;
 }
 
+.DropdownItem:hover {
+    color: #FDFCF8;
+    background-color: #ff6a5c !important;
+}
+
+.Orange {
+    color: #ff6a5c;
+}
+
+.Orange:hover {
+    background-color: #ff6a5c;
+    color: #FDFCF8;
+}
+
 .Absolute {
     position: absolute;
     right: 0;
     z-index: 99;
 }
+

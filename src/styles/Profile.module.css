@@ -3,5 +3,22 @@
 }
 
 .Orange {
-    color: #ff6a5c;
+    color: #FF6A5C;
+    padding: 2px;
+    border: 2px solid transparent;
 }
+
+.Orange:hover {
+    background-color: #FF6A5C;;
+    color: #FDFCF8;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* .Avatar {
+    border: 2px solid transparent;
+}
+
+.Avatar:hover {
+    border: 2px solid #FF6A5C;
+} */

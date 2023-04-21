@@ -26,24 +26,22 @@ const NavBar = () => {
 
   const addPostIcon = (
     <Dropdown className={styles.NavLink}>
-      <Dropdown.Toggle className={`${styles.NavBarDropDown} ${styles.NavLink}`}>
+      <Dropdown.Toggle 
+        className={`${styles.NavBarDropDown} ${styles.NavLink}`}
+      >
         <i className="fa-solid fa-square-plus"></i>
         Create
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item>
+        <Dropdown.Item className={styles.NavBarDropDown}>
           <NavLink
-            className={styles.NavLink}
-            // activeClassName={styles.Active}
             to="/posts/create"
           >
             <i className="fa-solid fa-pen"></i>post
           </NavLink>
         </Dropdown.Item>
-        <Dropdown.Item>
+        <Dropdown.Item className={styles.NavBarDropDown}>
           <NavLink
-            className={styles.NavLink}
-            // activeClassName={styles.Active}
             to="/personals/create"
           >
             <i className="fa-solid fa-bolt"></i>bolt

@@ -64,7 +64,7 @@ function ProfilePage() {
                 src={profile?.image}
             />
         </Col>
-        <Col lg={6}>
+        <Col lg={7}>
           <h3 className="m-2">{profile?.owner}</h3>
           { profile?.city && profile?.country && <Col>{profile.city}, {profile.country}</Col>}
           <hr />
@@ -87,7 +87,7 @@ function ProfilePage() {
             </Col>
           </Row>
         </Col>
-        <Col lg={3} className="text-lg-right">
+        <Col lg={2} className="text-lg-right">
             {currentUser && !is_owner && 
                 (profile?.following_id ? (
                     <Button
@@ -111,13 +111,7 @@ function ProfilePage() {
         
 
         <hr />
-        <Row></Row>
-
-        {}
-        {/* <Row>{profile.about}</Row>
-        <Row>{profile.ask_me}</Row>
-        <Row>{profile.tell_me}</Row> */}
-        {/* { profile?.about && <Col className="p-3">{profile.about}</Col>} */}
+        
       </Row>
     </>
   );
@@ -126,7 +120,7 @@ function ProfilePage() {
     <>
       <hr />
       <p className="text-center">{profile?.owner}'s posts</p>
-      <hr />
+      
       {profilePosts.results.length ? (
         <InfiniteScroll 
             children={profilePosts.results.map((post) => (

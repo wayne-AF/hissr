@@ -44,8 +44,10 @@ const Post = (props) => {
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profile_image} height={55} />
-            <strong>{ owner }</strong>
+            <div className="d-flex align-items-center">
+              <Avatar src={profile_image} height={55} />
+              <h5 className="font-weight-bold">{ owner }</h5>
+            </div>
           </Link>
           
           <div className="d-flex align-items-center">
@@ -62,20 +64,23 @@ const Post = (props) => {
       <Card.Body>
         
         {title && (
-          <Link to={`/posts/${id}`}>
+          <Link className="text-center" to={`/posts/${id}`}>
             <Card.Title><strong>{title}</strong></Card.Title>
           </Link>
         )}
-        <p>
+        <p className="text-center">
           
             {city}, {country}
               
           </p>
         
         {content && <Card.Text>{content}</Card.Text>}
-        <div className={styles.PostBar}>
+        <div className="text-center">
           <Link to={`/posts/${id}`}>
-            <i className={`${styles.Comment} fa-regular fa-comment-dots`} />
+            <span>
+              <i className={`${styles.Comment} fa-regular fa-comment-dots`} />
+            </span>
+            
           </Link>
           {comments_count}
         </div>
