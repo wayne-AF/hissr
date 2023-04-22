@@ -28,7 +28,7 @@ function App() {
           <NavBar />
           <Container className={styles.Main}>
             <Switch>
-              {/* How can I render both PostsPage and PersonalsPage here? */}
+              
               <Route 
                 exact 
                 path="/" 
@@ -47,7 +47,6 @@ function App() {
                 exact 
                 path="/feed" 
                 render={() => 
-                  // How can I render PostsPage and PersonalsPage here?
                   <PostsPage 
                     message="No results found! Adjust the keyword or try following someone." 
                     filter={`owner__followed__owner__profile=${profile_id}&`}

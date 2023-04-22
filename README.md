@@ -12,10 +12,13 @@ The live project can be found [here]()
     - [Colours]
     - [Imagery]
     - [Wireframes]
+5. [Front-end]
+6. [Back-end API]
 5. [Features]
 6. [Technologies Used]
-7. [Testing]
-8. [Deployment]
+7. [Validation]
+8. [Testing]
+9. [Deployment]
 
 ## About
 
@@ -53,3 +56,55 @@ The live project can be found [here]()
 29. As a user, I want the ability to see all a user's posted content on their profile page.
 30. As a user, I want the ability to access different pages quickly without the whole page refreshing.
 31. As a user, I want the ability to change my username and password.
+
+
+### Wireframes
+
+<details><summary>Sign up page</summary>
+<img src="documentation/wireframes/sign_up_wireframe.png">
+</details>
+<details><summary>Sign in page</summary>
+<img src="documentation/wireframes/sign_in_page.png">
+</details>
+<details><summary>Home page</summary>
+<img src="documentation/wireframes/homepage_wireframe.png">
+</details>
+<details><summary>Post page</summary>
+<img src="documentation/wireframes/postpage_wireframe.png">
+</details>
+<details><summary>Create post</summary>
+<img src="documentation/wireframes/postcreate_wireframe.png">
+</details>
+<details><summary>Edit post</summary>
+<img src="documentation/wireframes/postedit_wireframe.png">
+</details>
+<details><summary>Feed</summary>
+<img src="documentation/wireframes/feed_wireframe.png">
+</details>
+<details><summary>Liked</summary>
+<img src="documentation/wireframes/liked_wireframe.png">
+</details>
+<details><summary>Bolts page</summary>
+<img src="documentation/wireframes/bolt_wireframe.png">
+</details>
+<details><summary>Bolt page</summary>
+<img src="documentation/wireframes/boltpage_wireframe.png">
+</details>
+<details><summary>Create bolt</summary>
+<img src="documentation/wireframes/personalcreate_wireframe.png">
+</details>
+<details><summary>Edit bolt</summary>
+<img src="documentation/wireframes/personaledit_wireframe.png">
+</details>
+<details><summary>Profile</summary>
+<img src="documentation/wireframes/profilepage_wireframe.png">
+</details>
+<details><summary>Edit profile</summary>
+<img src="documentation/wireframes/profileedit_wireframe.png">
+</details>
+<details><summary>Change username</summary>
+<img src="documentation/wireframes/usernameedit_wireframe.png">
+</details>
+<details><summary>Change password</summary>
+<img src="documentation/wireframes/passwordedit_wireframe.png">
+</details>

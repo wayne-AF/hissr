@@ -1,129 +1,128 @@
-import React, { useEffect, useState } from 'react'
-import { axiosReq } from '../../api/axiosDefaults'
+import React, { useEffect, useState } from "react";
+
+import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+
+import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { axiosReq } from "../../api/axiosDefaults";
+// import Post from "./Post";
+import NoResults from "../../assets/no-results.png"
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
+import InfiniteScroll from "react-infinite-scroll-component";
+import PopularProfiles from "../profiles/PopularProfiles";
+import Post from "../posts/Post";
+import Personal from "../personals/Personal";
 
-import { useLocation, useParams } from 'react-router-dom/cjs/react-router-dom.min'
-import { Col, Container, Form, Row } from 'react-bootstrap'
-import PopularProfiles from '../profiles/PopularProfiles'
-import Personal from '../personals/Personal';
-
-function HomeFeed ({ message, filter = ""}) {
-    // const [personals, setPersonals] = useState({ results: [] })
-    // const [posts, setPosts] = useState({ results: [] })
-    // const {pageHomeFeed} = useProfileData()
+function HomeFeed({ message, filter = ""}) {
+    const [posts, setPosts] = useState({ results: [] })
+    const [personals, setPersonals] = useState({ results: [] })
     const [allContent, setAllContent] = useState({ results: [] })
     const [hasLoaded, setHasLoaded] = useState(false)
-    const [query, setQuery] = useState("")
-    const {id} = useParams()
-
     const { pathname } = useLocation()
-    const Personal = (props) => {
-        const {
-            id,
-            owner,
-            profile_id,
-            profile_image,
-            likes_count,
-            like_id,
-            title,
-            content,
-            category,
-            updated_at,
-            personalPage,
-            setPersonals
-        } = props
-    }
 
-        const Post = (props) => {
-            const {
-              id,
-              owner,
-              profile_id,
-              profile_image,
-              comments_count,
-              title,
-              city,
-              country,
-              content,
-              updated_at,
-              postPage,
-            } = props;
+    const [query, setQuery] = useState("")
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            // try {
+            //     const {cats} = await axiosReq.get(`/personals/?${filter}search=${query}`)
+            //     const {data} = await axiosReq.get(`/posts/?${filter}search=${query}`)
+                
+            //     setPosts(data)
+            //     setPersonals(cats)
+            //     setHasLoaded(true)
+            // } catch(err){
+            //     console.log(err)
+            // }
+            try {
+                const [{ data: posts }, { data: personals }] = 
+                    await Promise.all([
+                        axiosReq.get(`/personals/?${filter}search=${query}`),
+                        axiosReq.get(`/posts/?${filter}search=${query}`)
+                    ])
+                    // setProfileData((prevState) => ({
+                    //     ...prevState,
+                    //     pageProfile: { results: [pageProfile] }
+                    // }))
+                    setPosts(posts)
+                    setPersonals(personals)
+                    let allContent = [...posts.results, ...personals.results]
+                    // Sorting dates of posts and personals according to created_at date.
+                    allContent = allContent.sort((a, b) => {
+                        const dateA = new Date(a.created_at);
+                        const dateB = new Date(b.created_at);
+                        return dateA > dateB ? -1 : dateA < dateB ? 1  : 0
+                    })
+                    setAllContent(allContent)
+                    setHasLoaded(true); 
+            } catch(err){
+                console.log(err)
+            }
         }
-          
-
-            useEffect(() => {
-                const fetchData = async () => {
-                    try {
-                        const [{ data: Post }, { data: Personal }] = 
-                            await Promise.all([
-                                axiosReq.get(`/posts/${id}/`),
-                                axiosReq.get(`/personals/${id}`)
-                            ])
-                            setAllContent((prevContent) => ({
-                                ...prevContent
-                                // : { results: [pageHomeFeed] }
-                            }))
-                            setAllContent()
-                            setHasLoaded(true); 
-                    } catch(err){
-                        console.log(err)
-                    }
-                }
-                  fetchData()
-              }, [id])
-        
+        setHasLoaded(false)
+        const timer = setTimeout(() => {
+            fetchPosts()
+        }, 1000)
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [filter, query, pathname])
   
- 
-
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+        <PopularProfiles mobile/>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
-        <Form
-            className={styles.SearchBar}
+        <Form 
+            className={styles.SearchBar} 
             onSubmit={(event) => event.preventDefault()}
+            
         >
-            <Form.Control
-                type="text"
+            <Form.Control 
+                type="text" 
                 className="mr-sm-2"
                 placeholder="enter your search keyword"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
             />
         </Form>
-
-        <Container>
-            {allContent.forEach((content) => (
-            
-            <Personal key={content.id} {...content} />
-            ))}
-
-        </Container>
-        {/* {hasLoaded ? (
+        {hasLoaded ? (
             <>
-                {allContent.results.length ? (
+                {allContent.length ? (
                     <InfiniteScroll 
                         children={
-                            allContent.results.map((content) => (
-                                <Personal key={personal.id} {...personal} setPersonals={setPersonals} />
+                            allContent.map((post) => (
+                                // <Post key={post.id} {...post} setPosts={setPosts} />
+                                post.category ?
+                                <Personal key={`PER-${post.id}`} {...post} setPersonals={setPersonals} /> 
+                                :
+                                <Post key={`POS-${post.id}`} {...post} setPosts={setPosts} />
                             ))
                         }
-                        dataLength={personals.results.length}
+                        // dataLength={posts.results.length}
+                        // loader={<Asset spinner />}
+                        // hasMore={!!posts.next}
+                        // next={() => fetchMoreData(allContent, setAllContent)}
+                        dataLength={allContent.length}
                         loader={<Asset spinner />}
-                        hasMore={!!personals.next}
-                        next={() => fetchMoreData(personals, setPersonals)}
+                        hasMore={!!allContent.next}
+                        next={() => fetchMoreData(allContent, setAllContent)}
                     />
                     
                 ) : (<Container className={appStyles.Content}>
-                    <Asset src={NoResults} message={message} />    
+                    <Asset src={NoResults} message={message}/>    
                 </Container>)}
             </>
         ) : (
             <Container className={appStyles.Content}>
                 <Asset spinner />
             </Container>
-        )} */}
+        )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
@@ -132,6 +131,4 @@ function HomeFeed ({ message, filter = ""}) {
   );
 }
 
-
-
-export default HomeFeed
+export default HomeFeed;
