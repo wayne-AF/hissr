@@ -18,6 +18,7 @@ import PersonalCreateForm from './pages/personals/PersonalCreateForm';
 import PersonalPage from './pages/personals/PersonalPage';
 import PersonalsPage from './pages/personals/PersonalsPage';
 import PersonalEditForm from './pages/personals/PersonalEditForm';
+import NotFound from './components/NotFound';
 // import HomeFeed from './pages/homefeed/HomeFeed';
 
 function App() {
@@ -84,16 +85,7 @@ function App() {
               <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
               <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
 
-
-
-              <Route
-                render={() => (
-                  <p>
-                    <i className="fa-solid fa-face-sad-cry"></i> Page not found
-                    <i className="fa-solid fa-face-sad-cry"></i>
-                  </p>
-                )}
-              />
+              <Route render={() => <NotFound />}/>
             </Switch>
           </Container>
         </div>
