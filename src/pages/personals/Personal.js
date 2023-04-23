@@ -1,13 +1,12 @@
 import React from 'react'
 import styles from '../../styles/Post.module.css'
-import btnStyles from "../../styles/Button.module.css";
+// import btnStyles from "../../styles/Button.module.css";
 
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
-import { Button, Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
 import Avatar from '../../components/Avatar'
 import { MoreDropdown } from '../../components/MoreDropdown'
-// import { Tooltip } from 'bootstrap';
 import { axiosRes } from '../../api/axiosDefaults';
 
 const Personal = (props) => {

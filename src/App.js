@@ -18,7 +18,7 @@ import PersonalCreateForm from './pages/personals/PersonalCreateForm';
 import PersonalPage from './pages/personals/PersonalPage';
 import PersonalsPage from './pages/personals/PersonalsPage';
 import PersonalEditForm from './pages/personals/PersonalEditForm';
-import HomeFeed from './pages/homefeed/HomeFeed';
+// import HomeFeed from './pages/homefeed/HomeFeed';
 
 function App() {
   const currentUser = useCurrentUser()
