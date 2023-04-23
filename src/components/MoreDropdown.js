@@ -1,6 +1,6 @@
-import React from "react"
-import Dropdown from 'react-bootstrap/Dropdown'
-import styles from '../styles/MoreDropdown.module.css'
+import React from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import styles from "../styles/MoreDropdown.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 

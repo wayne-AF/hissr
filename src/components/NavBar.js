@@ -1,13 +1,16 @@
-import React from 'react'
-import { Navbar, Container, Nav, Dropdown } from 'react-bootstrap'
-import logo from '../assets/hissr-logo-2.png'
-import styles from '../styles/NavBar.module.css'
-import { NavLink } from 'react-router-dom'
-import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext'
-import Avatar from './Avatar'
-import axios from 'axios'
-import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
-import { removeTokenTimestamp } from '../utils/utils'
+import React from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-boostrap/Nav";
+import Dropdown from "react-bootstrap/Dropdown";
+import logo from "../assets/hissr-logo-2.png";
+import styles from "../styles/NavBar.module.css";
+import { NavLink } from "react-router-dom";
+import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
+import axios from "axios";
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { removeTokenTimestamp } from "../utils/utils"
 
 const NavBar = () => {
 

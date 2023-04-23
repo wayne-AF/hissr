@@ -1,8 +1,8 @@
-import React from 'react'
-import NoResults from "../assets/no-results.png"
-import styles from "../styles/NotFound.module.css"
+import React from "react";
+import NoResults from "../assets/no-results.png";
+import styles from "../styles/NotFound.module.css";
 import appStyles from "../App.module.css";
-import Asset from './Asset'
+import Asset from "./Asset";
 
 const NotFound = () => {
   return (
