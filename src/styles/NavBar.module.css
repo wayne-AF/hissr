@@ -1,12 +1,13 @@
 .NavBar {
     background-color: #FDFCF8;
+    color: #FF6A5C;
     /* background-color: #f7f5e7; */
 }
 
 .navbarName {
     color: #ff6a5c !important;
     font-family: 'Yeseva One', cursive;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .NavLink {

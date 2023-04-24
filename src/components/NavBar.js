@@ -124,9 +124,11 @@ const NavBar = () => {
               <img className={styles.navbarLogo} src={logo} alt="logo" height="50" />
             </Navbar.Brand>
           </NavLink>
+          <Navbar.Brand className={styles.navbarName}>hissr</Navbar.Brand>
+          <p>where cats connect</p>
           {currentUser && addPostIcon}
 
-        {/* <Navbar.Brand className={styles.navbarName}>hissr</Navbar.Brand> */}
+        
 
         <Navbar.Toggle 
           ref={ref}
