@@ -121,11 +121,13 @@ const NavBar = () => {
         <Container>
           <NavLink to="/">
             <Navbar.Brand>
+              <div className="d-flex align-items-center">
               <img className={styles.navbarLogo} src={logo} alt="logo" height="50" />
+              <span className={`ml-2 ${styles.navbarName}`}>hissr</span>
+              </div>
             </Navbar.Brand>
           </NavLink>
-          <Navbar.Brand className={styles.navbarName}>hissr</Navbar.Brand>
-          <p>where cats connect</p>
+          {/* <Navbar.Brand className={styles.navbarName}>hissr</Navbar.Brand> */}
           {currentUser && addPostIcon}
 
         

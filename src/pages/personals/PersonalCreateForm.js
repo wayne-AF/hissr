@@ -15,6 +15,7 @@ import { Alert } from "bootstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import { toast } from "react-toastify";
 
 function PersonalCreateForm() {
   useRedirect('loggedOut')
@@ -40,6 +41,7 @@ function PersonalCreateForm() {
 
     try  {
         const {data} = await axiosReq.post('/personals/', formData)
+        toast.success('Bolt created')
         history.push(`/personals/${data.id}`)
     } catch(err){
         console.log(err)

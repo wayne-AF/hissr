@@ -5,6 +5,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import { Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 function CommentEditForm(props) {
   const { id, content, setShowEditForm, setComments } = props;
@@ -21,6 +22,7 @@ function CommentEditForm(props) {
       await axiosRes.put(`/comments/${id}/`, {
         content: formContent.trim(),
       });
+      toast.success('Comment updated successfully')
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {
@@ -35,7 +37,7 @@ function CommentEditForm(props) {
       }));
       setShowEditForm(false);
     } catch (err) {
-      console.log(err);
+      toast.error('Something went wrong! Try again later')
     }
   };
 

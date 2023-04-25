@@ -13,16 +13,17 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Alert } from "bootstrap";
 import { useRedirect } from "../../hooks/useRedirect";
 import { countries } from "../../components/Countries"; 
+import { toast } from "react-toastify";
 
 function PostCreateForm() {
-  useRedirect('loggedOut')
+  useRedirect("loggedOut")
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
-    title: '',
-    content: '',
-    city: '',
-    country: '',
+    title: "",
+    content: "",
+    city: "",
+    country: "",
   })
   const { title, content, city, country } = postData
 
@@ -33,14 +34,15 @@ function PostCreateForm() {
     event.preventDefault()
     const formData = new FormData()
 
-    formData.append('title', title)
-    formData.append('content', content)
-    formData.append('city', city)
-    formData.append('country', country)
+    formData.append("title", title)
+    formData.append("content", content)
+    formData.append("city", city)
+    formData.append("country", country)
 
     try {
-        const {data} = await axiosReq.post('/posts/', formData)
+        const {data} = await axiosReq.post("/posts/", formData)
         history.push(`/posts/${data.id}`)
+        toast.success("Post created successfully")
     } catch(err){
         console.log(err)
         if (err.response?.status !== 401){
@@ -55,7 +57,6 @@ function PostCreateForm() {
         [event.target.name]: event.target.value
     })
   }
-
 
   const textFields = (
     <div className="text-center">
@@ -141,7 +142,7 @@ function PostCreateForm() {
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} `} type="submit">
+      <Button className={`${btnStyles.Button}`} type="submit">
         create
       </Button>
     </div>
@@ -149,7 +150,7 @@ function PostCreateForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
+      <Container className={`mt-3 p-3 ${appStyles.Content}`}>
         <Row>
           <Col className={`${appStyles.Orange} text-center pb-2`}><h3>Create a post</h3></Col>
         </Row>
@@ -157,7 +158,7 @@ function PostCreateForm() {
           <Col className={`${appStyles.Orange} text-center pb-2`}><h5>Start a conversation!</h5></Col>  
         </Row>
         <hr />
-        <Row className={`${styles.Row} `}>
+        <Row className={`${styles.Row}`}>
           <Col>{textFields}</Col>
           </Row>
       </Container>

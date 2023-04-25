@@ -12,15 +12,16 @@ import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min
 import { axiosReq } from "../../api/axiosDefaults";
 import { Alert } from "bootstrap";
 import { countries } from "../../components/Countries";
+import { toast } from "react-toastify";
 
 function PostEditForm() {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
-    title: '',
-    content: '',
-    city: '',
-    country: '',
+    title: "",
+    content: "",
+    city: "",
+    country: "",
   })
   const { title, content, city, country } = postData
 
@@ -33,7 +34,7 @@ function PostEditForm() {
             const {data} = await axiosReq.get(`/posts/${id}/`)
             const {title, content, city, country, is_owner} = data
 
-            is_owner ? setPostData({title, content, city, country}) : history.push('/')
+            is_owner ? setPostData({title, content, city, country}) : history.push("/")
         } catch (err) {
             console.log(err)
 
@@ -46,14 +47,15 @@ function PostEditForm() {
     event.preventDefault()
     const formData = new FormData()
 
-    formData.append('title', title)
-    formData.append('content', content)
-    formData.append('city', city)
-    formData.append('country', country)
+    formData.append("title", title)
+    formData.append("content", content)
+    formData.append("city", city)
+    formData.append("country", country)
 
     try {
         await axiosReq.put(`/posts/${id}/`, formData)
         history.push(`/posts/${id}`)
+        toast.success("Post updated successfully")
     } catch(err){
         console.log(err)
         if (err.response?.status !== 401){
@@ -147,7 +149,7 @@ function PostEditForm() {
       ))}
 
       <Button 
-        className={`${btnStyles.Button} `} 
+        className={`${btnStyles.Button}`} 
         onClick={() => history.goBack()}
       >
         cancel

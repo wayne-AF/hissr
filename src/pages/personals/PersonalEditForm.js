@@ -14,6 +14,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { Alert } from "bootstrap";
 import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
+import { toast } from "react-toastify";
 
 function PersonalEditForm() {
 
@@ -55,6 +56,7 @@ function PersonalEditForm() {
     try  {
         await axiosReq.put(`/personals/${id}`, formData)
         history.push(`/personals/${id}`)
+        toast.success('Bolt updated successfully')
     } catch(err){
         console.log(err)
         if (err.response?.status !== 401){

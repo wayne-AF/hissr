@@ -21,11 +21,12 @@ The live project can be found [here](https://hissr.herokuapp.com/).
     - [Tools & Software](#tools-&-software)
 7. [Validation](#validation)
 8. [Testing](#testing)
-    -[Testing User Stories](#testing-user-stories)
+    - [Testing User Stories](#testing-user-stories)
 9. [Deployment](#deployment)
 10. [Notes](#notes)
 
 ## About
+Hissr is a content-sharing and social platform for cats around the world to connect and interact with each other. Users can create and comment on posts, create and like short-form posts, follow and unfollow users to curate their content feed, and edit their profiles to present themselves how they wish to their community.
 
 ## Project Goals
 The goal for this project was to create a content-sharing platform for users from around the world to interact by creating posts, commenting on posts, liking content, and following other users. The intended tone is light and informal.
@@ -39,8 +40,12 @@ Key aspects:
 - data filtering by profiles followed, and content liked
 - site responsiveness
 
+I used an Agile methodology for planning this project, implemented using a Kanban board in Github Project with linked issues.  
+View the Kanban board [here](https://github.com/users/wayne-AF/projects/9).
+(Please see the [Notes](#notes) section concerning the numbering of User Stories on the Kanban board.)
+
 ## User Stories
-(Please see the [Notes](#notes) section concerning the numbering of User Stories on the project kanban board.)
+
 ### First sprint
 #### Navigation
 1. As a user, I want the ability to view and understand the site before I decide to create an account.
@@ -309,6 +314,7 @@ React was used for this project due to its:
 - A user can also unlike a bolt if they change their mind
 - Users cannot like their own bolts
 - Likes and unlikes can be performed on the bolts page and the bolt detail page
+- A paw icon from FontAwesome is used in place of a heart icon for likes
 - User stories: 25, 26
 <details><summary>like screenshot</summary>
 <img src="documentation/features/like_bolt.png">
@@ -412,6 +418,21 @@ React was used for this project due to its:
 
 
 ## Technologies Used
+### Languages
+- HTML5
+- CSS3
+- JavaScript
+### Libraries, Frameworks & Dependencies
+- [Axios](https://axios-http.com/docs/intro)
+- [JWT](https://jwt.io/)
+- [Popper](https://popper.js.org/)
+- [React](https://17.reactjs.org/)
+- [React-Bootstrap](https://react-bootstrap-v4.netlify.app/)
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
+- [React-Toastify](https://www.npmjs.com/package/react-toastify)
+
+### Tools & Software
 
 
 ## Validation

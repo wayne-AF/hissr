@@ -1,13 +1,17 @@
-import React from 'react'
-import styles from '../../styles/Post.module.css'
+import React from "react"
+import styles from "../../styles/Post.module.css"
 // import btnStyles from "../../styles/Button.module.css";
 
-import { useCurrentUser } from '../../contexts/CurrentUserContext'
-import { Card, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
-import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
-import Avatar from '../../components/Avatar'
-import { MoreDropdown } from '../../components/MoreDropdown'
-import { axiosRes } from '../../api/axiosDefaults';
+import { useCurrentUser } from "../../contexts/CurrentUserContext"
+import Card from "react-bootstrap/Card"
+import Media from "react-bootstrap/Media"
+import OverlayTrigger from "react-bootstrap/OverlayTrigger"
+import Tooltip from "react-bootstrap/Tooltip"
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import Avatar from "../../components/Avatar"
+import { MoreDropdown } from "../../components/MoreDropdown"
+import { axiosRes } from "../../api/axiosDefaults"
+import { toast } from "react-toastify"
 
 const Personal = (props) => {
     const {
@@ -36,15 +40,17 @@ const Personal = (props) => {
     const handleDelete = async () => {
         try {
             await axiosRes.delete(`/personals/${id}/`)
-            history.goBack()
+            toast.success("Bolt deleted successfully")
+            history.push("/personals")
         } catch(err){
+          toast.error("Something went wrong! Try again later.")
             console.log(err)
         }
     }
 
     const handleLike = async () => {
       try {
-        const { data } = await axiosRes.post('/likes/', { personal: id });
+        const { data } = await axiosRes.post("/likes/", { personal: id });
         setPersonals((prevPersonals) => ({
           ...prevPersonals,
           results: prevPersonals.results.map((personal) => {
@@ -54,7 +60,7 @@ const Personal = (props) => {
           }),
         }));
       } catch (err) {
-        console.log(err);
+        toast.error("Something went wrong! Try again later")
       }
     };
 
@@ -70,6 +76,7 @@ const Personal = (props) => {
           }),
         }));
       } catch (err) {
+        toast.error("Something went wrong! Try again later.")
         console.log(err);
       }
     };

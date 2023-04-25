@@ -28,6 +28,9 @@ a {
     color: #ff6a5c;
     transition: color ease-in-out 0.3s;
 }
+.Card > a:hover {
+    color: #ff6a5c;
+}
 
 a:hover {
     color: #FDFCF8;

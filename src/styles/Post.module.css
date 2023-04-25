@@ -68,3 +68,7 @@ h5 {
   background-color: #ff6a5c;
   border-radius: 50%;
 }
+
+.card-body-link:hover {
+ color: #ff6a5c;
+}

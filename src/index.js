@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'react-toastify/dist/ReactToastify.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom'
 import { CurrentUserProvider } from './contexts/CurrentUserContext';
 import 'react-bootstrap-country-select/dist/react-bootstrap-country-select.css';
 import { ProfileDataProvider } from './contexts/ProfileDataContext';
+import { ToastContainer } from 'react-toastify';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,10 +17,10 @@ ReactDOM.render(
       <CurrentUserProvider>
         <ProfileDataProvider>
           <App />
+          <ToastContainer />
         </ProfileDataProvider>
       </CurrentUserProvider>
     </Router>
-    
   </React.StrictMode>,
   document.getElementById('root')
 );

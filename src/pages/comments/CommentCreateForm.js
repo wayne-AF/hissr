@@ -9,6 +9,7 @@ import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { Button } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
@@ -25,6 +26,7 @@ function CommentCreateForm(props) {
         content,
         post,
       });
+      toast.success('Comment created')
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
@@ -38,8 +40,9 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
+
     } catch (err) {
-      console.log(err);
+      toast.error('Something went wrong! Try again later')
     }
   };
 

@@ -1,11 +1,12 @@
-import React from 'react'
-import styles from '../../styles/Post.module.css'
-import { useCurrentUser } from '../../contexts/CurrentUserContext'
-import { Card, Media } from 'react-bootstrap'
-import { Link, useHistory } from 'react-router-dom/cjs/react-router-dom.min'
-import Avatar from '../../components/Avatar'
-import { axiosRes } from '../../api/axiosDefaults'
-import { MoreDropdown } from '../../components/MoreDropdown'
+import React from "react";
+import styles from "../../styles/Post.module.css"
+import { useCurrentUser } from "../../contexts/CurrentUserContext"
+import { Card, Media } from "react-bootstrap"
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import Avatar from "../../components/Avatar"
+import { axiosRes } from "../../api/axiosDefaults"
+import { MoreDropdown } from "../../components/MoreDropdown"
+import { toast } from "react-toastify";
 
 const Post = (props) => {
   const {
@@ -33,9 +34,10 @@ const Post = (props) => {
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
-      history.goBack();
+      history.push("/");
+      toast.success("Post deleted")
     } catch (err) {
-      console.log(err);
+      toast.error("Something went wrong! Try again later.")
     }
   };
 
@@ -64,7 +66,7 @@ const Post = (props) => {
       <Card.Body>
         
         {title && (
-          <Link className="text-center" to={`/posts/${id}`}>
+          <Link className="text-center card-body-link" to={`/posts/${id}`}>
             <Card.Title><strong>{title}</strong></Card.Title>
           </Link>
         )}

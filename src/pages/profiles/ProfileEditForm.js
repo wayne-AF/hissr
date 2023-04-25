@@ -18,6 +18,7 @@ import {
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { countries } from "../../components/Countries";
+import { toast } from "react-toastify";
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -82,10 +83,12 @@ const ProfileEditForm = () => {
         ...currentUser,
         profile_image: data.image,
       }));
+      toast.success('Profile updated successfully')
       history.goBack();
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
+      toast.error('Something went wrong! Try again later.')
     }
   };
 

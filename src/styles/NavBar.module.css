@@ -18,9 +18,9 @@
     text-decoration: underline;
 }
 
-.navbarLogo {
+/* .navbarLogo {
     border: 2px solid green;
-}
+} */
 
 .navbarLogo:hover {
     border: 2px solid #ff6a5c;
