@@ -12,7 +12,7 @@ export const countries = [
     "code": "DZ"
     },
     {
-    "name": "AmericanSamoa",
+    "name": "American Samoa",
     "code": "AS"
     },
     {
@@ -100,7 +100,7 @@ export const countries = [
     "code": "BT"
     },
     {
-    "name": "Bolivia, Plurinational State of",
+    "name": "Bolivia",
     "code": "BO"
     },
     {
@@ -148,7 +148,7 @@ export const countries = [
     "code": "CA"
     },
     {
-    "name": "Cape Verde",
+    "name": "Cabo Verde",
     "code": "CV"
     },
     {
@@ -192,7 +192,7 @@ export const countries = [
     "code": "CG"
     },
     {
-    "name": "Congo, The Democratic Republic of the Congo",
+    "name": "Congo (the Democratic Republic of the)",
     "code": "CD"
     },
     {
@@ -220,7 +220,7 @@ export const countries = [
     "code": "CY"
     },
     {
-    "name": "Czech Republic",
+    "name": "Czechia",
     "code": "CZ"
     },
     {
@@ -364,7 +364,7 @@ export const countries = [
     "code": "HT"
     },
     {
-    "name": "Holy See (Vatican City State)",
+    "name": "Holy See",
     "code": "VA"
     },
     {
@@ -392,7 +392,7 @@ export const countries = [
     "code": "ID"
     },
     {
-    "name": "Iran, Islamic Republic of Persian Gulf",
+    "name": "Iran",
     "code": "IR"
     },
     {
@@ -444,14 +444,6 @@ export const countries = [
     "code": "KI"
     },
     {
-    "name": "Korea, Democratic People's Republic of Korea",
-    "code": "KP"
-    },
-    {
-    "name": "Korea, Republic of South Korea",
-    "code": "KR"
-    },
-    {
     "name": "Kuwait",
     "code": "KW"
     },
@@ -480,7 +472,7 @@ export const countries = [
     "code": "LR"
     },
     {
-    "name": "Libyan Arab Jamahiriya",
+    "name": "Libya",
     "code": "LY"
     },
     {
@@ -498,10 +490,6 @@ export const countries = [
     {
     "name": "Macao",
     "code": "MO"
-    },
-    {
-    "name": "Macedonia",
-    "code": "MK"
     },
     {
     "name": "Madagascar",
@@ -552,7 +540,7 @@ export const countries = [
     "code": "MX"
     },
     {
-    "name": "Micronesia, Federated States of Micronesia",
+    "name": "Micronesia (Federated States of)",
     "code": "FM"
     },
     {
@@ -604,10 +592,6 @@ export const countries = [
     "code": "NL"
     },
     {
-    "name": "Netherlands Antilles",
-    "code": "AN"
-    },
-    {
     "name": "New Caledonia",
     "code": "NC"
     },
@@ -636,6 +620,14 @@ export const countries = [
     "code": "NF"
     },
     {
+    "name": "North Korea",
+    "code": "KP"
+    },
+    {
+    "name": "North Macedonia",
+    "code": "MK"
+    },
+    {
     "name": "Northern Mariana Islands",
     "code": "MP"
     },
@@ -656,7 +648,7 @@ export const countries = [
     "code": "PW"
     },
     {
-    "name": "Palestinian Territory, Occupied",
+    "name": "Palestine, State of",
     "code": "PS"
     },
     {
@@ -712,15 +704,11 @@ export const countries = [
     "code": "RW"
     },
     {
-    "name": "Reunion",
+    "name": "Réunion",
     "code": "RE"
     },
     {
-    "name": "Saint Barthelemy",
-    "code": "BL"
-    },
-    {
-    "name": "Saint Helena, Ascension and Tristan Da Cunha",
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
     "code": "SH"
     },
     {
@@ -732,7 +720,7 @@ export const countries = [
     "code": "LC"
     },
     {
-    "name": "Saint Martin",
+    "name": "Saint Martin (French part)",
     "code": "MF"
     },
     {
@@ -800,6 +788,10 @@ export const countries = [
     "code": "ZA"
     },
     {
+    "name": "South Korea",
+    "code": "KR"
+    },
+    {
     "name": "South Sudan",
     "code": "SS"
     },
@@ -828,10 +820,6 @@ export const countries = [
     "code": "SJ"
     },
     {
-    "name": "Swaziland",
-    "code": "SZ"
-    },
-    {
     "name": "Sweden",
     "code": "SE"
     },
@@ -840,7 +828,7 @@ export const countries = [
     "code": "CH"
     },
     {
-    "name": "Syrian Arab Republic",
+    "name": "Syria",
     "code": "SY"
     },
     {
@@ -852,7 +840,7 @@ export const countries = [
     "code": "TJ"
     },
     {
-    "name": "Tanzania, United Republic of Tanzania",
+    "name": "Tanzania",
     "code": "TZ"
     },
     {
@@ -884,7 +872,7 @@ export const countries = [
     "code": "TN"
     },
     {
-    "name": "Turkey",
+    "name": "Türkiye",
     "code": "TR"
     },
     {
@@ -916,7 +904,7 @@ export const countries = [
     "code": "GB"
     },
     {
-    "name": "United States",
+    "name": "United States of America",
     "code": "US"
     },
     {
@@ -932,7 +920,7 @@ export const countries = [
     "code": "VU"
     },
     {
-    "name": "Venezuela, Bolivarian Republic of Venezuela",
+    "name": "Venezuela",
     "code": "VE"
     },
     {
@@ -940,11 +928,11 @@ export const countries = [
     "code": "VN"
     },
     {
-    "name": "Virgin Islands, British",
+    "name": "Virgin Islands (British)",
     "code": "VG"
     },
     {
-    "name": "Virgin Islands, U.S.",
+    "name": "Virgin Islands (U.S.)",
     "code": "VI"
     },
     {
