@@ -16,7 +16,7 @@
     background-color: #FDFCF8;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #dadadf;
+    border: 1px solid #DADADF;
 }
 
 * {
@@ -24,17 +24,17 @@
 }
 
 a {
-    color: #ff6a5c;
+    color: #FF6A5C;
     transition: color ease-in-out 0.3s;
 }
 
 /* .Card > a:hover {
-    color: #ff6a5c;
+    color: #FF6A5C;
 } */
 
 /* a:hover {
     color: #FDFCF8;
-    background-color: #ff6a5c;
+    background-color: #FF6A5C;
     transition: color ease-in-out 0.3s;
     padding: -10px; 
     border-radius: 5px;
@@ -42,14 +42,14 @@ a {
 
 /*a:hover i {
     color: #FDFCF8;
-    background-color: #ff6a5c;
+    background-color: #FF6A5C;
     transition: color ease-in-out 0.3s;
 } */
 
 
 
 i {
-    color: #ff6a5c;
+    color: #FF6A5C;
     font-size: 1.6rem;
     padding: 7px;
     vertical-align: middle;

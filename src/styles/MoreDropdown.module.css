@@ -6,15 +6,15 @@
 
 .DropdownItem:hover {
     color: #FDFCF8;
-    background-color: #ff6a5c !important;
+    background-color: #FF6A5C !important;
 }
 
 .Orange {
-    color: #ff6a5c;
+    color: #FF6A5C;
 }
 
 .Orange:hover {
-    background-color: #ff6a5c;
+    background-color: #FF6A5C;
     color: #FDFCF8;
 }
 

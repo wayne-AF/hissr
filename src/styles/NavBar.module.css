@@ -4,7 +4,7 @@
 }
 
 .navbarName {
-    color: #ff6a5c !important;
+    color: #FF6A5C !important;
     font-family: 'Yeseva One', cursive;
     font-size: 1.75rem;
 }
@@ -22,7 +22,7 @@
 
 .NavLink:hover i {
     color: #FDFCF8;
-    background-color: #ff6a5c;
+    background-color: #FF6A5C;
     transition: color ease-in-out 0.3s;
 }
 
@@ -40,15 +40,15 @@ NavDropdown > NavLink {
 
 .NavDropdown.Item:hover {
     color: #FDFCF8 !important;
-    background-color: #ff6a5c;
-    border: 1px solid #ff6a5c;
+    background-color: #FF6A5C;
+    border: 1px solid #FF6A5C;
 }
 
 
 .NavDropdown:active {
     color: #FDFCF8 !important;
-    background-color: #ff6a5c !important;
-    border: 1px solid #ff6a5c;
+    background-color: #FF6A5C !important;
+    border: 1px solid #FF6A5C;
 }
 
 .NavDropdown:hover>i {
@@ -58,9 +58,9 @@ NavDropdown > NavLink {
 /* 
 .btn-primary.active {
 color: #FDFCF8 !important;
-background-color: #ff6a5c !important; 
+background-color: #FF6A5C !important; 
   
 } */
 /* .linkText {
-    color: #ff6a5c !important;
+    color: #FF6A5C !important;
 } */

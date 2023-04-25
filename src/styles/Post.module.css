@@ -29,8 +29,8 @@ a:hover {
 
 .Category {
   color: #FDFCF8;
-  border: 2px solid #ff6a5c;
-  background-color: #ff6a5c;
+  border: 2px solid #FF6A5C;
+  background-color: #FF6A5C;
   border-radius: 15px;
   width: 35%;
   margin-left: 32.5%;
@@ -61,7 +61,7 @@ a:hover {
 
 .PawNoLike:hover{
   color: #FDFCF8;
-  background-color: #ff6a5c;
+  background-color: #FF6A5C;
   border-radius: 50%;
 }
 
@@ -71,10 +71,10 @@ a:hover {
 
 .Comment:hover {
   color: #FDFCF8;
-  background-color: #ff6a5c;
+  background-color: #FF6A5C;
   border-radius: 50%;
 }
 
 .card-body-link:hover {
- color: #ff6a5c;
+ color: #FF6A5C;
 }

@@ -3,10 +3,6 @@ export const countries = [
     "name": "Afghanistan",
     "code": "AF"
     },
-    // {
-    // "name": "Aland Islands",
-    // "code": "AX"
-    // },
     {
     "name": "Albania",
     "code": "AL"
