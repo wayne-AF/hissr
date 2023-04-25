@@ -88,7 +88,7 @@ const Personal = (props) => {
             <Link to={`/profiles/${profile_id}`}>
               <div className="d-flex align-items-center">
                 <Avatar src={profile_image} height={55} />
-                <h5 className="font-weight-bold">{ owner }</h5>
+                <h5 className={`${styles.ProfileLink} font-weight-bold`}>{ owner }</h5>
               </div>
             </Link>
             <div className="d-flex align-items-center">

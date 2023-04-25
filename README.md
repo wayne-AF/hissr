@@ -22,8 +22,9 @@ The live project can be found [here](https://hissr.herokuapp.com/).
 7. [Validation](#validation)
 8. [Testing](#testing)
     - [Testing User Stories](#testing-user-stories)
-9. [Deployment](#deployment)
-10. [Notes](#notes)
+9. Bugs
+10. [Deployment](#deployment)
+12. [Notes](#notes)
 
 ## About
 Hissr is a content-sharing and social platform for cats around the world to connect and interact with each other. Users can create and comment on posts, create and like short-form posts, follow and unfollow users to curate their content feed, and edit their profiles to present themselves how they wish to their community.
@@ -190,8 +191,11 @@ React was used for this project due to its:
 - Logged-out users cannot see all pages of the site but they can view the most recent posts and get an idea of the tone of the site and if they'd like to sign up. The sign-in and sign-up links are also clearly visible in the navbar.
 - Users can see how many comments each post has
 - User stories: 1, 2, 3, 12
-<details><summary></summary>
-<img src="documentation/features/.png">
+<details><summary>Homepage large screen</summary>
+<img src="documentation/features/homepage_large_screen.png">
+</details>
+<details><summary>Homepage small screen</summary>
+<img src="documentation/features/homepage_small_screen.png">
 </details>
 
 ### Navbar
@@ -203,8 +207,14 @@ React was used for this project due to its:
 - When collapsed on smaller screens, the create icon remains visible, enforcing the idea that the site is for content sharing and engagement
 - When logged in, the navbar displays all the available pages for the user, as well as displaying the user's profile photo (if uploaded), letting them see at a glance whether they are logged in or not
 - User stories: 2, 3, 7
-<details><summary></summary>
-<img src="documentation/features/.png">
+<details><summary>Navbar large screen</summary>
+<img src="documentation/features/navbar_large.png">
+</details>
+<details><summary>Navbar small screen</summary>
+<img src="documentation/features/navbar_small.png">
+</details>
+<details><summary>Navbar dropdown</summary>
+<img src="documentation/features/navbar_dropdown.png">
 </details>
 
 ### Sign up form
@@ -212,7 +222,7 @@ React was used for this project due to its:
 - Contains a welcome message and a tagline further explaining to the user that the site is for cats who wish to connect with cats all over the world
 - Contains a link to the sign in page for users who already have an account
 - User stories: 4
-<details><summary>sign up form screenshot</summary>
+<details><summary>Sign up form</summary>
 <img src="documentation/features/sign_up_form.png">
 </details>
 
@@ -222,7 +232,7 @@ React was used for this project due to its:
 - Contains a link to sign up for users who do not already have an account
 - Brings the user to the homepage once log in is completed
 - User stories: 5
-<details><summary>sign in form screenshot</summary>
+<details><summary>Sign in form</summary>
 <img src="documentation/features/sign_in_form.png">
 </details>
 
@@ -232,7 +242,7 @@ React was used for this project due to its:
 - The country names are listed as full names, but displayed as two-letter country codes in the published post
 - The tagline encourages the user to start a conversation, reminding them about creating a dialogue and engaging with other users
 - User stories: 8, 9
-<details><summary>post create form screenshot</summary>
+<details><summary>Post create form</summary>
 <img src="documentation/features/post_create.png">
 </details>
 
@@ -240,7 +250,7 @@ React was used for this project due to its:
 - Is prepopulated with the information from the original post which the user can edit as they wish
 - The tagline reminds the user that any edits they make might affect any conversation taking place in the comments on a post
 - User stories: 10
-<details><summary>post edit form screenshot</summary>
+<details><summary>Post edit form</summary>
 <img src="documentation/features/post_edit.png">
 </details>
 
@@ -250,10 +260,10 @@ React was used for this project due to its:
 - This page allows the owner of the post to access its' edit and delete options from a dropdown menu in the upper-right corner of the post
 - Users can create a comment on a post on this page
 - User stories: 14, 15, 16, 17
-<details><summary>post detail screenshot</summary>
+<details><summary>Post detail page</summary>
 <img src="documentation/features/post_1.png">
 </details>
-<details><summary>post dropdown screenshot</summary>
+<details><summary>Post edit menu</summary>
 <img src="documentation/features/post_2.png">
 </details>
 
@@ -263,13 +273,13 @@ React was used for this project due to its:
 - Users can update or delete their comments via a dropdown menu
 - Users can see the owner of each comment from the avatar and username on each comment
 - User stories: 15, 16, 17
-<details><summary>comment screenshot</summary>
+<details><summary>Comment</summary>
 <img src="documentation/features/comment.png">
 </details>
-<details><summary>comment dropdown screenshot</summary>
+<details><summary>Comment edit menu</summary>
 <img src="documentation/features/comment_edit_menu.png">
 </details>
-<details><summary>comment edit screenshot</summary>
+<details><summary>Comment edit</summary>
 <img src="documentation/features/comment_edit.png">
 </details>
 
@@ -279,24 +289,24 @@ React was used for this project due to its:
 - Instead of location, users choose a category from a list of cat-related topics
 - The tagline asks the question "something on your mind?" suggesting the idea of putting out a quick thought or idea
 - User stories: 19, 20
-<details><summary>bolt create screenshot</summary>
+<details><summary>Bolt create</summary>
 <img src="documentation/features/bolt_create.png">
 </details>
 
 ### Bolt edit form
 - Is prepopulated with the information from the original bolt which the user can edit as they wish
 - User stories: 21
-<details><summary>bolt edit screenshot</summary>
+<details><summary>Bolt edit</summary>
 <img src="documentation/features/bolt_edit.png">
 </details>
 
 ### Bolt detail page
 - A single bolt page where the bolt owner can access the edit and delete options
 - User stories: 21, 22
-<details><summary>bolt screenshot</summary>
+<details><summary>Bolt</summary>
 <img src="documentation/features/bolt.png">
 </details>
-<details><summary>bolt dropdown screenshot</summary>
+<details><summary>Bolt edit menu</summary>
 <img src="documentation/features/bolt_dropdown.png">
 </details>
 

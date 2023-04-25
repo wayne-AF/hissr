@@ -12,15 +12,27 @@ h5 {
   margin: 0 0;
 }
 
-a:hover {
+/* a:hover {
   color: #FF6A5C;
   text-decoration: underline;
-  transition: color ease-in-out 0.3s;
+} */
+
+.ProfileLink:hover {
+  text-decoration: underline;
+}
+
+.Link {
+  color: #FF6A5C;
+}
+
+.Link:hover {
+  text-decoration: underline;
+  color: #FF6A5C;
 }
 
 .Personal {
   background-color: #FDFCF8;
-  border: 2px solid #fba39b;
+  border: 2px solid #FBA39B;
   border-radius: 10px;
   margin-bottom: 16px;
   text-align: center;
@@ -75,6 +87,6 @@ a:hover {
   border-radius: 50%;
 }
 
-.card-body-link:hover {
+/* .card-body-link:hover {
  color: #FF6A5C;
-}
+} */

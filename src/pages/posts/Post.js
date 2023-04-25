@@ -48,7 +48,7 @@ const Post = (props) => {
           <Link to={`/profiles/${profile_id}`}>
             <div className="d-flex align-items-center">
               <Avatar src={profile_image} height={55} />
-              <h5 className="font-weight-bold">{ owner }</h5>
+              <h5 className={`${styles.ProfileLink} font-weight-bold`}>{ owner }</h5>
             </div>
           </Link>
           
@@ -66,23 +66,19 @@ const Post = (props) => {
       <Card.Body>
         
         {title && (
-          <Link className="text-center card-body-link" to={`/posts/${id}`}>
+          <Link className={`${styles.Link} text-center card-body-link`} to={`/posts/${id}`}>
             <Card.Title><strong>{title}</strong></Card.Title>
           </Link>
         )}
         <p className="text-center">
-          
             {city}, {country}
-              
           </p>
-        
         {content && <Card.Text>{content}</Card.Text>}
         <div className="text-center">
           <Link to={`/posts/${id}`}>
             <span>
               <i className={`${styles.Comment} fa-regular fa-comment-dots`} />
             </span>
-            
           </Link>
           {comments_count}
         </div>

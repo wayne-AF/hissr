@@ -2,22 +2,22 @@
     word-break: break-all;
 }
 
-.Orange {
+/* .Orange {
     color: #FF6A5C;
     padding: 2px;
     border: 2px solid transparent;
 }
 
 .Orange:hover {
-    background-color: #FF6A5C;;
-    color: #FDFCF8;
+    color: #FF6A5C !important;
+    text-decoration: underline;
     cursor: pointer;
     border-radius: 5px;
-}
+} */
 
 a:hover{
-    background-color: #FF6A5C;;
-    color: #FDFCF8;
+    color: #FF6A5C;;
+    text-decoration: underline;
     cursor: pointer;
     border-radius: 5px;
 }

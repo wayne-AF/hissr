@@ -20,7 +20,7 @@ const PopularProfiles = ({mobile}) => {
           <p>Most followed profiles</p>
           <hr />
           {mobile ? (
-            <div className={`${appStyles.PopularAvatar} d-flex justify-content-around`}>
+            <div className={`d-flex justify-content-around`}>
               {popularProfiles.results.slice(0, 4).map((profile) => (
                 <Profile 
                    
