@@ -3,7 +3,6 @@
     color: #056571;
     background-color: #E7F4E3;
     background-image: url("https://res.cloudinary.com/dnddcsxad/image/upload/v1682260382/hissr_bg_ujvnfu.png");
-    /* background-image: url("/workspace/hissr/src/assets/hissr_bg.png"); */
     background-repeat: repeat;
     min-height: 100vh;
     font-weight: 600;
@@ -28,23 +27,26 @@ a {
     color: #ff6a5c;
     transition: color ease-in-out 0.3s;
 }
-.Card > a:hover {
+
+/* .Card > a:hover {
     color: #ff6a5c;
-}
+} */
 
-a:hover {
+/* a:hover {
     color: #FDFCF8;
     background-color: #ff6a5c;
     transition: color ease-in-out 0.3s;
-    /* padding: -10px; */
+    padding: -10px; 
     border-radius: 5px;
-}
+} */
 
-a:hover i {
+/*a:hover i {
     color: #FDFCF8;
     background-color: #ff6a5c;
     transition: color ease-in-out 0.3s;
-}
+} */
+
+
 
 i {
     color: #ff6a5c;
@@ -56,7 +58,7 @@ i {
 i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: #ff6a5c;
+    color: #FDFCF8;
 }
 
 input[type="file"] {
@@ -64,6 +66,7 @@ input[type="file"] {
 }
 
 figure {
+    max-width: 75%;
     text-align: center;
     display: inline-block;
 }

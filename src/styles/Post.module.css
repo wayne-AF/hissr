@@ -1,6 +1,6 @@
 .Post {
   background-color: #FDFCF8;
-  border: 2px solid #bdd8cc;
+  border: 3px solid #BBD8CC;
   border-radius: 10px;
   margin-bottom: 16px;
   /* text-align: center; */
@@ -12,9 +12,15 @@ h5 {
   margin: 0 0;
 }
 
+a:hover {
+  color: #FF6A5C;
+  text-decoration: underline;
+  transition: color ease-in-out 0.3s;
+}
+
 .Personal {
   background-color: #FDFCF8;
-  border: 1px solid #fba39b;
+  border: 2px solid #fba39b;
   border-radius: 10px;
   margin-bottom: 16px;
   text-align: center;

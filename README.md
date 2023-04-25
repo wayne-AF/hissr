@@ -429,8 +429,9 @@ React was used for this project due to its:
 - [React](https://17.reactjs.org/)
 - [React-Bootstrap](https://react-bootstrap-v4.netlify.app/)
 - [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
+- [React-Toastify](https://www.npmjs.com/package/react-toastify) - Used for notification messages to inform user of successful content creation, update, and deletion
 - [React Router](https://v5.reactrouter.com/web/guides/quick-start)
-- [React-Toastify](https://www.npmjs.com/package/react-toastify)
+
 
 ### Tools & Software
 

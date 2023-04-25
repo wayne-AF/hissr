@@ -1,5 +1,6 @@
 import React from 'react'
 import appStyles from '../../App.module.css'
+import styles from "../../styles/Post.module.css"
 import { Container } from 'react-bootstrap'
 import Asset from '../../components/Asset'
 import Profile from './Profile'
@@ -17,6 +18,7 @@ const PopularProfiles = ({mobile}) => {
       {popularProfiles.results.length ? (
         <>
           <p>Most followed profiles</p>
+          <hr />
           {mobile ? (
             <div className={`${appStyles.PopularAvatar} d-flex justify-content-around`}>
               {popularProfiles.results.slice(0, 4).map((profile) => (

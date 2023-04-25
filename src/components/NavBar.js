@@ -3,6 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Dropdown from "react-bootstrap/Dropdown";
+import NavDropdown from "react-bootstrap/NavDropdown"
 import logo from "../assets/hissr-logo-2.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -30,30 +31,58 @@ const NavBar = () => {
   };
 
   const addPostIcon = (
-    <Dropdown className={styles.NavLink}>
-      <Dropdown.Toggle 
+    // <Dropdown className={styles.NavLink}>
+    //   <Dropdown.Toggle 
+    //     className={`${styles.NavBarDropDown} ${styles.NavLink}`}
+    //   >
+    //     <i className="fa-solid fa-square-plus"></i>
+    //     Create
+    //   </Dropdown.Toggle>
+    //   <Dropdown.Menu>
+    //     <Dropdown.Item className={styles.NavBarDropDown}>
+    //       <NavLink
+    //         to="/posts/create"
+    //       >
+    //         <i className="fa-solid fa-pen"></i>post
+    //       </NavLink>
+    //     </Dropdown.Item>
+    //     <Dropdown.Item className={styles.NavBarDropDown}>
+    //       <NavLink
+    //         to="/personals/create"
+    //       >
+    //         <i className="fa-solid fa-bolt"></i>bolt
+    //       </NavLink>
+    //     </Dropdown.Item>
+    //   </Dropdown.Menu>
+    // </Dropdown>
+    <NavDropdown 
         className={`${styles.NavBarDropDown} ${styles.NavLink}`}
+        title={
+          <span>
+            <i className="fa-solid fa-square-plus"></i><strong>Create</strong>
+          </span>
+        }
+        activeClassName={styles.Active}
       >
-        <i className="fa-solid fa-square-plus"></i>
-        Create
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item className={styles.NavBarDropDown}>
+      
+        <NavDropdown.Item className={styles.NavBarDropDown}>
           <NavLink
             to="/posts/create"
           >
-            <i className="fa-solid fa-pen"></i>post
+            <span className={styles.NavDropdown}>
+              <i className="fa-solid fa-pen"></i>post
+            </span>
+            
           </NavLink>
-        </Dropdown.Item>
-        <Dropdown.Item className={styles.NavBarDropDown}>
+        </NavDropdown.Item>
+        <NavDropdown.Item className={styles.NavBarDropDown}>
           <NavLink
             to="/personals/create"
           >
             <i className="fa-solid fa-bolt"></i>bolt
           </NavLink>
-        </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+        </NavDropdown.Item>
+        </NavDropdown>
   );
 
   const loggedInIcons = (
@@ -96,6 +125,7 @@ const NavBar = () => {
             <i className="fas fa-sign-out-alt"></i>Sign out
         </NavLink>
     </>)
+
   const loggedOutIcons = (
     <>
       <NavLink
@@ -117,20 +147,18 @@ const NavBar = () => {
 
   return (
     
-      <Navbar expanded={expanded} className={styles.NavBar} expand="md" fixed="top">
+      <Navbar expanded={expanded} className={styles.NavBar} expand="lg" fixed="top">
         <Container>
-          <NavLink to="/">
+          {/* <NavLink to="/"> */}
             <Navbar.Brand>
               <div className="d-flex align-items-center">
               <img className={styles.navbarLogo} src={logo} alt="logo" height="50" />
               <span className={`ml-2 ${styles.navbarName}`}>hissr</span>
               </div>
             </Navbar.Brand>
-          </NavLink>
-          {/* <Navbar.Brand className={styles.navbarName}>hissr</Navbar.Brand> */}
+          {/* </NavLink> */}
+          
           {currentUser && addPostIcon}
-
-        
 
         <Navbar.Toggle 
           ref={ref}
