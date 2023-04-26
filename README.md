@@ -514,55 +514,55 @@ The back-end API for this project was built using the Django Rest Framework. The
 ### HTML
 W3C Markup validation was used to validate the HTML of the site. Results screenshots are provided below.
 <details><summary>Home page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/home_page.png">
 </details>
 <details><summary>Sign up page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/sign_up_page.png">
 </details>
 <details><summary>Sign in page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/sign_in_page.png">
 </details>
 <details><summary>Post create page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/post_create_page.png">
 </details>
 <details><summary>Post edit page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/post_edit_page.png">
 </details>
 <details><summary>Post detail page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/post_detail_page.png">
 </details>
 <details><summary>Feed page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/feed_page.png">
 </details>
 <details><summary>Liked page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/liked_page.png">
 </details>
 <details><summary>Bolts page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/bolts_page.png">
 </details>
 <details><summary>Bolt create page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/bolt_create_page.png">
 </details>
 <details><summary>Bolt edit page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/bolt_edit_page.png">
 </details>
 <details><summary>Bolt detail page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/bolt_detail_page.png">
 </details>
 <details><summary>Profile page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/profile_page.png">
 </details>
 <details><summary>Profile edit page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/profile_edit_page.png">
 </details>
 <details><summary>Username edit page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/username_edit_page.png">
 </details>
 <details><summary>Password edit page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/password_edit_page.png">
 </details>
 <details><summary>404 error page</summary>
-<img src="documentation/validation/html/.png">
+<img src="documentation/validation/html/404_error_page.png">
 </details>
 
 
@@ -572,30 +572,40 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 1. As a user, I want the ability to view and understand the site before I decide to create an account.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
+I showed the site to two family members and asked them what kind of site did they understand this to be from looking at the main page. | They will surmise the site to be a content-sharing and social platform. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 1</summary>
+<img src="documentation/testing_user_stories/user_story_1.png">
 </details>
 
 2. As a user, I want the ability to view the navbar from every page so I can easily navigate around the site.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
+Navigated to the home, feed, bolts, and profile page. | The navbar will be visible on all pages. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 2</summary>
+<img src="documentation/testing_user_stories/user_story_2.1.png">
+<img src="documentation/testing_user_stories/user_story_2.2.png">
+<img src="documentation/testing_user_stories/user_story_2.3.png">
+<img src="documentation/testing_user_stories/user_story_2.4.png">
 </details>
 
 3. As a logged-out user, I want the ability to easily sign in or sign up from wherever I am on the site.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
+Logged out and navigated to the home page. | The sign in and sign up links will be clearly visible at the top of the page. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 3</summary>
+<img src="documentation/testing_user_stories/user_story_3.png">
 </details>
 
 4. As a user, I want the ability to sign up for an account to use all the site’s features.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -604,6 +614,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 5. As a user, I want the ability to sign in with my login credentials.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -612,6 +623,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 6. As a user, I want the ability to stay signed in until I choose to log out.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -620,6 +632,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 7. As a user, I want the ability to quickly see if I am signed in or not.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -628,6 +641,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 8. As a user, I want the ability to create a post in order to start a conversation with my community.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -636,6 +650,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 9. As a user, I want the ability to add a location to my post so that others can easily find posts from users in specific areas.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -644,6 +659,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 10. As a user, I want the ability to edit my post to correct for errors.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -652,6 +668,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 11. As a user, I want the ability to delete my post in case I have changed my mind.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -660,6 +677,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 12. As a user, I want the ability to see all users’ posts with the most recent first, so that I can keep up-to-date with my community.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -668,6 +686,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 13. As a user, I want the ability to keep scrolling through content so I don’t have to move to a different page.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -676,6 +695,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 14. As a user, I want the ability to see a page with a single post and its comments.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -684,6 +704,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 15. As a user, I want the ability to make a comment on a post to be part of the conversation.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -692,6 +713,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 16. As a user, I want the ability to edit a comment I have made to correct for errors.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -700,6 +722,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 17. As a user, I want the ability to delete a comment I have made in case I have changed my mind.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -708,6 +731,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 18. As a user, I want the ability to search for posts based on username, post title, post content, or post location.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -716,6 +740,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 19. As a user, I want the ability to create a short post, a bolt, to express an idea or thought without the intention of starting a conversation.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -724,6 +749,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 20. As a user, I want the ability to add a category to my bolt, so that others can search for it based on this criterion.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -732,6 +758,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 21. As a user, I want the ability to edit my bolt to correct for errors.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -740,6 +767,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 22. As a user, I want the ability to delete my bolt in case I have changed my mind.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -748,6 +776,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 23. As a user, I want the ability to see all users’ bolts on their own page with the most recent first, so I can keep up-to-date with my community.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -756,6 +785,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 24. As a user, I want the ability to search for bolts based on username, bolt title, bolt content, or bolt category.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -764,6 +794,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 25. As a user, I want the ability to like a bolt to express my appreciation for its content.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -772,6 +803,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 26. As a user, I want the ability to unlike a bolt I have liked in case I have changed my mind.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -780,6 +812,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 27. As a user, I want the ability to see all the bolts I have liked on a single page to be able to quickly access the funny and interesting ones.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -788,6 +821,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 28. As a user, I want the ability to upload a profile pictures so users can easily identify me.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -796,6 +830,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 29. As a user, I want the ability to edit the content of my profile so others can know more about me.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -804,6 +839,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 30. As a user, I want the ability to change my username.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -812,6 +848,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 31. As a user, I want the ability to change my password to maintain the security of my account.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -820,6 +857,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 32. As a user, I want the ability to view other users’ profiles in order to know more about them.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -828,6 +866,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 33. As a user, I want the ability to see the number of posts, bolts, followers, and followed on a user’s profile so that I can learn more about them.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -836,6 +875,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 34. As a user, I want the ability to see a user’s posts on their profile.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -844,6 +884,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 35. As a user, I want the ability to follow and unfollow a user so that specific users’ posts will appear in my feed.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -852,6 +893,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 36. As a user, I want the ability to see the most followed profiles.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">
@@ -860,6 +902,7 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 37. As a user, I want the ability to receive feedback messages to tell me if my attempted action has been successful, e.g. updating a post or deleting a comment.
 
 **Action** | **Expectation** | **Result**
+------------ | ------------ | ------------ |
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/.png">

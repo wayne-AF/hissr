@@ -15,16 +15,16 @@
     border-radius: 5px;
 }
 
-/* .NavLink:hover {
+.NavLink:hover {
     color: #FDFCF8;
     background-color: #FF6A5C;
-} */
+}
 
-/* .NavLink:hover i {
+.NavLink:hover i {
     color: #FDFCF8;
     background-color: #FF6A5C;
     transition: color ease-in-out 0.3s;
-} */
+}
 
 .Active {
     text-decoration: underline;
