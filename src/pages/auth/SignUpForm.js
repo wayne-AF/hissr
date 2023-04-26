@@ -70,6 +70,7 @@ const SignUpForm = () => {
                 placeholder="username"  
                 name="username"
                 value={username}
+                aria-label="username"
                 onChange={handleChange}
                 />
             </Form.Group>
@@ -85,6 +86,7 @@ const SignUpForm = () => {
                 placeholder="choose a password" 
                 name="password1"
                 value={password1}
+                aria-label="password"
                 onChange={handleChange}
                 />
             </Form.Group>
@@ -102,6 +104,7 @@ const SignUpForm = () => {
                 placeholder="confirm your password" 
                 name="password2"
                 value={password2}
+                aria-label="confirm password"
                 onChange={handleChange}
                 />
             </Form.Group>

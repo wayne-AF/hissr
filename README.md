@@ -18,9 +18,16 @@ The live project can be found [here](https://hissr.herokuapp.com/).
     - [Libraries, Frameworks & Dependencies](#libraries-frameworks-&-dependencies)
     - [Tools & Software](#tools-&-software)
 7. [Validation](#validation)
+    - [HTML]
+    - [CSS]
+    - [JSX]
+    - [Chrome Lighthouse]
+    - [Wave]
 8. [Testing](#testing)
     - [Testing User Stories](#testing-user-stories)
-9. Bugs
+    - [Browser Compatibility](#browser-compatibility)
+    - [Device Testing](#device-testing)
+9. [Bugs](#bugs)
 10. [Deployment](#deployment)
 12. [Notes](#notes)
 
@@ -143,7 +150,7 @@ The logo font is Yeseva One, a more embellished font than the rest of the text. 
 <img src="documentation/design/wireframes/sign_up_wireframe.png">
 </details>
 <details><summary>Sign in page</summary>
-<img src="documentation/design/wireframes/sign_in_page.png">
+<img src="documentation/design/wireframes/sign_in_wireframe.png">
 </details>
 <details><summary>Home page</summary>
 <img src="documentation/design/wireframes/homepage_wireframe.png">
@@ -489,7 +496,7 @@ The back-end API for this project was built using the Django Rest Framework. The
 - [React-Bootstrap](https://react-bootstrap-v4.netlify.app/) - Used for app styling and responsiveness
 - [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - Used to load content automatically as the user scrolls down in order to prevent the user from having to navigate to another page to continue viewing content
 - [React-Toastify](https://www.npmjs.com/package/react-toastify) - Used for notification messages to inform user of successful content creation, update, and deletion
-- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start) - Used to enable navigation of different views of components depending on the URL the user has accessed
 
 ### Tools & Software
 - [Am I Responsive](https://ui.dev/amiresponsive) - Used to create the mock-up image for the Readme
@@ -565,6 +572,10 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 <img src="documentation/validation/html/404_error_page.png">
 </details>
 
+### CSS
+
+### JSX
+
 
 
 ## Testing
@@ -606,9 +617,13 @@ Logged out and navigated to the home page. | The sign in and sign up links will 
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Clicked on sign up link in the navbar, entered details in the sign up form. | The user will be taken to the sign in page where they can log in with their credentials. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 4</summary>
+<img src="documentation/testing_user_stories/user_story_4.1.png">
+<img src="documentation/testing_user_stories/user_story_4.2.png">
+<img src="documentation/testing_user_stories/user_story_4.3.png">
+<img src="documentation/testing_user_stories/user_story_4.4.png">
 </details>
 
 5. As a user, I want the ability to sign in with my login credentials.
