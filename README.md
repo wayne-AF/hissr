@@ -511,6 +511,60 @@ The back-end API for this project was built using the Django Rest Framework. The
 
 
 ## Validation
+### HTML
+W3C Markup validation was used to validate the HTML of the site. Results screenshots are provided below.
+<details><summary>Home page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Sign up page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Sign in page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Post create page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Post edit page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Post detail page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Feed page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Liked page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Bolts page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Bolt create page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Bolt edit page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Bolt detail page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Profile page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Profile edit page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Username edit page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>Password edit page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+<details><summary>404 error page</summary>
+<img src="documentation/validation/html/.png">
+</details>
+
 
 
 ## Testing
