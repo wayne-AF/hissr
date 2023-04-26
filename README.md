@@ -155,7 +155,7 @@ View the Kanban board [here](https://github.com/users/wayne-AF/projects/9).
 </details>
 
 ## Front-end
-### 
+### React
 React is an open-source front-end Javascript library for developers to easily create fast user interfaces for websites and applications based on individual and reusable components.
 
 React was used for this project due to its:
@@ -181,7 +181,8 @@ React was used for this project due to its:
 
 
 ## Back-end API
-
+### Django Rest Framework
+The back-end API for this project was built using the Django Rest Framework. The API's repository can be found [here](https://github.com/wayne-AF/hissr-drf-api).
 
 ## Features
 ### Homepage
@@ -457,6 +458,19 @@ React was used for this project due to its:
 - [React Router](https://v5.reactrouter.com/web/guides/quick-start)
 
 ### Tools & Software
+- [Am I Responsive](https://ui.dev/amiresponsive) - Used to create the mock-up image for the Readme
+- [Balsamiq](https://balsamiq.com) - Used to create wireframes
+- [ColorHunt](https://colorhunt.co/) - Used to choose and create a colour palette
+- [Font Awesome](https://fontawesome.com/) - Used for icons across the site
+- [Git](https://git-scm.com/) - Used for version control by committing to Git and pushing to GitHub
+- [GitHub](https://github.com/) - Used to store the code pushed from Git
+- [Gitpod](https://gitpod.io) - Used to host virtual workspace
+- [Google Fonts](https://fonts.google.com/) - Used for the site's fonts
+- [Heroku](https://heroku.com/) - Used to deploy and run the application
+- [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) - Used for CSS validation
+- [MiniPaint](https://viliusle.github.io/miniPaint/) - Used for image editing to create the background and the placeholder images
+- [VectorStock](https://www.vectorstock.com/) - Used as a source for the background, the site's logo, the default profile picture, and the No-Results cat image
+- [W3C](https://validator.w3.org/) - Used for HTML validation
 
 
 
@@ -766,5 +780,7 @@ React was used for this project due to its:
 
 
 ## Notes
+### Kanban board numbering of user stories
+Upon starting this project, I used a Kanban board for user stories and task organisation. At a later point in the project, I was attempting to map user stories to sprints, and through my inexperience with Issues in Github, I mistakenly deleted them, believing that I could reset the numbering. Issues does not allow for renumbering, so issues on the Kanban board now start from #34 instead of #1. 
 
 

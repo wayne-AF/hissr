@@ -130,7 +130,7 @@ const NavBar = () => {
             <Navbar.Brand>
               <div className="d-flex align-items-center">
               <img className={styles.navbarLogo} src={logo} alt="logo" height="50" />
-              <span className={`ml-2 ${styles.navbarName}`}>hissr</span>
+              <span className={`ml-2 d-none d-sm-block ${styles.navbarName}`}>hissr</span>
               </div>
             </Navbar.Brand>
           {/* </NavLink> */}
