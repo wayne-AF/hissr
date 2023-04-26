@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
 import styles from "../../styles/PostCreateEditForm.module.css";
-
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
 import { Alert } from "bootstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -18,45 +14,47 @@ import { useRedirect } from "../../hooks/useRedirect";
 import { toast } from "react-toastify";
 
 function PersonalCreateForm() {
-  useRedirect('loggedOut')
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [personalData, setPersonalData] = useState({
-    title: '',
-    content: '',
-    category: ''
-  })
+    title: "",
+    content: "",
+    category: ","
+  });
 
-  const { title, content, category } = personalData
-
-  const history = useHistory()
+  const { title, content, category } = personalData;
+  const history = useHistory();
   
+  // Handles data submission
+  // Refreshes user's access tokens before making submission request
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const formData = new FormData()
+    const formData = new FormData();
 
-    formData.append('title', title)
-    formData.append('content', content)
-    formData.append('category', category)
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("category", category);
 
     try  {
-        const {data} = await axiosReq.post('/personals/', formData)
-        toast.success('Bolt created')
-        history.push(`/personals/${data.id}`)
+        const {data} = await axiosReq.post("/personals/", formData);
+        toast.success("Bolt created");
+        history.push(`/personals/${data.id}`);
     } catch(err){
         console.log(err)
         if (err.response?.status !== 401){
             setErrors(err.response?.data)
         }
     }
-  }
+  };
 
+  // Handles changes to input fields
   const handleChange = (event) => {
     setPersonalData({
         ...personalData,
         [event.target.name]: event.target.value
-    })
-  }
+    });
+  };
 
   const textFields = (
     <div className="text-center">
@@ -137,13 +135,21 @@ function PersonalCreateForm() {
     <Form onSubmit={handleSubmit}>
       <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
         <Row>
-          <Col className={`${appStyles.Orange} text-center pb-2`}><h3>Create a bolt</h3></Col>
+          <Col 
+            className={`${appStyles.Orange} text-center pb-2`}
+          >
+            <h3>Create a bolt</h3>
+          </Col>
         </Row>
         <Row>
-          <Col className={`${appStyles.Orange} text-center pb-2`}><h5>Something on your mind?</h5></Col>  
+          <Col 
+            className={`${appStyles.Orange} text-center pb-2`}
+          >
+            <h5>Something on your mind?</h5>
+          </Col>  
         </Row>
         <hr />
-        <Row className={`${styles.Row} `}>
+        <Row className={styles.Row}>
           <Col>{textFields}</Col>
           </Row>
       </Container>

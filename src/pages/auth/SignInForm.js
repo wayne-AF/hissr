@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import { Link } from "react-router-dom";
-
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
@@ -19,39 +16,38 @@ import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
 
 function SignInForm() {
-
-  const setCurrentUser = useSetCurrentUser()
-  useRedirect("loggedIn")
+  const setCurrentUser = useSetCurrentUser();
+  useRedirect("loggedIn");
 
   const [signInData, setSignInData] = useState({
     username: "",
-    password: ""
-  })
+    password: "",
+  });
 
-  const { username, password } = signInData
+  const { username, password } = signInData;
+  const [errors, setErrors] = useState({});
+  const history = useHistory();
 
-  const [errors, setErrors] = useState({})
-
-  const history = useHistory()
-
+  // Handles submitted form data
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     try {
-        const {data} = await axios.post("/dj-rest-auth/login/", signInData)
-        setCurrentUser(data.user)
-        setTokenTimestamp(data)
-        history.goBack()
+        const {data} = await axios.post("/dj-rest-auth/login/", signInData);
+        setCurrentUser(data.user);
+        setTokenTimestamp(data);
+        history.goBack();
     } catch (err) {
-        setErrors(err.response?.data)
+        setErrors(err.response?.data);
     }
-  }
+  };
 
+  // Handles changes to any input field
   const handleChange = (event) => {
     setSignInData({
         ...signInData,
         [event.target.name]: event.target.value
-    })
-  }
+    });
+  };
 
   return (
     <Container>
@@ -59,10 +55,14 @@ function SignInForm() {
         <Col className="mx-auto mt-5 py-2 p-md-2" md={10}>
           <Container className={`${appStyles.Content} p-4 `}>
           <Row>
-        <Col className={`${appStyles.Orange} text-center`}><h2>Welcome back!</h2></Col>
+        <Col className={`${appStyles.Orange} text-center`}>
+          <h2>Welcome back!</h2>
+        </Col>
         </Row>
     <Row>
-        <Col className={`${appStyles.Orange} text-center`}><h4>We missed you</h4></Col>
+        <Col className={`${appStyles.Orange} text-center`}>
+          <h4>We missed you</h4>
+        </Col>
     </Row>
     <hr />
             <h1 className={styles.Header}>sign in</h1>

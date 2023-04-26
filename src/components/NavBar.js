@@ -2,38 +2,41 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import Dropdown from "react-bootstrap/Dropdown";
+// import Dropdown from "react-bootstrap/Dropdown";
 import NavDropdown from "react-bootstrap/NavDropdown"
 import logo from "../assets/hissr-logo-2.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
+import { 
+  useCurrentUser, 
+  useSetCurrentUser 
+} from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
-import { removeTokenTimestamp } from "../utils/utils"
+import { removeTokenTimestamp } from "../utils/utils";
 
 const NavBar = () => {
 
-  const currentUser = useCurrentUser()
-  const setCurrentUser = useSetCurrentUser()
+  const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
-  const { expanded, setExpanded, ref } = useClickOutsideToggle()
+  const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
+  // Handles user sign out
   const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
-      removeTokenTimestamp()
+      removeTokenTimestamp();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
+  // Displays when the user is logged in
   const addPostIcon = (
-    
     <NavDropdown 
-        className={``}
         title={
           <span>
             <i className="fa-solid fa-square-plus"></i><strong>Create</strong>
@@ -41,15 +44,11 @@ const NavBar = () => {
         }
         activeClassName={styles.Active}
       >
-      
         <NavDropdown.Item className={styles.NavDropdown}>
           <NavLink
             to="/posts/create"
           >
-            
               <i className="fa-solid fa-pen"></i>post
-            
-            
           </NavLink>
         </NavDropdown.Item>
         <NavDropdown.Item className={styles.NavDropdown}>
@@ -62,6 +61,7 @@ const NavBar = () => {
         </NavDropdown>
   );
 
+  // Links visible when user is logged in
   const loggedInIcons = (
     <>
       <NavLink
@@ -103,6 +103,7 @@ const NavBar = () => {
         </NavLink>
     </>)
 
+  // Links visible when user is logged out
   const loggedOutIcons = (
     <>
       <NavLink
@@ -123,17 +124,27 @@ const NavBar = () => {
   );
 
   return (
-    
-      <Navbar expanded={expanded} className={styles.NavBar} expand="lg" fixed="top">
+      <Navbar 
+        expanded={expanded} 
+        className={styles.NavBar} 
+        expand="lg" 
+        fixed="top"
+      >
         <Container>
-          {/* <NavLink to="/"> */}
             <Navbar.Brand>
               <div className="d-flex align-items-center">
-              <img className={styles.navbarLogo} src={logo} alt="logo" height="50" />
-              <span className={`ml-2 d-none d-sm-block ${styles.navbarName}`}>hissr</span>
+                <img 
+                  className={styles.navbarLogo} 
+                  src={logo} alt="logo" 
+                  height="50" 
+                />
+                <span 
+                  className={`ml-2 d-none d-sm-block ${styles.navbarName}`}
+                >
+                  hissr
+                </span>
               </div>
             </Navbar.Brand>
-          {/* </NavLink> */}
           
           {currentUser && addPostIcon}
 
@@ -157,7 +168,6 @@ const NavBar = () => {
         </Navbar.Collapse>
         </Container>
       </Navbar>
-    
   );
 };
 

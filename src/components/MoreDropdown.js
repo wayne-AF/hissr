@@ -15,6 +15,8 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
     />
   ));
 
+  // Dropdown menu containing edit and delete options for posts, bolts,
+  // and comments.
   export const MoreDropdown = ({handleEdit, handleDelete}) => {
     return (
     <Dropdown className="ml-auto" drop="left">
@@ -44,6 +46,8 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
     )
   }
 
+  // Dropdown menu on the profile page with options to edit profile,
+  // update username, and update password.
   export const ProfileEditDropdown = ({ id }) => {
     const history = useHistory();
     return (

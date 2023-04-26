@@ -1,14 +1,13 @@
-import React, { useState} from 'react'
-import styles from "../../styles/Comment.module.css"
-import { Media } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import Avatar from '../../components/Avatar'
-import { useCurrentUser } from '../../contexts/CurrentUserContext'
-import { MoreDropdown } from '../../components/MoreDropdown'
-import { axiosRes } from '../../api/axiosDefaults'
-import CommentEditForm from './CommentEditForm'
+import React, { useState} from "react";
+import styles from "../../styles/Comment.module.css";
+import { Media } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Avatar from "../../components/Avatar";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { MoreDropdown } from "../../components/MoreDropdown";
+import { axiosRes } from "../../api/axiosDefaults";
+import CommentEditForm from "./CommentEditForm";
 import { toast } from "react-toastify";
-
 
 const Comment = (props) => {
     const { 
@@ -20,17 +19,18 @@ const Comment = (props) => {
         id, 
         setPost, 
         setComments
-    } = props
+    } = props;
 
-    const [showEditForm, setShowEditForm] = useState(false)
+    const [showEditForm, setShowEditForm] = useState(false);
+    const currentUser = useCurrentUser();
+    const is_owner = currentUser?.username === owner;
 
-    const currentUser = useCurrentUser()
-    const is_owner = currentUser?.username === owner
-
+    // Handles comment deletion based on its ID
+    // Displays confirmation message to user using react-toastify
     const handleDelete = async () => {
         try {
-            await axiosRes.delete(`/comments/${id}/`)
-            toast.success('Comment deleted successfully');
+            await axiosRes.delete(`/comments/${id}/`);
+            toast.success("Comment deleted successfully");
 
             setPost(prevPost => ({
                 results: [{
@@ -38,14 +38,14 @@ const Comment = (props) => {
                     comments_count: prevPost.results[0].comments_count - 1
                 },
             ],
-            }))
+            }));
             setComments((prevComments) => ({
                 ...prevComments,
                 results: prevComments.results.filter((comment) => comment.id !== id)
-            }))
+            }));
     } catch(err){
-         toast.error('Something went wrong! Try again later')
-    }}
+         toast.error("Something went wrong! Try again later")
+    }};
 
   return (
     <>
@@ -69,7 +69,6 @@ const Comment = (props) => {
                 ) : (
                     <p>{content}</p>
                 )}
-                
             </Media.Body>
             {is_owner && !showEditForm && (
                 <MoreDropdown handleEdit={() => setShowEditForm(true)} 
@@ -78,6 +77,6 @@ const Comment = (props) => {
         </Media>
     </>
   )
-}
+};
 
 export default Comment

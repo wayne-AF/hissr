@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -18,33 +16,35 @@ import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PersonalsPage({ message, filter = "" }) {
-    const [personals, setPersonals] = useState({ results: [] })
-    const [hasLoaded, setHasLoaded] = useState(false)
-    const { pathname } = useLocation()
+    const [personals, setPersonals] = useState({ results: [] });
+    const [hasLoaded, setHasLoaded] = useState(false);
+    const { pathname } = useLocation();
 
-    const [query, setQuery] = useState("")
+    const [query, setQuery] = useState("");
+    const currentUser = useCurrentUser();
 
-    const currentUser = useCurrentUser()
-
+    // Handles API request using filters to display relevent personals
     useEffect(() => {
         const fetchPersonals = async () => {
             try {
-                const {data} = await axiosReq.get(`/personals/?${filter}search=${query}`)
-                setPersonals(data)
-                setHasLoaded(true)
+                const {data} = await axiosReq.get(
+                    `/personals/?${filter}search=${query}`
+                    );
+                setPersonals(data);
+                setHasLoaded(true);
             } catch(err){
-                console.log(err)
+                // console.log(err)
             }
         }
         setHasLoaded(false)
         const timer = setTimeout(() => {
             fetchPersonals()
-        }, 1000)
+        }, 1000);
         return () => {
-            clearTimeout(timer)
+            clearTimeout(timer);
         }
         
-    }, [filter, query, pathname, currentUser])
+    }, [filter, query, pathname, currentUser]);
   
   return (
     <Row className="h-100">
@@ -60,6 +60,7 @@ function PersonalsPage({ message, filter = "" }) {
                 className="mr-sm-2"
                 placeholder="enter your search keyword"
                 value={query}
+                aria_label="search bar"
                 onChange={(event) => setQuery(event.target.value)}
             />
         </Form>
@@ -69,7 +70,11 @@ function PersonalsPage({ message, filter = "" }) {
                     <InfiniteScroll 
                         children={
                             personals.results.map((personal) => (
-                                <Personal key={personal.id} {...personal} setPersonals={setPersonals} />
+                                <Personal 
+                                    key={personal.id} 
+                                    {...personal} 
+                                    setPersonals={setPersonals} 
+                                />
                             ))
                         }
                         dataLength={personals.results.length}

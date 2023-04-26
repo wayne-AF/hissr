@@ -4,11 +4,11 @@ import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { followHelper, unfollowHelper } from "../utils/utils";
 
 
-export const ProfileDataContext = createContext()
-export const SetProfileDataContext = createContext()
+export const ProfileDataContext = createContext();
+export const SetProfileDataContext = createContext();
 
-export const useProfileData = () => useContext(ProfileDataContext)
-export const useSetProfileData = () => useContext(SetProfileDataContext)
+export const useProfileData = () => useContext(ProfileDataContext);
+export const useSetProfileData = () => useContext(SetProfileDataContext);
 
 export const ProfileDataProvider = ({ children }) => {
     const [profileData, setProfileData] = useState({
@@ -18,30 +18,36 @@ export const ProfileDataProvider = ({ children }) => {
 
     const currentUser = useCurrentUser()
 
+    // Makes a request to /followers/, sends information
+    // about profile ID that's been clicked, and updates
+    // profile and popularprofiles data
     const handleFollow = async (clickedProfile) => {
         try {
-            const { data } = await axiosRes.post('/followers/', {
+            const { data } = await axiosRes.post("/followers/", {
                 followed: clickedProfile.id
-            })
+            });
             setProfileData(prevState => ({
                 ...prevState,
                 pageProfile: {
                     results: prevState.pageProfile.results.map(profile => 
                         followHelper(profile, clickedProfile, data.id)
-                        )
+                        ),
                 },
                 popularProfiles: {
                     ...prevState.popularProfiles,
                     results: prevState.popularProfiles.results.map(profile => 
                         followHelper(profile, clickedProfile, data.id)
-                        )
-                }
-            }))
+                        ),
+                },
+            }));
         } catch(err){
-            console.log(err)
+            // console.log(err)
         }
-    }
+    };
 
+    // Makes a request to /followers/, sends information
+    // about profile ID that's been clicked, and updates
+    // profile and popularprofiles data
     const handleUnfollow = async (clickedProfile) => {
         try {
           await axiosRes.delete(`/followers/${clickedProfile.following_id}/`);
@@ -65,22 +71,24 @@ export const ProfileDataProvider = ({ children }) => {
         }
       };
 
+    // Fetches data on popularprofiles and displays in order of
+    // most followed
     useEffect(() => {
         const handleMount = async () => {
             try {
                 const {data} = await axiosReq.get(
-                    '/profiles/?ordering=-followers_count'
-                )
+                    "/profiles/?ordering=-followers_count"
+                );
                 setProfileData(prevState => ({
                     ...prevState,
                     popularProfiles: data
-                }))
+                }));
             } catch(err){
-                console.log(err)
+                // console.log(err)
             }
-        }
+        };
         handleMount()
-    }, [currentUser])
+    }, [currentUser]);
 
     return (
         <ProfileDataContext.Provider value={profileData}>
@@ -91,4 +99,4 @@ export const ProfileDataProvider = ({ children }) => {
             </SetProfileDataContext.Provider>
         </ProfileDataContext.Provider>
     )
-}
+};

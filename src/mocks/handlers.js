@@ -1,6 +1,6 @@
-import { rest } from "msw"
+import { rest } from "msw";
 
-const baseURL = 'https://hissr-drf-api.herokuapp.com/'
+const baseURL = "https://hissr-drf-api.herokuapp.com/"
 
 export const handlers = [
     rest.get(`${baseURL}dj-rest-auth/user/`, (req, res, ctx) => {

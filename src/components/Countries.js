@@ -1,3 +1,5 @@
+// List of countries passed into the country select fields in post create and
+// edit forms and profile edit form
 export const countries = [
     {
     "name": "Afghanistan",

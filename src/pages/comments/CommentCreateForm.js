@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 // import btnStyles from "../../styles/Button.module.css";
-
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -15,10 +13,12 @@ function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
 
+  // Handles changes to input field
   const handleChange = (event) => {
     setContent(event.target.value);
   };
 
+  // Handles data submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -26,7 +26,7 @@ function CommentCreateForm(props) {
         content,
         post,
       });
-      toast.success('Comment created')
+      toast.success("Comment created")
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
@@ -40,9 +40,8 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-
     } catch (err) {
-      toast.error('Something went wrong! Try again later')
+      toast.error("Something went wrong! Try again later")
     }
   };
 
