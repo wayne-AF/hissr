@@ -31,32 +31,9 @@ const NavBar = () => {
   };
 
   const addPostIcon = (
-    // <Dropdown className={styles.NavLink}>
-    //   <Dropdown.Toggle 
-    //     className={`${styles.NavBarDropDown} ${styles.NavLink}`}
-    //   >
-    //     <i className="fa-solid fa-square-plus"></i>
-    //     Create
-    //   </Dropdown.Toggle>
-    //   <Dropdown.Menu>
-    //     <Dropdown.Item className={styles.NavBarDropDown}>
-    //       <NavLink
-    //         to="/posts/create"
-    //       >
-    //         <i className="fa-solid fa-pen"></i>post
-    //       </NavLink>
-    //     </Dropdown.Item>
-    //     <Dropdown.Item className={styles.NavBarDropDown}>
-    //       <NavLink
-    //         to="/personals/create"
-    //       >
-    //         <i className="fa-solid fa-bolt"></i>bolt
-    //       </NavLink>
-    //     </Dropdown.Item>
-    //   </Dropdown.Menu>
-    // </Dropdown>
+    
     <NavDropdown 
-        className={`${styles.NavBarDropDown} ${styles.NavLink}`}
+        className={``}
         title={
           <span>
             <i className="fa-solid fa-square-plus"></i><strong>Create</strong>
@@ -65,17 +42,17 @@ const NavBar = () => {
         activeClassName={styles.Active}
       >
       
-        <NavDropdown.Item className={styles.NavBarDropDown}>
+        <NavDropdown.Item className={styles.NavDropdown}>
           <NavLink
             to="/posts/create"
           >
-            <span className={styles.NavDropdown}>
+            
               <i className="fa-solid fa-pen"></i>post
-            </span>
+            
             
           </NavLink>
         </NavDropdown.Item>
-        <NavDropdown.Item className={styles.NavBarDropDown}>
+        <NavDropdown.Item className={styles.NavDropdown}>
           <NavLink
             to="/personals/create"
           >

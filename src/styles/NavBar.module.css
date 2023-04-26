@@ -15,31 +15,50 @@
     border-radius: 5px;
 }
 
-.NavLink:hover {
+/* .NavLink:hover {
     color: #FDFCF8;
     background-color: #FF6A5C;
-}
+} */
 
-.NavLink:hover i {
+/* .NavLink:hover i {
     color: #FDFCF8;
     background-color: #FF6A5C;
     transition: color ease-in-out 0.3s;
-}
+} */
 
 .Active {
     text-decoration: underline;
 }
 
-NavDropdown > NavLink {
+/* NavDropdown > NavLink {
     color: green !important;
     background-color: #FDFCF8;
     background-color: black;
     border: none;
     border-radius: 5px;
+} */
+
+/* .NavDropdown {
+    width: 100%;
+    color: #FF6A5C;
+} */
+
+/* .NavDropdown:hover span{
+    width: 100%;
+    color: #FDFCF8;
+    background-color: #FF6A5C;
+} */
+
+/* .NavBarDropDown:hover a{
+    color: #FF6A5C;
+    background-color: #FF6A5C;
+}
+.NavDropdownItem a{
+    color: #FF6A5C;
 }
 
-.NavDropdown.Item:hover {
-    color: #FDFCF8 !important;
+.NavDropdownItem:hover {
+   
     background-color: #FF6A5C;
     border: 1px solid #FF6A5C;
 }
@@ -53,7 +72,7 @@ NavDropdown > NavLink {
 
 .NavDropdown:hover>i {
     color: #FDFCF8 !important;
-}
+} */
 
 /* 
 .btn-primary.active {

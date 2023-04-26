@@ -47,11 +47,11 @@ const UserPasswordForm = () => {
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
       history.goBack();
-      toast.success('Password updated successfully')
+      toast.success("Password updated successfully")
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);
-      toast.error('Something went wrong! Try again later.')
+      toast.error("Something went wrong! Try again later.")
     }
   };
 
@@ -95,16 +95,16 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.Button}`}
               onClick={() => history.goBack()}
             >
               cancel
             </Button>
             <Button
               type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.Button}`}
             >
-              save
+              save new password
             </Button>
           </Form>
         </Container>

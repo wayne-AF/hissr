@@ -36,9 +36,9 @@ Key aspects:
 - bright and cheerful design
 - simple and intuitive navigation
 - straightforward user authentication
-- CRUD functionality for posts, comments, bolts, and images
+- CRUD functionality for posts, comments, and bolts
 - user interactions via comments and likes and follows
-- data filtering by profiles followed, and content liked
+- data filtering by keywords, profiles followed, and content liked
 - site responsiveness
 
 I used an Agile methodology for planning this project, implemented using a Kanban board in Github Project with linked issues.  
@@ -313,8 +313,11 @@ React was used for this project due to its:
 ### Bolts page
 - Lists all the recently created bolts
 - User stories: 23
-<details><summary></summary>
-<img src="documentation/features/.png">
+<details><summary>Bolt large screen</summary>
+<img src="documentation/features/bolt_large_screen.png">
+</details>
+<details><summary>Bolt small screen</summary>
+<img src="documentation/features/bolt_small_screen.png">
 </details>
 
 
@@ -326,18 +329,21 @@ React was used for this project due to its:
 - Likes and unlikes can be performed on the bolts page and the bolt detail page
 - A paw icon from FontAwesome is used in place of a heart icon for likes
 - User stories: 25, 26
-<details><summary>like screenshot</summary>
+<details><summary>Liking a bolt</summary>
 <img src="documentation/features/like_bolt.png">
 </details>
-<details><summary>like own bolt screenshot</summary>
+<details><summary>Liking own bolt</summary>
 <img src="documentation/features/like_own_bolt.png">
 </details>
 
 ### Liked page
 - A page displaying all the bolts a user has liked
 - User stories: 27
-<details><summary></summary>
-<img src="documentation/features/.png">
+<details><summary>Liked page large screen</summary>
+<img src="documentation/features/liked_page_large.png">
+</details>
+<details><summary>Liked page small screen</summary>
+<img src="documentation/features/liked_page_small.png">
 </details>
 
 ### Feed page
@@ -354,31 +360,31 @@ React was used for this project due to its:
 - Displays a list of the profile owner's recent posts
 - Contains a follow/unfollow on other profiles
 - User stories: 32, 33, 34
-<details><summary>profile screenshot</summary>
+<details><summary>Profile</summary>
 <img src="documentation/features/profile_1.png">
 </details>
-<details><summary>profile dropdown screenshot</summary>
+<details><summary>Profile edit menu</summary>
 <img src="documentation/features/profile_2.png">
 </details>
 
 ### Profile edit form
 - Allows a user to upload a profile picture, to enter their location, and to write some personal text in the about section
 - User stories: 28, 29
-<details><summary>profile edit screenshot</summary>
+<details><summary>Profile edit form</summary>
 <img src="documentation/features/profile_edit.png">
 </details>
 
 ### Username edit form
 - Allows a user to update their username
 - User stories: 30
-<details><summary>username edit screenshot</summary>
+<details><summary>Username edit form</summary>
 <img src="documentation/features/username_edit.png">
 </details>
 
 ### Password change form
 - Allows a user to update their login password
 - User stories: 31
-<details><summary>password change screenshot</summary>
+<details><summary>Password change form</summary>
 <img src="documentation/features/password_edit.png">
 </details>
 
@@ -388,10 +394,10 @@ React was used for this project due to its:
 - On larger screens it contains follow/unfollow buttons
 - Users can click on the profiles avatars or names to navigate to their profile pages
 - User stories: 36
-<details><summary>popular profiles large screen screenshot</summary>
+<details><summary>Popular profiles large screen</summary>
 <img src="documentation/features/popularprofiles_1.png">
 </details>
-<details><summary>popular profiles small screen screenshot</summary>
+<details><summary>Popular profiles small screen</summary>
 <img src="documentation/features/popularprofiles_2.png">
 </details>
 
@@ -399,8 +405,11 @@ React was used for this project due to its:
 - Users can follow profiles so that any posts from those profiles will appear in the user's feed page
 - Follow/unfollow buttons appear in the most followed profiles component on larger screen and on profile pages
 - User stories: 35
-<details><summary></summary>
-<img src="documentation/features/.png">
+<details><summary>Profile follow</summary>
+<img src="documentation/features/profile_follow.png">
+</details>
+<details><summary>Popular profiles follow</summary>
+<img src="documentation/features/popularprofiles_1.png">
 </details>
 
 ### Search bar
@@ -408,10 +417,10 @@ React was used for this project due to its:
 - The search bar is available on the home, feed, liked, and bolts pages
 - If no results are found, a message with accompanying image is displayed
 - User stories: 18, 24
-<details><summary>searchbar screenshot</summary>
+<details><summary>Search bar</summary>
 <img src="documentation/features/searchbar_1.png">
 </details>
-<details><summary>searchbar no results screenshot</summary>
+<details><summary>Search bar no results</summary>
 <img src="documentation/features/searchbar_2.png">
 </details>
 
@@ -420,8 +429,13 @@ React was used for this project due to its:
 - Used for posts, bolts, comments, bolts, and liked pages
 - User stories: 13
 ### Feedback messages
-- 
-
+- Provides the user with feedback messages telling them their attempted action was successful or failed
+- Provides confirmation when the user creates, edits or deletes a post, bolt, comment, profile, username, and password 
+- Appears in the upper-right corner of the screen and disappears after five seconds
+- User stories: 37
+<details><summary>Feedback message</summary>
+<img src="documentation/features/feedback_message.png">
+</details>
 
 
 ### Future Features
@@ -433,17 +447,18 @@ React was used for this project due to its:
 - CSS3
 - JavaScript
 ### Libraries, Frameworks & Dependencies
-- [Axios](https://axios-http.com/docs/intro)
-- [JWT](https://jwt.io/)
-- [Popper](https://popper.js.org/)
-- [React](https://17.reactjs.org/)
-- [React-Bootstrap](https://react-bootstrap-v4.netlify.app/)
-- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component)
+- [Axios](https://axios-http.com/docs/intro) - Used to send API requests to the Django Rest Framework back-end API to send, retrieve, and update data
+- [JWT](https://jwt.io/) - Used to prevent unauthenticated users from making extra network requests to refresh their access tokens
+- [Popper](https://popper.js.org/) - Used to ensure the three-dots dropdown menu was correctly positioned across all browser windows
+- [React](https://17.reactjs.org/) - Used for the creation of this project
+- [React-Bootstrap](https://react-bootstrap-v4.netlify.app/) - Used for app styling and responsiveness
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - Used to load content automatically as the user scrolls down in order to prevent the user from having to navigate to another page to continue viewing content
 - [React-Toastify](https://www.npmjs.com/package/react-toastify) - Used for notification messages to inform user of successful content creation, update, and deletion
 - [React Router](https://v5.reactrouter.com/web/guides/quick-start)
 
-
 ### Tools & Software
+
+
 
 
 ## Validation
@@ -453,113 +468,299 @@ React was used for this project due to its:
 ### Testing User Stories
 1. As a user, I want the ability to view and understand the site before I decide to create an account.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 2. As a user, I want the ability to view the navbar from every page so I can easily navigate around the site.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 3. As a logged-out user, I want the ability to easily sign in or sign up from wherever I am on the site.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 4. As a user, I want the ability to sign up for an account to use all the site’s features.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 5. As a user, I want the ability to sign in with my login credentials.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 6. As a user, I want the ability to stay signed in until I choose to log out.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 7. As a user, I want the ability to quickly see if I am signed in or not.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 8. As a user, I want the ability to create a post in order to start a conversation with my community.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 9. As a user, I want the ability to add a location to my post so that others can easily find posts from users in specific areas.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 10. As a user, I want the ability to edit my post to correct for errors.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 11. As a user, I want the ability to delete my post in case I have changed my mind.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 12. As a user, I want the ability to see all users’ posts with the most recent first, so that I can keep up-to-date with my community.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 13. As a user, I want the ability to keep scrolling through content so I don’t have to move to a different page.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 14. As a user, I want the ability to see a page with a single post and its comments.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 15. As a user, I want the ability to make a comment on a post to be part of the conversation.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 16. As a user, I want the ability to edit a comment I have made to correct for errors.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 17. As a user, I want the ability to delete a comment I have made in case I have changed my mind.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 18. As a user, I want the ability to search for posts based on username, post title, post content, or post location.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 19. As a user, I want the ability to create a short post, a bolt, to express an idea or thought without the intention of starting a conversation.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 20. As a user, I want the ability to add a category to my bolt, so that others can search for it based on this criterion.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 21. As a user, I want the ability to edit my bolt to correct for errors.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 22. As a user, I want the ability to delete my bolt in case I have changed my mind.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 23. As a user, I want the ability to see all users’ bolts on their own page with the most recent first, so I can keep up-to-date with my community.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 24. As a user, I want the ability to search for bolts based on username, bolt title, bolt content, or bolt category.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 25. As a user, I want the ability to like a bolt to express my appreciation for its content.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 26. As a user, I want the ability to unlike a bolt I have liked in case I have changed my mind.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 27. As a user, I want the ability to see all the bolts I have liked on a single page to be able to quickly access the funny and interesting ones.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 28. As a user, I want the ability to upload a profile pictures so users can easily identify me.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 29. As a user, I want the ability to edit the content of my profile so others can know more about me.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 30. As a user, I want the ability to change my username.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 31. As a user, I want the ability to change my password to maintain the security of my account.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 32. As a user, I want the ability to view other users’ profiles in order to know more about them.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 33. As a user, I want the ability to see the number of posts, bolts, followers, and followed on a user’s profile so that I can learn more about them.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 34. As a user, I want the ability to see a user’s posts on their profile.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 35. As a user, I want the ability to follow and unfollow a user so that specific users’ posts will appear in my feed.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 36. As a user, I want the ability to see the most followed profiles.
 
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 37. As a user, I want the ability to receive feedback messages to tell me if my attempted action has been successful, e.g. updating a post or deleting a comment.
+
+**Action** | **Expectation** | **Result**
+
+<details><summary></summary>
+<img src="documentation/testing_user_stories/.png">
+</details>
 
 ## Deployment
 
