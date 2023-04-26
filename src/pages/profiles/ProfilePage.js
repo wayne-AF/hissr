@@ -112,6 +112,7 @@ function ProfilePage() {
         </Col>
         <Row>
         { profile?.about && <Col className="pt-3">{profile.about}</Col>}
+        {/* {profile.about} */}
         </Row>
         <hr />
       </Row>

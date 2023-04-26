@@ -42,7 +42,7 @@ const UserPasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
-      history.push("/");
+      history.goBack();
       toast.success("Password updated successfully")
     } catch (err) {
       // console.log(err);

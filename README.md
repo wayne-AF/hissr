@@ -630,270 +630,320 @@ Clicked on sign up link in the navbar, entered details in the sign up form. | Th
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+When logged out, clicked on sign in link in the navbar. On the sign in page, entered previous credentials. | The user will be logged in and able to access the site's features. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 5</summary>
+<img src="documentation/testing_user_stories/user_story_5.1.png">
+<img src="documentation/testing_user_stories/user_story_5.2.png">
+<img src="documentation/testing_user_stories/user_story_5.3.png">
 </details>
 
 6. As a user, I want the ability to stay signed in until I choose to log out.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Logged into the website and did not log out within 24 hours. | The user will stay logged in for 24 hours unless they choose to log out. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
-</details>
 
 7. As a user, I want the ability to quickly see if I am signed in or not.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Looked at the navbar when logged in and when logged out. | When logged out, the user will see links for sign in and sign out. When logged in, user will see links for navigating around the site. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 7</summary>
+<img src="documentation/testing_user_stories/user_story_7.1.png">
+<img src="documentation/testing_user_stories/user_story_7.2.png">
 </details>
 
 8. As a user, I want the ability to create a post in order to start a conversation with my community.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+When logged in, clicked the create icon in the navbar, and clicked the post icon. Filled in the input fields in the post create form and submitted the form. | User will be taken to post detail page. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 8</summary>
+<img src="documentation/testing_user_stories/user_story_8.1.png">
+<img src="documentation/testing_user_stories/user_story_8.2.png">
+<img src="documentation/testing_user_stories/user_story_8.3.png">
 </details>
 
 9. As a user, I want the ability to add a location to my post so that others can easily find posts from users in specific areas.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+When creating a post, entered location into the city and country fields. | Location will be visible in the post. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 9</summary>
+<img src="documentation/testing_user_stories/user_story_9.1.png">
+<img src="documentation/testing_user_stories/user_story_9.2.png">
 </details>
 
 10. As a user, I want the ability to edit my post to correct for errors.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Clicked on post title created by user, and on post detail page, selected the dropdown edit menu. Navigated to the post edit page and updated content of post and saved. | Edits will be visible in post. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 10</summary>
+<img src="documentation/testing_user_stories/user_story_10.1.png">
+<img src="documentation/testing_user_stories/user_story_10.2.png">
+<img src="documentation/testing_user_stories/user_story_10.3.png">
+<img src="documentation/testing_user_stories/user_story_10.4.png">
 </details>
 
 11. As a user, I want the ability to delete my post in case I have changed my mind.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Clicked on post title created by user, and on post detail page, selected and selected delete. | Post will be deleted and user will receive confirmation message and be returned to the home page. | PASS
 
 <details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<img src="documentation/testing_user_stories/user_story_11.1.png">
+<img src="documentation/testing_user_stories/user_story_11.2.png">
 </details>
 
 12. As a user, I want the ability to see all users’ posts with the most recent first, so that I can keep up-to-date with my community.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to the home page. | Content will be displayed with the most recent first. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 12</summary>
+<img src="documentation/testing_user_stories/user_story_12.png">
 </details>
 
 13. As a user, I want the ability to keep scrolling through content so I don’t have to move to a different page.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
-
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
-</details>
+Navigated to home page, scrolled down. | Content will keep loading until all content has been displayed. | PASS
 
 14. As a user, I want the ability to see a page with a single post and its comments.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Clicked on a post with comments. | Post and its comments will be shown. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 14</summary>
+<img src="documentation/testing_user_stories/user_story_14.1.png">
+<img src="documentation/testing_user_stories/user_story_14.2.png">
 </details>
 
 15. As a user, I want the ability to make a comment on a post to be part of the conversation.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a post's detail page and entered a comment. | Comment will be published beneath the post. | PASS
 
 <details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<img src="documentation/testing_user_stories/user_story_15.1.png">
+<img src="documentation/testing_user_stories/user_story_15.2.png">
 </details>
 
 16. As a user, I want the ability to edit a comment I have made to correct for errors.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a comment owned by the user and selected the edit button from the edit menu beside the comment. Updated the comment and saved. | User will receive confirmation message and edited comment will be visible. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 16</summary>
+<img src="documentation/testing_user_stories/user_story_16.1.png">
+<img src="documentation/testing_user_stories/user_story_16.2.png">
+<img src="documentation/testing_user_stories/user_story_16.3.png">
 </details>
 
 17. As a user, I want the ability to delete a comment I have made in case I have changed my mind.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a comment owned by the user and selected the delete button from the edit menu beside the comment. Deleted the comment. | User will receive confirmation message and comment will no longer be visible. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 17</summary>
+<img src="documentation/testing_user_stories/user_story_17.1.png">
+<img src="documentation/testing_user_stories/user_story_17.2.png">
 </details>
 
-18. As a user, I want the ability to search for posts based on username, post title, post content, or post location.
+18. As a user, I want the ability to search for posts based on username, post title, or post location.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to home page and entered text into the search bar. | Posts which match the entered text will be shown. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 18</summary>
+<img src="documentation/testing_user_stories/user_story_18.1.png">
 </details>
 
 19. As a user, I want the ability to create a short post, a bolt, to express an idea or thought without the intention of starting a conversation.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+When logged in, clicked the create icon in the navbar, and clicked the bolt icon. Filled in the input fields in the bolt create form and submitted the form. | User will receive confirmation message and be taken to bolt detail page. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 19</summary>
+<img src="documentation/testing_user_stories/user_story_19.1.png">
+<img src="documentation/testing_user_stories/user_story_19.2.png">
+<img src="documentation/testing_user_stories/user_story_19.3.png">
 </details>
 
 20. As a user, I want the ability to add a category to my bolt, so that others can search for it based on this criterion.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+When creating a bolt, selected a category from the category selection menu. | Category will be visible in published bolt. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 20</summary>
+<img src="documentation/testing_user_stories/user_story_20.1.png">
+<img src="documentation/testing_user_stories/user_story_20.2.png">
 </details>
 
 21. As a user, I want the ability to edit my bolt to correct for errors.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a bolt owned by the user, and selected edit from the edit dropdown menu. Edited the bolt content and saved. | User will receive a confirmation message and edit will be visible in the bolt. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 21</summary>
+<img src="documentation/testing_user_stories/user_story_21.1.png">
+<img src="documentation/testing_user_stories/user_story_21.2.png">
+<img src="documentation/testing_user_stories/user_story_21.3.png">
 </details>
 
 22. As a user, I want the ability to delete my bolt in case I have changed my mind.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a bolt owned by the user, and selected delete from the edit dropdown menu. | User will receive a confirmation message and be brought to the bolts page and bolt will have been deleted. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 22</summary>
+<img src="documentation/testing_user_stories/user_story_22.1.png">
+<img src="documentation/testing_user_stories/user_story_22.2.png">
 </details>
 
 23. As a user, I want the ability to see all users’ bolts on their own page with the most recent first, so I can keep up-to-date with my community.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to the Bolts tab on the navbar. | All bolts will be visible with the most recent first. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 23</summary>
+<img src="documentation/testing_user_stories/user_story_23.png">
 </details>
 
-24. As a user, I want the ability to search for bolts based on username, bolt title, bolt content, or bolt category.
+24. As a user, I want the ability to search for bolts based on username, bolt title, or bolt category.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to the Bolts page and entered the search word in the search bar. | Relevant bolts will be displayed. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 24</summary>
+<img src="documentation/testing_user_stories/user_story_24.png">
 </details>
 
 25. As a user, I want the ability to like a bolt to express my appreciation for its content.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a bolt and clicked on the paw icon. | The like counter will increment by 1 and there will be a visual sign that the user has liked the bolt. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 25</summary>
+<img src="documentation/testing_user_stories/user_story_25.1.png">
+<img src="documentation/testing_user_stories/user_story_25.2.png">
 </details>
 
 26. As a user, I want the ability to unlike a bolt I have liked in case I have changed my mind.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a previously liked bolt and clicked on the paw icon. | The like counter will decrement by 1 and there will be a visual sign that the user has unliked the bolt. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 26</summary>
+<img src="documentation/testing_user_stories/user_story_26.1.png">
+<img src="documentation/testing_user_stories/user_story_26.2.png">
 </details>
 
 27. As a user, I want the ability to see all the bolts I have liked on a single page to be able to quickly access the funny and interesting ones.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to Liked page. | All previously liked bolts will be visible. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 27</summary>
+<img src="documentation/testing_user_stories/user_story_27.png">
 </details>
 
 28. As a user, I want the ability to upload a profile pictures so users can easily identify me.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to Profile page and selected "edit profile" from dropdown menu. Uploaded image on profile edit page and selected save. | User will receive confirmation message and uploaded profile picture will be displayed as user's avatar across the site. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 28</summary>
+<img src="documentation/testing_user_stories/user_story_28.1.png">
+<img src="documentation/testing_user_stories/user_story_28.2.png">
 </details>
 
 29. As a user, I want the ability to edit the content of my profile so others can know more about me.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to user's profile page and selected "edit profile" from dropdown menu. Entered data into the city, country, and about fields and clicked save. | The entered data will be visible on the user's profile. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 29</summary>
+<img src="documentation/testing_user_stories/user_story_29.1.png">
 </details>
 
 30. As a user, I want the ability to change my username.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to user's profile page and selected "edit username" from dropdown menu. Entered new name and clicked "update username". | User will receive confirmation message and be returned to their profile page, and their updated name will be visible across the site. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 30</summary>
+<img src="documentation/testing_user_stories/user_story_30.1.png">
+<img src="documentation/testing_user_stories/user_story_30.2.png">
+<img src="documentation/testing_user_stories/user_story_30.3.png">
 </details>
 
 31. As a user, I want the ability to change my password to maintain the security of my account.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to user's profile page and selected "change password" from dropdown menu. Entered new password and clicked "save new password". | User will receive confirmation message and be returned to their profile page, and their new password will be used to log in to the site. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 31</summary>
+<img src="documentation/testing_user_stories/user_story_.png">
 </details>
 
 32. As a user, I want the ability to view other users’ profiles in order to know more about them.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Clicked on a user's name and avatar. | User will be taken to the profile of the user they clicked on. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 32</summary>
+<img src="documentation/testing_user_stories/user_story_32.1.png">
+<img src="documentation/testing_user_stories/user_story_32.2.png">
 </details>
 
 33. As a user, I want the ability to see the number of posts, bolts, followers, and followed on a user’s profile so that I can learn more about them.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a user's profile page. | The profile owner's number of posts, bolts, followers and followed will be visible. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 33</summary>
+<img src="documentation/testing_user_stories/user_story_33.png">
 </details>
 
 34. As a user, I want the ability to see a user’s posts on their profile.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Navigated to a user's profile page. | The profile owner's posts will be visible. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<details><summary>User story 34</summary>
+<img src="documentation/testing_user_stories/user_story_34.png">
 </details>
 
 35. As a user, I want the ability to follow and unfollow a user so that specific users’ posts will appear in my feed.
@@ -902,7 +952,7 @@ Clicked on sign up link in the navbar, entered details in the sign up form. | Th
 ------------ | ------------ | ------------ |
 
 <details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<img src="documentation/testing_user_stories/user_story_.png">
 </details>
 
 36. As a user, I want the ability to see the most followed profiles.
@@ -911,7 +961,7 @@ Clicked on sign up link in the navbar, entered details in the sign up form. | Th
 ------------ | ------------ | ------------ |
 
 <details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<img src="documentation/testing_user_stories/user_story_.png">
 </details>
 
 37. As a user, I want the ability to receive feedback messages to tell me if my attempted action has been successful, e.g. updating a post or deleting a comment.
@@ -920,7 +970,7 @@ Clicked on sign up link in the navbar, entered details in the sign up form. | Th
 ------------ | ------------ | ------------ |
 
 <details><summary></summary>
-<img src="documentation/testing_user_stories/.png">
+<img src="documentation/testing_user_stories/user_story_.png">
 </details>
 
 ## Deployment

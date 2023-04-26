@@ -47,7 +47,7 @@ const UsernameForm = () => {
         username,
       }));
       toast.success("Username updated successfully");
-      history.push("/");
+      history.goBack();
     } catch (err) {
       // console.log(err);
       setErrors(err.response?.data);
