@@ -1,11 +1,12 @@
 import React from "react";
-import styles from "../../styles/Post.module.css"
-import { useCurrentUser } from "../../contexts/CurrentUserContext"
-import { Card, Media } from "react-bootstrap"
-import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min"
-import Avatar from "../../components/Avatar"
-import { axiosRes } from "../../api/axiosDefaults"
-import { MoreDropdown } from "../../components/MoreDropdown"
+import styles from "../../styles/Post.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Avatar from "../../components/Avatar";
+import { axiosRes } from "../../api/axiosDefaults";
+import { MoreDropdown } from "../../components/MoreDropdown";
 import { toast } from "react-toastify";
 
 const Post = (props) => {
@@ -27,10 +28,13 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  // Handles any edits made to the input fields
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
 
+  // Handles deletion of the post
+  // Gives user confirmation message using react-toastify
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
@@ -48,7 +52,10 @@ const Post = (props) => {
           <Link to={`/profiles/${profile_id}`}>
             <div className="d-flex align-items-center">
               <Avatar src={profile_image} height={55} />
-              <h5 className={`${styles.ProfileLink} font-weight-bold`}>{ owner }</h5>
+              <h5 
+                className={`${styles.ProfileLink} font-weight-bold`}>
+                  { owner }
+                </h5>
             </div>
           </Link>
           
@@ -66,7 +73,10 @@ const Post = (props) => {
       <Card.Body>
         
         {title && (
-          <Link className={`${styles.Link} text-center card-body-link`} to={`/posts/${id}`}>
+          <Link 
+            className={`${styles.Link} text-center card-body-link`} 
+            to={`/posts/${id}`}
+          >
             <Card.Title><strong>{title}</strong></Card.Title>
           </Link>
         )}
@@ -87,5 +97,5 @@ const Post = (props) => {
   );
 }
 
-export default Post
+export default Post;
 

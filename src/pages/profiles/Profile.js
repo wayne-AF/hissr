@@ -4,24 +4,26 @@ import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import { useSetProfileData } from '../../contexts/ProfileDataContext'
 
 const Profile = (props) => {
     const { profile, mobile, imageSize = 40 } = props;
-    const { id, following_id, image, owner } = profile
+    const { id, following_id, image, owner } = profile;
+    const currentUser = useCurrentUser();
+    const is_owner = currentUser?.username === owner;
 
-    const currentUser = useCurrentUser()
-    const is_owner = currentUser?.username === owner
-
-    const {handleFollow, handleUnfollow} = useSetProfileData()
+    const {handleFollow, handleUnfollow} = useSetProfileData();
 
     return (
         <div
             className={`my-3 d-flex align-items-center ${mobile && 'flex-column'}`}
         >
             <div>
-                <Link className={`${styles.Avatar} align-self-center`} to={`/profiles/${id}`}>
+                <Link 
+                    className={`${styles.Avatar} align-self-center`} 
+                    to={`/profiles/${id}`}
+                >
                     <Avatar src={image} height={imageSize} />
                 </Link>
             </div>
@@ -29,7 +31,6 @@ const Profile = (props) => {
                 <Link to={`/profiles/${id}`}>
                     <strong>{owner}</strong>
                 </Link>
-                
             </div>
             <div className={`text-right ${!mobile && 'ml-auto'}`}>
                 {!mobile && currentUser && !is_owner && (

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
@@ -8,13 +7,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-
 import { axiosReq } from "../../api/axiosDefaults";
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
-
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { countries } from "../../components/Countries";
@@ -38,6 +35,8 @@ const ProfileEditForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  // Handles editing of user's profile data
+  // Makes a request to the API based on user's profile ID
   useEffect(() => {
     const handleMount = async () => {
       if (currentUser?.profile_id?.toString() === id) {
@@ -46,7 +45,7 @@ const ProfileEditForm = () => {
           const { name, about, image, city, country } = data;
           setProfileData({ name, about, image, city, country });
         } catch (err) {
-          console.log(err);
+          // console.log(err);
           history.push("/");
         }
       } else {
@@ -57,6 +56,7 @@ const ProfileEditForm = () => {
     handleMount();
   }, [currentUser, history, id]);
 
+  // Handles changes to the input fields
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
@@ -64,6 +64,8 @@ const ProfileEditForm = () => {
     });
   };
 
+  // Handles submission of profile form's data
+  // Displays a confirmation message using react-toastify
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -71,7 +73,7 @@ const ProfileEditForm = () => {
     formData.append("name", name);
     formData.append("about", about);
     formData.append("city", city);
-    formData.append("country", country)
+    formData.append("country", country);
 
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
@@ -83,18 +85,17 @@ const ProfileEditForm = () => {
         ...currentUser,
         profile_image: data.image,
       }));
-      toast.success('Profile updated successfully')
+      toast.success("Profile updated successfully")
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
-      toast.error('Something went wrong! Try again later.')
+      toast.error("Something went wrong! Try again later.")
     }
   };
 
   const textFields = (
     <>
-
       <Form.Group>
          <Form.Label>City</Form.Label>
          <Form.Control 
@@ -102,6 +103,7 @@ const ProfileEditForm = () => {
              type="text"
              name="city"
              value={city}
+             aria-label="city"
              onChange={handleChange}
              />
       </Form.Group>
@@ -118,10 +120,13 @@ const ProfileEditForm = () => {
              name="country"
              className={appStyles.Input}
              value={country}
+             aria-label="country"
              onChange={handleChange}
          >
+          {/* Populates the list with the values from Countries.js */}
            <option>choose your country</option>
-           {countries.map((countrySelect) => <option value={countrySelect.code} key={countrySelect.code}>
+           {countries.map((countrySelect) => 
+              <option value={countrySelect.code} key={countrySelect.code}>
                  {countrySelect.name}
                </option>
                )}
@@ -140,6 +145,7 @@ const ProfileEditForm = () => {
           value={about}
           onChange={handleChange}
           name="about"
+          aria-label="about"
           rows={4}
         />
       </Form.Group>
@@ -148,15 +154,13 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
-
-
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={btnStyles.Button}
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={btnStyles.Button} type="submit">
         save
       </Button>
     </>
@@ -180,7 +184,7 @@ const ProfileEditForm = () => {
               ))}
               <div>
                 <Form.Label
-                  className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
+                  className={`${btnStyles.Button} btn my-auto`}
                   htmlFor="image-upload"
                 >
                   Change the image
@@ -203,7 +207,11 @@ const ProfileEditForm = () => {
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
-        <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
+        <Col 
+          md={5} 
+          lg={6} 
+          className="d-none d-md-block p-0 p-md-2 text-center"
+        >
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>

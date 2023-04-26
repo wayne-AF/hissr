@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import appStyles from "../../App.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -17,31 +15,29 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 function PostPage() {
-  const { id } = useParams()
-  const [post, setPost] = useState({results: []})
+  const { id } = useParams();
+  const [post, setPost] = useState({ results: [] });
 
-  const currentUser = useCurrentUser()
-  const profile_image = currentUser?.profile_image
-  const [comments, setComments] = useState({ results: [] })
+  const currentUser = useCurrentUser();
+  const profile_image = currentUser?.profile_image;
+  const [comments, setComments] = useState({ results: [] });
 
+  // Handles requests for posts and their comments
   useEffect(() => {
     const handleMount = async () => {
         try {
             const [{data: post}, {data: comments}] = await Promise.all([
                 axiosReq.get(`/posts/${id}`),
                 axiosReq.get(`/comments/?post=${id}`)
-            ])
-            setPost({results: [post]})
-            setComments(comments)
-            console.log(post)
+            ]);
+            setPost({ results: [post] });
+            setComments(comments);
         } catch(err) {
-            console.log(err)
+            // console.log(err)
         }
-    }
-
-    handleMount()
-  }, [id])
-
+    };
+    handleMount();
+  }, [id]);
 
   return (
     <Row className="h-100">

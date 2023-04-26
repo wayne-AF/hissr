@@ -28,26 +28,6 @@ a {
     transition: color ease-in-out 0.3s;
 }
 
-/* .Card > a:hover {
-    color: #FF6A5C;
-} */
-
-/* a:hover {
-    color: #FDFCF8;
-    background-color: #FF6A5C;
-    transition: color ease-in-out 0.3s;
-    padding: -10px; 
-    border-radius: 5px;
-} */
-
-/*a:hover i {
-    color: #FDFCF8;
-    background-color: #FF6A5C;
-    transition: color ease-in-out 0.3s;
-} */
-
-
-
 i {
     color: #FF6A5C;
     font-size: 1.6rem;

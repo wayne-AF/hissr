@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
-
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-
 import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { toast } from "react-toastify";
@@ -25,7 +22,6 @@ const UserPasswordForm = () => {
     new_password2: "",
   });
   const { new_password1, new_password2 } = userData;
-
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
@@ -37,7 +33,7 @@ const UserPasswordForm = () => {
 
   useEffect(() => {
     if (currentUser?.profile_id?.toString() !== id) {
-      // redirect user if they are not the owner of this profile
+      // Redirects user if they are not the owner of this profile
       history.push("/");
     }
   }, [currentUser, history, id]);
@@ -46,10 +42,10 @@ const UserPasswordForm = () => {
     event.preventDefault();
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
-      history.goBack();
+      history.push("/");
       toast.success("Password updated successfully")
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
       toast.error("Something went wrong! Try again later.")
     }
@@ -60,7 +56,11 @@ const UserPasswordForm = () => {
       <Col className="py-2 mx-auto text-center" md={6}>
         <Container className={appStyles.Content}>
         <Row>
-          <Col className={`${appStyles.Orange} text-center pt-2`}><h3>Change your password</h3></Col>
+          <Col 
+            className={`${appStyles.Orange} text-center pt-2`}
+          >
+            <h3>Change your password</h3>
+          </Col>
         </Row>
         <hr />
           <Form onSubmit={handleSubmit}>
@@ -72,6 +72,7 @@ const UserPasswordForm = () => {
                 value={new_password1}
                 onChange={handleChange}
                 name="new_password1"
+                aria-label="new password"
               />
             </Form.Group>
             {errors?.new_password1?.map((message, idx) => (
@@ -87,6 +88,7 @@ const UserPasswordForm = () => {
                 value={new_password2}
                 onChange={handleChange}
                 name="new_password2"
+                aria-label="confirm new password"
               />
             </Form.Group>
             {errors?.new_password2?.map((message, idx) => (

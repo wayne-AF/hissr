@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
@@ -18,31 +16,34 @@ import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostsPage({ message, filter = ""}) {
-    const [posts, setPosts] = useState({ results: [] })
-    const [hasLoaded, setHasLoaded] = useState(false)
-    const { pathname } = useLocation()
+    const [posts, setPosts] = useState({ results: [] });
+    const [hasLoaded, setHasLoaded] = useState(false);
+    const { pathname } = useLocation();
 
-    const [query, setQuery] = useState("")
-    const currentUser = useCurrentUser()
+    const [query, setQuery] = useState("");
+    const currentUser = useCurrentUser();
 
+    // Handles API request using filters to display relevant posts
     useEffect(() => {
         const fetchPosts = async () => {
             try {
                 const {data} = await axiosReq.get(`/posts/?${filter}search=${query}`)
-                setPosts(data)
-                setHasLoaded(true)
+                setPosts(data);
+                setHasLoaded(true);
             } catch(err){
-                console.log(err)
+                // console.log(err)
             }
         }
-        setHasLoaded(false)
+        setHasLoaded(false);
+        // Delays the API request until 1 second
+        // after user has finished typing
         const timer = setTimeout(() => {
-            fetchPosts()
-        }, 1000)
+            fetchPosts();
+        }, 1000);
         return () => {
-            clearTimeout(timer)
+            clearTimeout(timer);
         }
-    }, [filter, query, pathname, currentUser])
+    }, [filter, query, pathname, currentUser]);
   
   return (
     <Row className="h-100">
@@ -59,6 +60,7 @@ function PostsPage({ message, filter = ""}) {
                 className="mr-sm-2"
                 placeholder="enter your search keyword"
                 value={query}
+                aria-label="search bar"
                 onChange={(event) => setQuery(event.target.value)}
             />
         </Form>
@@ -68,7 +70,11 @@ function PostsPage({ message, filter = ""}) {
                     <InfiniteScroll 
                         children={
                             posts.results.map((post) => (
-                                <Post key={post.id} {...post} setPosts={setPosts} />
+                                <Post 
+                                    key={post.id} 
+                                    {...post} 
+                                    setPosts={setPosts} 
+                                />
                             ))
                         }
                         dataLength={posts.results.length}
@@ -76,7 +82,6 @@ function PostsPage({ message, filter = ""}) {
                         hasMore={!!posts.next}
                         next={() => fetchMoreData(posts, setPosts)}
                     />
-                    
                 ) : (<Container className={appStyles.Content}>
                     <Asset src={NoResults} message={message}/>    
                 </Container>)}

@@ -1,9 +1,11 @@
-import jwtDecode from "jwt-decode"
-import { axiosReq } from "../api/axiosDefaults"
+import jwtDecode from "jwt-decode";
+import { axiosReq } from "../api/axiosDefaults";
 
+// Updates different types of data for InfiniteScroll component
+// Filters out duplicates of content if new content has been added
 export const fetchMoreData = async (resource, setResource) => {
     try {
-        const {data} = await axiosReq.get(resource.next)
+        const {data} = await axiosReq.get(resource.next);
         setResource(prevResource => ({
             ...prevResource,
             next:data.next,
@@ -12,12 +14,13 @@ export const fetchMoreData = async (resource, setResource) => {
                 ? acc
                 : [...acc, cur]
             }, prevResource.results)
-        }))
+        }));
     } catch (err) {
-
     }
-}
+};
 
+// Increments number of following users by 1
+// Increments number of users being followed by 1
 export const followHelper = (profile, clickedProfile, following_id) => {
     return profile.id === clickedProfile.id
     ? {
@@ -31,8 +34,10 @@ export const followHelper = (profile, clickedProfile, following_id) => {
         following_count: profile.following_count + 1
     }
     : profile
-}
+};
 
+// Decrements number of following users by 1
+// Decrements number of users being followed by 1
 export const unfollowHelper = (profile, clickedProfile) => {
     return profile.id === clickedProfile.id
       ? {
@@ -48,15 +53,20 @@ export const unfollowHelper = (profile, clickedProfile) => {
       : profile;
   };
 
+  // Sets token timestamp in the browser's storage
   export const setTokenTimestamp = (data) => {
-    const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp
-    localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp)
-  }
+    const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
+    localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp);
+  };
 
+  // Indicates if user's token should be refreshed
+  // Will only refresh for logged in user
   export const shouldRefreshToken = () => {
-    return !!localStorage.getItem('refreshTokenTimestamp')
-  }
+    return !!localStorage.getItem("refreshTokenTimestamp");
+  };
 
+  // Removes token timestamp from local storage if user logs out
+  // or refresh token expires
   export const removeTokenTimestamp = () => {
-    localStorage.removeItem('refreshTokenTimestamp')
-  }
+    localStorage.removeItem("refreshTokenTimestamp");
+  };

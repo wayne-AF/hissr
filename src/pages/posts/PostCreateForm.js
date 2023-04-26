@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -16,7 +15,7 @@ import { countries } from "../../components/Countries";
 import { toast } from "react-toastify";
 
 function PostCreateForm() {
-  useRedirect("loggedOut")
+  useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -25,38 +24,39 @@ function PostCreateForm() {
     city: "",
     country: "",
   })
-  const { title, content, city, country } = postData
+  const { title, content, city, country } = postData;
+  const history = useHistory();
 
-  const history = useHistory()
-
-
+  // Handles data submission
+  // Refreshes user's access tokens before making submission request
   const handleSubmit = async (event) => {
     event.preventDefault()
     const formData = new FormData()
 
-    formData.append("title", title)
-    formData.append("content", content)
-    formData.append("city", city)
-    formData.append("country", country)
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("city", city);
+    formData.append("country", country);
 
     try {
-        const {data} = await axiosReq.post("/posts/", formData)
-        history.push(`/posts/${data.id}`)
-        toast.success("Post created successfully")
+        const {data} = await axiosReq.post("/posts/", formData);
+        history.push(`/posts/${data.id}`);
+        toast.success("Post created successfully");
     } catch(err){
         console.log(err)
         if (err.response?.status !== 401){
             setErrors(err.response?.data)
         }
     }
-  }
-
+  };
+  
+  // Handles changes to input fields
   const handleChange = (event) => {
     setPostData({
         ...postData,
         [event.target.name]: event.target.value
-    })
-  }
+    });
+  };
 
   const textFields = (
     <div className="text-center">
@@ -68,6 +68,7 @@ function PostCreateForm() {
             type="text"
             name="title"
             value={title}
+            aria-label="title"
             onChange={handleChange}
         />
       </Form.Group>
@@ -85,6 +86,7 @@ function PostCreateForm() {
             type="text"
             name="city"
             value={city}
+            aria-label="city"
             onChange={handleChange}
         />
       </Form.Group>
@@ -102,10 +104,13 @@ function PostCreateForm() {
             required={true}
             className={appStyles.Input}
             value={country}
+            aria-label="country"
             onChange={handleChange}
         >
+          {/* Populates the list with the values from Countries.js */}
           <option>choose your country</option>
-          {countries.map((country) => <option key={country.code} value={country.name}>
+          {countries.map((country) => 
+            <option key={country.code} value={country.name}>
                 {country.name}
               </option>
               )}
@@ -127,6 +132,7 @@ function PostCreateForm() {
             required={true}
             name="content"
             value={content}
+            aria-label="content"
             onChange={handleChange}
         />
       </Form.Group>
@@ -152,10 +158,18 @@ function PostCreateForm() {
     <Form onSubmit={handleSubmit}>
       <Container className={`mt-3 p-3 ${appStyles.Content}`}>
         <Row>
-          <Col className={`${appStyles.Orange} text-center pb-2`}><h3>Create a post</h3></Col>
+          <Col 
+            className={`${appStyles.Orange} text-center pb-2`}
+          >
+            <h3>Create a post</h3>
+          </Col>
         </Row>
         <Row>
-          <Col className={`${appStyles.Orange} text-center pb-2`}><h5>Start a conversation!</h5></Col>  
+          <Col 
+            className={`${appStyles.Orange} text-center pb-2`}
+          >
+            <h5>Start a conversation!</h5>
+          </Col>  
         </Row>
         <hr />
         <Row className={`${styles.Row}`}>

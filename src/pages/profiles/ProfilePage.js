@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import Asset from "../../components/Asset";
-
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
 import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
-import { useProfileData, useSetProfileData } from "../../contexts/ProfileDataContext";
+import { 
+  useProfileData, 
+  useSetProfileData 
+} from "../../contexts/ProfileDataContext";
 import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
-import NoResults from '../../assets/no-results.png'
+import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const currentUser = useCurrentUser();
-  const {id} = useParams()
-  const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData()
-  const {pageProfile} = useProfileData()
-  const [profile] = pageProfile.results
-  const is_owner = currentUser?.username === profile?.owner
-  const [profilePosts, setProfilePosts] = useState({ results: [] })
+  const { id } = useParams();
+  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
+  const {pageProfile} = useProfileData();
+  const [profile] = pageProfile.results;
+  const is_owner = currentUser?.username === profile?.owner;
+  const [profilePosts, setProfilePosts] = useState({ results: [] });
 
+  // Makes request to API to retrieve user's profile and posts
   useEffect(() => {
     const fetchData = async () => {
         try {
@@ -39,22 +39,23 @@ function ProfilePage() {
                 await Promise.all([
                     axiosReq.get(`/profiles/${id}/`),
                     axiosReq.get(`/posts/?owner__profile=${id}`)
-                ])
+                ]);
                 setProfileData((prevState) => ({
                     ...prevState,
                     pageProfile: { results: [pageProfile] }
-                }))
-                setProfilePosts(profilePosts)
-                setHasLoaded(true); 
+                }));
+                setProfilePosts(profilePosts);
+                setHasLoaded(true);
         } catch(err){
-            console.log(err)
+            // console.log(err)
         }
-    }
-      fetchData()
-  }, [id, setProfileData])
+    };
+      fetchData();
+  }, [id, setProfileData]);
 
   const mainProfile = (
     <>
+    {/* Displays the profile edit dropdown menu if user is profile owner */}
     {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
@@ -66,7 +67,9 @@ function ProfilePage() {
         </Col>
         <Col lg={7}>
           <h3 className="m-2">{profile?.owner}</h3>
-          { profile?.city && profile?.country && <Col>{profile.city}, {profile.country}</Col>}
+          { profile?.city && profile?.country && 
+            <Col>{profile.city}, {profile.country}</Col>
+          }
           <hr />
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
@@ -88,6 +91,8 @@ function ProfilePage() {
           </Row>
         </Col>
         <Col lg={2} className="text-lg-right">
+          {/* Displays a follow/unfollow button 
+            if user is not profile's owner */}
             {currentUser && !is_owner && 
                 (profile?.following_id ? (
                     <Button
@@ -108,14 +113,12 @@ function ProfilePage() {
         <Row>
         { profile?.about && <Col className="pt-3">{profile.about}</Col>}
         </Row>
-        
-
         <hr />
-        
       </Row>
     </>
   );
 
+  // Displays posts from the profile owner
   const mainProfilePosts = (
     <>
       <hr />
@@ -134,7 +137,7 @@ function ProfilePage() {
       ) : (
         <Asset 
             src={NoResults}
-            message={`No results found. ${profile?.owner} hasn't posted yet.`}    
+            message={`No results found. ${profile?.owner} hasn't posted yet.`}
         />
       ) }
     </>

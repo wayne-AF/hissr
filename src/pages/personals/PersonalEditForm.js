@@ -19,7 +19,7 @@ function PersonalEditForm() {
     title: "",
     content: "",
     category: "",
-  })
+  });
 
   const { title, content, category } = personalData;
 
@@ -84,6 +84,7 @@ function PersonalEditForm() {
             type="text"
             name="title"
             value={title}
+            aria-label="title"
             onChange={handleChange}
         />
       </Form.Group>
@@ -101,6 +102,7 @@ function PersonalEditForm() {
           required={true}
           className={appStyles.Input}
           value={category}
+          aria-label="category"
           onChange={handleChange}
         >
           <option>select a topic</option>
@@ -127,6 +129,7 @@ function PersonalEditForm() {
             rows={6}
             name="content"
             value={content}
+            aria-label="content"
             onChange={handleChange}
         />
       </Form.Group>
@@ -150,7 +153,7 @@ function PersonalEditForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
+      <Container className={`mt-3 p-3 ${appStyles.Content}`}>
         <Row>
           <Col 
             className={`${appStyles.Orange} text-center pb-2`}

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -22,54 +21,60 @@ function PostEditForm() {
     content: "",
     city: "",
     country: "",
-  })
-  const { title, content, city, country } = postData
+  });
+  const { title, content, city, country } = postData;
 
-  const history = useHistory()
-  const { id } = useParams()
+  const history = useHistory();
+  const { id } = useParams();
 
+  // Handles API request using post ID
+  // Gets the existing content of the post
+  // Prevents other users from editing the post
   useEffect(() => {
     const handleMount = async () => {
         try {
-            const {data} = await axiosReq.get(`/posts/${id}/`)
-            const {title, content, city, country, is_owner} = data
+            const {data} = await axiosReq.get(`/posts/${id}/`);
+            const {title, content, city, country, is_owner} = data;
 
-            is_owner ? setPostData({title, content, city, country}) : history.push("/")
+            is_owner ? setPostData({title, content, city, country}) 
+            : history.push("/");
         } catch (err) {
-            console.log(err)
+            // console.log(err)
 
         }
     }
-    handleMount()
-  }, [history, id])
+    handleMount();
+  }, [history, id]);
 
+  // Handles data submission
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    const formData = new FormData()
+    event.preventDefault();
+    const formData = new FormData();
 
-    formData.append("title", title)
-    formData.append("content", content)
-    formData.append("city", city)
-    formData.append("country", country)
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("city", city);
+    formData.append("country", country);
 
     try {
-        await axiosReq.put(`/posts/${id}/`, formData)
-        history.push(`/posts/${id}`)
-        toast.success("Post updated successfully")
+        await axiosReq.put(`/posts/${id}/`, formData);
+        history.push(`/posts/${id}`);
+        toast.success("Post updated successfully");
     } catch(err){
         console.log(err)
         if (err.response?.status !== 401){
-            setErrors(err.response?.data)
+            setErrors(err.response?.data);
         }
     }
-  }
+  };
 
+  // Handles changes to input fields
   const handleChange = (event) => {
     setPostData({
         ...postData,
         [event.target.name]: event.target.value
     })
-  }
+  };
 
   const textFields = (
     <div className="text-center">
@@ -81,6 +86,7 @@ function PostEditForm() {
             type="text"
             name="title"
             value={title}
+            aria-label="title"
             onChange={handleChange}
         />
       </Form.Group>
@@ -98,6 +104,7 @@ function PostEditForm() {
             type="text"
             name="city"
             value={city}
+            aria-label="city"
             onChange={handleChange}
         />
       </Form.Group>
@@ -115,9 +122,11 @@ function PostEditForm() {
             required={true}
             className={appStyles.Input}
             value={country}
+            aria-label="country"
             onChange={handleChange}
         >
-          {countries.map((countrySelect) => <option value={countrySelect.code}>
+          {countries.map((countrySelect) => 
+            <option value={countrySelect.code}>
                 {countrySelect.name}
               </option>
               )}
@@ -139,6 +148,7 @@ function PostEditForm() {
             rows={6}
             name="content"
             value={content}
+            aria-label="content"
             onChange={handleChange}
         />
       </Form.Group>
@@ -164,12 +174,20 @@ function PostEditForm() {
     <Form onSubmit={handleSubmit}>
       <Container className={ `mt-3 p-3 ${appStyles.Content}`}>
         <Row>
-          <Col className={`${appStyles.Orange} text-center pb-2`}><h3>Edit your post?</h3></Col>
+          <Col 
+            className={`${appStyles.Orange} text-center pb-2`}
+          >
+            <h3>Edit your post?</h3>
+          </Col>
         </Row>
         <Row>
-          <Col className={`${appStyles.Orange} text-center pb-2`}><h5>Remember that your edits might affect the conversation!</h5></Col>
+          <Col 
+            className={`${appStyles.Orange} text-center pb-2`}
+          >
+            <h5>Remember that your edits might affect the conversation!</h5>
+          </Col>
         </Row>
-        <Row className={`${styles.Row} `}>
+        <Row className={`${styles.Row}`}>
           <Col>{textFields}</Col>
           </Row>
       </Container>

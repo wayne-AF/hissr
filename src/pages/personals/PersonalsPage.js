@@ -36,7 +36,9 @@ function PersonalsPage({ message, filter = "" }) {
                 // console.log(err)
             }
         }
-        setHasLoaded(false)
+        setHasLoaded(false);
+        // Delays the API request until 1 second
+        // after user has finished typing
         const timer = setTimeout(() => {
             fetchPersonals()
         }, 1000);

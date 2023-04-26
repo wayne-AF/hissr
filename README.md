@@ -122,7 +122,7 @@ The default profile photo was also purchased from Vectorstock and in the same or
 <details><summary>Default picture</summary>
 <img src="documentation/design/default_profile_pic_2.png">
 </details>
-The No-Results cat was also purchased from Vectorstock and used when a user's search is unsuccessful. 
+The No-Results cat image was also purchased from Vectorstock and used when a user's search is unsuccessful. 
 <details><summary>No results cat</summary>
 <img src="documentation/design/no-results.png">
 </details>

@@ -67,6 +67,7 @@ function PersonalCreateForm() {
             type="text"
             name="title"
             value={title}
+            aria-label="title"
             onChange={handleChange}
         />
       </Form.Group>
@@ -84,6 +85,7 @@ function PersonalCreateForm() {
           required={true}
           className={appStyles.Input}
           value={category}
+          aria-label="category"
           onChange={handleChange}
         >
           <option>select a topic</option>
@@ -110,6 +112,7 @@ function PersonalCreateForm() {
             rows={6}
             name="content"
             value={content}
+            aria-label="content"
             onChange={handleChange}
         />
       </Form.Group>
