@@ -1,9 +1,7 @@
 # Hissr
+![Mockup image](documentation/design/mock-up.png)
 
 The live project can be found [here](https://hissr.herokuapp.com/).
-
-![Mockup image]
-
 ## Table of Contents
 1. [About](#about)
 2. [Project Goals](#project-goals)
@@ -103,6 +101,42 @@ View the Kanban board [here](https://github.com/users/wayne-AF/projects/9).
 
 
 ## Design
+### Colours
+Mostly neutral colours were chosen to make the site feel relaxing, with a bright, playful accent colour to highlight links, texts, and icons.
+<details><summary>Colour palette</summary>
+<img src="documentation/design/colour_palette.png">
+</details>
+
+### Imagery
+The background contains imagery commonly associated with cats: paw prints, fish, balls of yarn, and bells. It is fairly muted so as not to draw attention from the site's content but provides a playful background, adding to the overall light and informal atmosphere of the site. 
+<details><summary>Background</summary>
+<img src="documentation/design/background.png">
+</details>
+
+The site logo is a simple cat's face purchased from Vectorstock which I edited for clarity. It's the same orange as the site's accent colour.
+<details><summary>Hissr logo</summary>
+<img src="documentation/design/cat-logo.png">
+</details>
+
+The default profile photo was also purchased from Vectorstock and in the same orange as the site's accent colour, so even if a user does not upload a profile photo, the default picture is appealing enough to not detract from the appearance of any page where it appears.
+<details><summary>Default picture</summary>
+<img src="documentation/design/default_profile_pic_2.png">
+</details>
+The No-Results cat was also purchased from Vectorstock and used when a user's search is unsuccessful. 
+<details><summary>No results cat</summary>
+<img src="documentation/design/no-results.png">
+</details>
+
+### Fonts
+The main font across the site is Comfortaa, which has a rounded, playful look to it, while also being easy to read. The font colour used is teal (#056571) to match better with the muted greens of the background while still being easy to read against the neutral backgrounds.
+<details><summary>Text font</summary>
+<img src="documentation/design/text_font.png">
+</details>
+The logo font is Yeseva One, a more embellished font than the rest of the text. It's rendered in orange to match the logo and the rest of the navbar text. It disappears on smaller screens. 
+<details><summary>Logo font</summary>
+<img src="documentation/design/logo_font.png">
+</details>
+
 ### Wireframes
 
 <details><summary>Sign up page</summary>
@@ -469,6 +503,7 @@ The back-end API for this project was built using the Django Rest Framework. The
 - [Heroku](https://heroku.com/) - Used to deploy and run the application
 - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) - Used for CSS validation
 - [MiniPaint](https://viliusle.github.io/miniPaint/) - Used for image editing to create the background and the placeholder images
+- [SimpleImageResizer](https://www.simpleimageresizer.com/) - Used for image resizing for screenshots, background, site logo, and No-Results cat image
 - [VectorStock](https://www.vectorstock.com/) - Used as a source for the background, the site's logo, the default profile picture, and the No-Results cat image
 - [W3C](https://validator.w3.org/) - Used for HTML validation
 
