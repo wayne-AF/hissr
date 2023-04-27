@@ -17,6 +17,7 @@
 .Orange:hover, .Orange:hover i {
     background-color: #FF6A5C;
     color: #FDFCF8;
+    border-radius: 5px;
 }
 
 .Absolute {

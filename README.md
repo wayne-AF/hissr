@@ -959,15 +959,17 @@ Navigated to a user's profile page. | The profile owner's posts will be visible.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+From the home, feed, liked, bolts, and profile page, looked at the Most followed profiles component on the screen. | Will see the most followed profiles on the site. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/user_story_.png">
+<details><summary>User story 36</summary>
+<img src="documentation/testing_user_stories/user_story_36.png">
 </details>
 
 37. As a user, I want the ability to receive feedback messages to tell me if my attempted action has been successful, e.g. updating a post or deleting a comment.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Created a post, updated a comment, updated profile information. | Confirmation messages will be received upon completion of these actions. | PASS
 
 <details><summary></summary>
 <img src="documentation/testing_user_stories/user_story_.png">

@@ -110,10 +110,7 @@ function ProfilePage() {
                     </Button>
                 ))}
         </Col>
-        <Row>
-        { profile?.about && <Col className="pt-3">{profile.about}</Col>}
-        {/* {profile.about} */}
-        </Row>
+        { profile?.about && <Col className="pt-3 text-center">{profile.about}</Col> }
         <hr />
       </Row>
     </>
