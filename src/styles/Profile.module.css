@@ -2,30 +2,9 @@
     word-break: break-all;
 }
 
-/* .Orange {
-    color: #FF6A5C;
-    padding: 2px;
-    border: 2px solid transparent;
-}
-
-.Orange:hover {
-    color: #FF6A5C !important;
-    text-decoration: underline;
-    cursor: pointer;
-    border-radius: 5px;
-} */
-
 a:hover{
-    color: #FF6A5C;;
+    color: #FF6A5C;
     text-decoration: underline;
     cursor: pointer;
     border-radius: 5px;
 }
-
-/* .Avatar {
-    border: 2px solid transparent;
-}
-
-.Avatar:hover {
-    border: 2px solid #FF6A5C;
-} */

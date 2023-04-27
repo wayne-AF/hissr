@@ -362,8 +362,6 @@ The back-end API for this project was built using the Django Rest Framework. The
 <img src="documentation/features/bolt_small_screen.png">
 </details>
 
-
-
 ### Likes
 - A user can like a bolt in order to express their appreciation for its content
 - A user can also unlike a bolt if they change their mind
@@ -391,8 +389,11 @@ The back-end API for this project was built using the Django Rest Framework. The
 ### Feed page
 - A page displaying all the posts from profiles that the user is following
 - User stories: 35
-<details><summary></summary>
-<img src="documentation/features/.png">
+<details><summary>Feed page large screen</summary>
+<img src="documentation/features/feed_large.png">
+</details>
+<details><summary>Feed page small screen</summary>
+<img src="documentation/features/feed_small.png">
 </details>
 
 ### Profile page
@@ -573,6 +574,52 @@ W3C Markup validation was used to validate the HTML of the site. Results screens
 </details>
 
 ### CSS
+W3C Jigsaw CSS validation was used to validate the CSS of the site. Results screenshots are provided below.
+<details><summary>App.module.css</summary>
+<img src="documentation/validation/css/App.module.css_validation.png">
+</details>
+<details><summary>Asset.module.css</summary>
+<img src="documentation/validation/css/Asset.module.css_validation.png">
+</details>
+<details><summary>Avatar.module.css</summary>
+<img src="documentation/validation/css/Avatar.module.css_validation.png">
+</details>
+<details><summary>Button.module.css</summary>
+<img src="documentation/validation/css/Button.module.css_validation.png">
+</details>
+<details><summary>Comment.module.css</summary>
+<img src="documentation/validation/css/Comment.module.css_validation.png">
+</details>
+<details><summary>CommentCreateEditForm.module.css</summary>
+<img src="documentation/validation/css/CommentCreateEditForm.module.css_validation.png">
+</details>
+<details><summary>MoreDropdown.module.css</summary>
+<img src="documentation/validation/css/MoreDropdown.module.css_validation.png">
+</details>
+<details><summary>NavBar.module.css</summary>
+<img src="documentation/validation/css/NavBar.module.css_validation.png">
+</details>
+<details><summary>NotFound.module.css</summary>
+<img src="documentation/validation/css/NotFound.module.css_validation.png">
+</details>
+<details><summary>Post.module.css</summary>
+<img src="documentation/validation/css/Post.module.css_validation.png">
+</details>
+<details><summary>PostCreateEditForm.module.css</summary>
+<img src="documentation/validation/css/PostCreateEditForm.module.css_validation.png">
+</details>
+<details><summary>PostsPage.module.css</summary>
+<img src="documentation/validation/css/PostsPage.module.css_validation.png">
+</details>
+<details><summary>Profile.module.css</summary>
+<img src="documentation/validation/css/Profile.module.css_validation.png">
+</details>
+<details><summary>ProfilePage.module.css</summary>
+<img src="documentation/validation/css/ProfilePage.module.css_validation.png">
+</details>
+<details><summary>SignUpForm.module.css</summary>
+<img src="documentation/validation/css/SignUpForm.module.css_validation.png">
+</details>
 
 ### JSX
 
@@ -912,7 +959,9 @@ Navigated to user's profile page and selected "edit username" from dropdown menu
 Navigated to user's profile page and selected "change password" from dropdown menu. Entered new password and clicked "save new password". | User will receive confirmation message and be returned to their profile page, and their new password will be used to log in to the site. | PASS
 
 <details><summary>User story 31</summary>
-<img src="documentation/testing_user_stories/user_story_.png">
+<img src="documentation/testing_user_stories/user_story_31.1.png">
+<img src="documentation/testing_user_stories/user_story_31.2.png">
+<img src="documentation/testing_user_stories/user_story_31.3.png">
 </details>
 
 32. As a user, I want the ability to view other users’ profiles in order to know more about them.
@@ -950,9 +999,12 @@ Navigated to a user's profile page. | The profile owner's posts will be visible.
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
+Clicked the "follow" button beside a profile's avatar and name in the Most followed profiles component. | If that user has made any posts, they will appear in the user's feed. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/user_story_.png">
+<details><summary>User story 35</summary>
+<img src="documentation/testing_user_stories/user_story_35.1.png">
+<img src="documentation/testing_user_stories/user_story_35.2.png">
+<img src="documentation/testing_user_stories/user_story_35.3.png">
 </details>
 
 36. As a user, I want the ability to see the most followed profiles.
@@ -969,10 +1021,12 @@ From the home, feed, liked, bolts, and profile page, looked at the Most followed
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
-Created a post, updated a comment, updated profile information. | Confirmation messages will be received upon completion of these actions. | PASS
+Created a bolt, deleted a comment, changed password. | Confirmation messages will be received upon completion of these actions. | PASS
 
-<details><summary></summary>
-<img src="documentation/testing_user_stories/user_story_.png">
+<details><summary>User story 37</summary>
+<img src="documentation/testing_user_stories/user_story_37.1.png">
+<img src="documentation/testing_user_stories/user_story_37.2.png">
+<img src="documentation/testing_user_stories/user_story_37.3.png">
 </details>
 
 ## Deployment

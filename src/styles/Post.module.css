@@ -12,11 +12,6 @@ h5 {
   margin: 0 0;
 }
 
-/* a:hover {
-  color: #FF6A5C;
-  text-decoration: underline;
-} */
-
 .ProfileLink:hover {
   text-decoration: underline;
 }
@@ -86,7 +81,3 @@ h5 {
   background-color: #FF6A5C;
   border-radius: 50%;
 }
-
-/* .card-body-link:hover {
- color: #FF6A5C;
-} */
