@@ -18,11 +18,10 @@ The live project can be found [here](https://hissr.herokuapp.com/).
     - [Libraries, Frameworks & Dependencies](#libraries-frameworks-&-dependencies)
     - [Tools & Software](#tools-&-software)
 7. [Validation](#validation)
-    - [HTML]
-    - [CSS]
-    - [JSX]
-    - [Chrome Lighthouse]
-    - [Wave]
+    - [HTML](#html)
+    - [CSS](#css)
+    - [JSX](#jsx)
+    - [Chrome Lighthouse](#chrome-lighthouse)
 8. [Testing](#testing)
     - [Testing User Stories](#testing-user-stories)
     - [Browser Compatibility](#browser-compatibility)
@@ -38,13 +37,13 @@ Hissr is a content-sharing and social platform for cats around the world to conn
 The goal for this project was to create a content-sharing platform for users from around the world to interact by creating posts, commenting on posts, liking content, and following other users. The intended tone is light and informal.
 
 Key aspects:
-- bright and cheerful design
-- simple and intuitive navigation
-- straightforward user authentication
-- CRUD functionality for posts, comments, and bolts
-- user interactions via comments and likes and follows
-- data filtering by keywords, profiles followed, and content liked
-- site responsiveness
+1. bright and cheerful design
+2. simple and intuitive navigation
+3. straightforward user authentication
+4. CRUD functionality for posts, comments, and bolts
+5. user interactions via comments and likes and follows
+6. data filtering by keywords, profiles followed, and content liked
+7. site responsiveness
 
 I used an Agile methodology for planning this project, implemented using a Kanban board in Github Project with linked issues.  
 View the Kanban board [here](https://github.com/users/wayne-AF/projects/9).
@@ -511,12 +510,11 @@ The back-end API for this project was built using the Django Rest Framework. The
 - [Google Fonts](https://fonts.google.com/) - Used for the site's fonts
 - [Heroku](https://heroku.com/) - Used to deploy and run the application
 - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) - Used for CSS validation
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) - Used to assess performance, accessibility, best practice and SEO of the application
 - [MiniPaint](https://viliusle.github.io/miniPaint/) - Used for image editing to create the background and the placeholder images
 - [SimpleImageResizer](https://www.simpleimageresizer.com/) - Used for image resizing for screenshots, background, site logo, and No-Results cat image
 - [VectorStock](https://www.vectorstock.com/) - Used as a source for the background, the site's logo, the default profile picture, and the No-Results cat image
 - [W3C](https://validator.w3.org/) - Used for HTML validation
-
-
 
 
 ## Validation
@@ -665,20 +663,21 @@ Chrome Lighthouse dev tools were used to test the performance, accessibility, be
 </details>
 
 
-
 ## Testing
 ### Testing User Stories
 1. As a user, I want the ability to view and understand the site before I decide to create an account.
+Project Goals: 1, 2, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
-I showed the site to two family members and asked them what kind of site did they understand this to be from looking at the main page. | They will surmise the site to be a content-sharing and social platform. | PASS
+I showed the site to two family members and asked them what kind of site did they understand this to be from looking at the main page. | They will surmise the site to be a content-sharing and social platform. | PASS |
 
 <details><summary>User story 1</summary>
 <img src="documentation/testing_user_stories/user_story_1.png">
 </details>
 
 2. As a user, I want the ability to view the navbar from every page so I can easily navigate around the site.
+Project Goals: 2, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -692,6 +691,7 @@ Navigated to the home, feed, bolts, and profile page. | The navbar will be visib
 </details>
 
 3. As a logged-out user, I want the ability to easily sign in or sign up from wherever I am on the site.
+Project Goals: 2, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -702,6 +702,7 @@ Logged out and navigated to the home page. | The sign in and sign up links will 
 </details>
 
 4. As a user, I want the ability to sign up for an account to use all the site’s features.
+Project Goals: 3
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -715,6 +716,7 @@ Clicked on sign up link in the navbar, entered details in the sign up form. | Th
 </details>
 
 5. As a user, I want the ability to sign in with my login credentials.
+Project Goals: 3
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -727,6 +729,7 @@ When logged out, clicked on sign in link in the navbar. On the sign in page, ent
 </details>
 
 6. As a user, I want the ability to stay signed in until I choose to log out.
+Project Goals: 3
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -734,6 +737,7 @@ Logged into the website and did not log out within 24 hours. | The user will sta
 
 
 7. As a user, I want the ability to quickly see if I am signed in or not.
+Project Goals: 2, 3, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -745,6 +749,7 @@ Looked at the navbar when logged in and when logged out. | When logged out, the 
 </details>
 
 8. As a user, I want the ability to create a post in order to start a conversation with my community.
+Project Goals: 1, 2, 4
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -757,6 +762,7 @@ When logged in, clicked the create icon in the navbar, and clicked the post icon
 </details>
 
 9. As a user, I want the ability to add a location to my post so that others can easily find posts from users in specific areas.
+Project Goals: 2, 4, 5
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -768,6 +774,7 @@ When creating a post, entered location into the city and country fields. | Locat
 </details>
 
 10. As a user, I want the ability to edit my post to correct for errors.
+Project Goals: 3
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -781,6 +788,7 @@ Clicked on post title created by user, and on post detail page, selected the dro
 </details>
 
 11. As a user, I want the ability to delete my post in case I have changed my mind.
+Project Goals: 3
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -792,6 +800,7 @@ Clicked on post title created by user, and on post detail page, selected and sel
 </details>
 
 12. As a user, I want the ability to see all users’ posts with the most recent first, so that I can keep up-to-date with my community.
+Project Goals: 2, 5, 6
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -802,12 +811,14 @@ Navigated to the home page. | Content will be displayed with the most recent fir
 </details>
 
 13. As a user, I want the ability to keep scrolling through content so I don’t have to move to a different page.
+Project Goals: 2, 6, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
 Navigated to home page, scrolled down. | Content will keep loading until all content has been displayed. | PASS
 
 14. As a user, I want the ability to see a page with a single post and its comments.
+Project Goals: 2, 6, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -819,6 +830,7 @@ Clicked on a post with comments. | Post and its comments will be shown. | PASS
 </details>
 
 15. As a user, I want the ability to make a comment on a post to be part of the conversation.
+Project Goals: 4, 5
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -830,6 +842,7 @@ Navigated to a post's detail page and entered a comment. | Comment will be publi
 </details>
 
 16. As a user, I want the ability to edit a comment I have made to correct for errors.
+Project Goals: 4, 5
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -842,6 +855,7 @@ Navigated to a comment owned by the user and selected the edit button from the e
 </details>
 
 17. As a user, I want the ability to delete a comment I have made in case I have changed my mind.
+Project Goals: 4
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -853,6 +867,7 @@ Navigated to a comment owned by the user and selected the delete button from the
 </details>
 
 18. As a user, I want the ability to search for posts based on username, post title, or post location.
+Project Goals: 2, 6
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -863,6 +878,7 @@ Navigated to home page and entered text into the search bar. | Posts which match
 </details>
 
 19. As a user, I want the ability to create a short post, a bolt, to express an idea or thought without the intention of starting a conversation.
+Project Goals: 4, 5
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -875,6 +891,7 @@ When logged in, clicked the create icon in the navbar, and clicked the bolt icon
 </details>
 
 20. As a user, I want the ability to add a category to my bolt, so that others can search for it based on this criterion.
+Project Goals: 4, 5, 6
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -886,6 +903,7 @@ When creating a bolt, selected a category from the category selection menu. | Ca
 </details>
 
 21. As a user, I want the ability to edit my bolt to correct for errors.
+Project Goals: 4
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -898,6 +916,7 @@ Navigated to a bolt owned by the user, and selected edit from the edit dropdown 
 </details>
 
 22. As a user, I want the ability to delete my bolt in case I have changed my mind.
+Project Goals: 4
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -909,6 +928,7 @@ Navigated to a bolt owned by the user, and selected delete from the edit dropdow
 </details>
 
 23. As a user, I want the ability to see all users’ bolts on their own page with the most recent first, so I can keep up-to-date with my community.
+Project Goals: 5, 6, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -919,6 +939,7 @@ Navigated to the Bolts tab on the navbar. | All bolts will be visible with the m
 </details>
 
 24. As a user, I want the ability to search for bolts based on username, bolt title, or bolt category.
+Project Goals: 6, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -929,6 +950,7 @@ Navigated to the Bolts page and entered the search word in the search bar. | Rel
 </details>
 
 25. As a user, I want the ability to like a bolt to express my appreciation for its content.
+Project Goals: 2, 5
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -940,6 +962,7 @@ Navigated to a bolt and clicked on the paw icon. | The like counter will increme
 </details>
 
 26. As a user, I want the ability to unlike a bolt I have liked in case I have changed my mind.
+Project Goals: 2, 5
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -951,6 +974,7 @@ Navigated to a previously liked bolt and clicked on the paw icon. | The like cou
 </details>
 
 27. As a user, I want the ability to see all the bolts I have liked on a single page to be able to quickly access the funny and interesting ones.
+Project Goals: 2, 6
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -961,6 +985,7 @@ Navigated to Liked page. | All previously liked bolts will be visible. | PASS
 </details>
 
 28. As a user, I want the ability to upload a profile pictures so users can easily identify me.
+Project Goals: 2, 4, 5
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -972,6 +997,7 @@ Navigated to Profile page and selected "edit profile" from dropdown menu. Upload
 </details>
 
 29. As a user, I want the ability to edit the content of my profile so others can know more about me.
+Project Goals: 4, 5
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -982,6 +1008,7 @@ Navigated to user's profile page and selected "edit profile" from dropdown menu.
 </details>
 
 30. As a user, I want the ability to change my username.
+Project Goals: 4
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -994,6 +1021,7 @@ Navigated to user's profile page and selected "edit username" from dropdown menu
 </details>
 
 31. As a user, I want the ability to change my password to maintain the security of my account.
+Project Goals: 4
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -1006,6 +1034,7 @@ Navigated to user's profile page and selected "change password" from dropdown me
 </details>
 
 32. As a user, I want the ability to view other users’ profiles in order to know more about them.
+Project Goals: 5, 6, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -1017,6 +1046,7 @@ Clicked on a user's name and avatar. | User will be taken to the profile of the 
 </details>
 
 33. As a user, I want the ability to see the number of posts, bolts, followers, and followed on a user’s profile so that I can learn more about them.
+Project Goals: 6
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -1027,6 +1057,7 @@ Navigated to a user's profile page. | The profile owner's number of posts, bolts
 </details>
 
 34. As a user, I want the ability to see a user’s posts on their profile.
+Project Goals: 6, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -1037,6 +1068,7 @@ Navigated to a user's profile page. | The profile owner's posts will be visible.
 </details>
 
 35. As a user, I want the ability to follow and unfollow a user so that specific users’ posts will appear in my feed.
+Project Goals: 5, 6
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -1049,6 +1081,7 @@ Clicked the "follow" button beside a profile's avatar and name in the Most follo
 </details>
 
 36. As a user, I want the ability to see the most followed profiles.
+Project Goals: 5, 6
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
@@ -1059,6 +1092,7 @@ From the home, feed, liked, bolts, and profile page, looked at the Most followed
 </details>
 
 37. As a user, I want the ability to receive feedback messages to tell me if my attempted action has been successful, e.g. updating a post or deleting a comment.
+Project Goals: 2, 6, 7
 
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |

@@ -12,7 +12,6 @@ import { ToastContainer } from "react-toastify";
 
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
       <CurrentUserProvider>
         <ProfileDataProvider>
@@ -20,8 +19,7 @@ ReactDOM.render(
           <ToastContainer />
         </ProfileDataProvider>
       </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById('root')
 );
 
