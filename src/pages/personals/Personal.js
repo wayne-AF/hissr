@@ -126,7 +126,7 @@ const Personal = (props) => {
             {is_owner ? (
                 <OverlayTrigger 
                   placement="top" 
-                  overlay={<Tooltip>You can't like your own bolt!</Tooltip>}
+                  overlay={<Tooltip>You can&apos;t like your own bolt!</Tooltip>}
                 >
                     <i className={`${styles.PawGrey} fas fa-paw`} />
                 </OverlayTrigger>

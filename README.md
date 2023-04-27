@@ -503,6 +503,7 @@ The back-end API for this project was built using the Django Rest Framework. The
 - [Am I Responsive](https://ui.dev/amiresponsive) - Used to create the mock-up image for the Readme
 - [Balsamiq](https://balsamiq.com) - Used to create wireframes
 - [ColorHunt](https://colorhunt.co/) - Used to choose and create a colour palette
+- [EsLint](https://eslint.org/) - Used for JSX validation
 - [Font Awesome](https://fontawesome.com/) - Used for icons across the site
 - [Git](https://git-scm.com/) - Used for version control by committing to Git and pushing to GitHub
 - [GitHub](https://github.com/) - Used to store the code pushed from Git
@@ -622,6 +623,16 @@ W3C Jigsaw CSS validation was used to validate the CSS of the site. Results scre
 </details>
 
 ### JSX
+JSX code was validated using ESLint. The screenshots provided below show ESLint running error-free following some corrections.
+<details><summary>Api, Components & Contexts validation results</summary>
+<img src="documentation/validation/jsx/api_components_contexts_validation.png">
+</details>
+<details><summary>Hooks, Auth, Comments & Personals validation results</summary>
+<img src="documentation/validation/jsx/hooks_auth_comments_personals_validation.png">
+</details>
+<details><summary>Posts, Profile, Utils & App.js validation results</summary>
+<img src="documentation/validation/jsx/posts_profiles_utils_app_validation.png">
+</details>
 
 
 
@@ -1028,6 +1039,16 @@ Created a bolt, deleted a comment, changed password. | Confirmation messages wil
 <img src="documentation/testing_user_stories/user_story_37.2.png">
 <img src="documentation/testing_user_stories/user_story_37.3.png">
 </details>
+
+
+### Browser Compatibility
+
+(Tested using MacOS Ventura Version 13.3.1 on iMac desktop)
+- Chrome Version 112.0.5615.137: Website performed as expected. 
+- Firefox Version 111.0: Website performed as expected. 
+- Safari Version 16.4: Website performed as expected. 
+### OS compatibility
+- Android 11 Oxygen 11 (Chrome 112.0.5414.85): Website performed as expected. 
 
 ## Deployment
 

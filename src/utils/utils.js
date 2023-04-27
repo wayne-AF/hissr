@@ -1,5 +1,6 @@
 import jwtDecode from "jwt-decode";
 import { axiosReq } from "../api/axiosDefaults";
+import { toast } from "react-toastify";
 
 // Updates different types of data for InfiniteScroll component
 // Filters out duplicates of content if new content has been added
@@ -16,6 +17,7 @@ export const fetchMoreData = async (resource, setResource) => {
             }, prevResource.results)
         }));
     } catch (err) {
+      toast.error("Oops, something went wrong! Try again later")
     }
 };
 
