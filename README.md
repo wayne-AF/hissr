@@ -634,6 +634,36 @@ JSX code was validated using ESLint. The screenshots provided below show ESLint 
 <img src="documentation/validation/jsx/posts_profiles_utils_app_validation.png">
 </details>
 
+### Chrome Lighthouse
+Chrome Lighthouse dev tools were used to test the performance, accessibility, best practice and CEO of the site.
+<details><summary>Home page</summary>
+<img src="documentation/lighthouse_testing/lighthouse_home.png">
+</details>
+<details><summary>Feed page</summary>
+<img src="documentation/lighthouse_testing/lighthouse_feed.png">
+</details>
+<details><summary>Liked page</summary>
+<img src="documentation/lighthouse_testing/lighthouse_liked.png">
+</details>
+<details><summary>Bolts</summary>
+<img src="documentation/lighthouse_testing/lighthouse_bolts.png">
+</details>
+<details><summary>Profile page</summary>
+<img src="documentation/lighthouse_testing/lighthouse_profile.png">
+</details>
+<details><summary>Post detail page</summary>
+<img src="documentation/lighthouse_testing/lighthouse_post_detail.png">
+</details>
+<details><summary>Post create page</summary>
+<img src="documentation/lighthouse_testing/lighthouse_post_create.png">
+</details>
+<details><summary>Sign in page</summary>
+<img src="documentation/lighthouse_testing/lighthouse_sign_in.png">
+</details>
+<details><summary>Sign up page</summary>
+<img src="documentation/lighthouse_testing/lighthouse_sign_up.png">
+</details>
+
 
 
 ## Testing

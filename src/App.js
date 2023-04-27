@@ -81,9 +81,9 @@ function App() {
               <Route exact path="/profiles/:id/edit/password" render={() => <UserPasswordForm />} />
               <Route exact path="/profiles/:id/edit" render={() => <ProfileEditForm />} />
               <Route render={() => <NotFound />}/>
-              <Route path="*">
+              {/* <Route path="*">
                 <NotFound />
-              </Route>
+              </Route> */}
             </Switch>
           </Container>
         </div>
