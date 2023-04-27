@@ -12,23 +12,23 @@ The live project can be found [here](https://hissr.herokuapp.com/).
     - [Wireframes](#wireframes)
 5. [Front-end](#front-end)
 6. [Back-end API](#back-end-api)
-5. [Features](#features)
-6. [Technologies Used](#technologies-used)
+7. [Features](#features)
+8. [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Libraries, Frameworks & Dependencies](#libraries-frameworks-&-dependencies)
     - [Tools & Software](#tools-&-software)
-7. [Validation](#validation)
+9. [Validation](#validation)
     - [HTML](#html)
     - [CSS](#css)
     - [JSX](#jsx)
     - [Chrome Lighthouse](#chrome-lighthouse)
-8. [Testing](#testing)
+10. [Testing](#testing)
     - [Testing User Stories](#testing-user-stories)
     - [Browser Compatibility](#browser-compatibility)
     - [Device Testing](#device-testing)
-9. [Bugs](#bugs)
-10. [Deployment](#deployment)
+11. [Deployment](#deployment)
 12. [Notes](#notes)
+13. [Acknowledgements](#acknowledgements)
 
 ## About
 Hissr is a content-sharing and social platform for cats around the world to connect and interact with each other. Users can create and comment on posts, create and like short-form posts, follow and unfollow users to curate their content feed, and edit their profiles to present themselves how they wish to their community.
@@ -109,89 +109,138 @@ View the Kanban board [here](https://github.com/users/wayne-AF/projects/9).
 ## Design
 ### Colours
 Mostly neutral colours were chosen to make the site feel relaxing, with a bright, playful accent colour to highlight links, texts, and icons.
-<details><summary>Colour palette</summary>
-<img src="documentation/design/colour_palette.png">
-</details>
+    <details><summary>Colour palette</summary>
+    <img src="documentation/design/colour_palette.png">
+    </details>
 
 ### Imagery
 The background contains imagery commonly associated with cats: paw prints, fish, balls of yarn, and bells. It is fairly muted so as not to draw attention from the site's content but provides a playful background, adding to the overall light and informal atmosphere of the site. 
-<details><summary>Background</summary>
-<img src="documentation/design/background.png">
-</details>
+    <details><summary>Background</summary>
+    <img src="documentation/design/background.png">
+    </details>
 
 The site logo is a simple cat's face purchased from Vectorstock which I edited for clarity. It's the same orange as the site's accent colour.
-<details><summary>Hissr logo</summary>
-<img src="documentation/design/cat-logo.png">
-</details>
+    <details><summary>Hissr logo</summary>
+    <img src="documentation/design/cat-logo.png">
+    </details>
 
 The default profile photo was also purchased from Vectorstock and in the same orange as the site's accent colour, so even if a user does not upload a profile photo, the default picture is appealing enough to not detract from the appearance of any page where it appears.
-<details><summary>Default picture</summary>
-<img src="documentation/design/default_profile_pic_2.png">
-</details>
+    <details><summary>Default picture</summary>
+    <img src="documentation/design/default_profile_pic_2.png">
+    </details>
+
 The No-Results cat image was also purchased from Vectorstock and used when a user's search is unsuccessful. 
-<details><summary>No results cat</summary>
-<img src="documentation/design/no-results.png">
-</details>
+    <details><summary>No results cat</summary>
+    <img src="documentation/design/no-results.png">
+    </details>
 
 ### Fonts
 The main font across the site is Comfortaa, which has a rounded, playful look to it, while also being easy to read. The font colour used is teal (#056571) to match better with the muted greens of the background while still being easy to read against the neutral backgrounds.
-<details><summary>Text font</summary>
-<img src="documentation/design/text_font.png">
-</details>
+    <details><summary>Text font</summary>
+    <img src="documentation/design/text_font.png">
+    </details>
 The logo font is Yeseva One, a more embellished font than the rest of the text. It's rendered in orange to match the logo and the rest of the navbar text. It disappears on smaller screens. 
-<details><summary>Logo font</summary>
-<img src="documentation/design/logo_font.png">
-</details>
+    <details><summary>Logo font</summary>
+    <img src="documentation/design/logo_font.png">
+    </details>
 
 ### Wireframes
 
-<details><summary>Sign up page</summary>
+<details><summary>Sign up page wireframe</summary>
 <img src="documentation/design/wireframes/sign_up_wireframe.png">
 </details>
-<details><summary>Sign in page</summary>
+<details><summary>Sign up page final</summary>
+<img src="documentation/design/final_screenshots/sign_up_final.png">
+</details>
+<details><summary>Sign in page wireframe</summary>
 <img src="documentation/design/wireframes/sign_in_wireframe.png">
 </details>
-<details><summary>Home page</summary>
+<details><summary>Sign in page final</summary>
+<img src="documentation/design/final_screenshots/sign_in_final.png">
+</details>
+<details><summary>Home page wireframe</summary>
 <img src="documentation/design/wireframes/homepage_wireframe.png">
 </details>
-<details><summary>Post page</summary>
+<details><summary>Home page final</summary>
+<img src="documentation/design/final_screenshots/home_page_final.png">
+</details>
+<details><summary>Post page wireframe</summary>
 <img src="documentation/design/wireframes/postpage_wireframe.png">
 </details>
-<details><summary>Create post</summary>
+<details><summary>Post page final</summary>
+<img src="documentation/design/final_screenshots/post_detail_final.png">
+</details>
+<details><summary>Create post wireframe</summary>
 <img src="documentation/design/wireframes/postcreate_wireframe.png">
 </details>
-<details><summary>Edit post</summary>
+<details><summary>Create post page final</summary>
+<img src="documentation/design/final_screenshots/create_post_final.png">
+</details>
+<details><summary>Edit post wireframe</summary>
 <img src="documentation/design/wireframes/postedit_wireframe.png">
 </details>
-<details><summary>Feed</summary>
+<details><summary>Edit post page final</summary>
+<img src="documentation/design/final_screenshots/edit_post_final.png">
+</details>
+<details><summary>Feed wireframe</summary>
 <img src="documentation/design/wireframes/feed_wireframe.png">
 </details>
-<details><summary>Liked</summary>
+<details><summary>Feed page final</summary>
+<img src="documentation/design/final_screenshots/feed_final.png">
+</details>
+<details><summary>Liked wireframe</summary>
 <img src="documentation/design/wireframes/liked_wireframe.png">
 </details>
-<details><summary>Bolts page</summary>
+<details><summary>Liked page final</summary>
+<img src="documentation/design/final_screenshots/liked_final.png">
+</details>
+<details><summary>Bolts page wireframe</summary>
 <img src="documentation/design/wireframes/bolt_wireframe.png">
 </details>
-<details><summary>Bolt page</summary>
+<details><summary>Bolts page final</summary>
+<img src="documentation/design/final_screenshots/bolts_page_final.png">
+</details>
+<details><summary>Bolt page wireframe</summary>
 <img src="documentation/design/wireframes/boltpage_wireframe.png">
 </details>
-<details><summary>Create bolt</summary>
+<details><summary>Bolt page final</summary>
+<img src="documentation/design/final_screenshots/bolt_page_final.png">
+</details>
+<details><summary>Create bolt wireframe</summary>
 <img src="documentation/design/wireframes/personalcreate_wireframe.png">
 </details>
-<details><summary>Edit bolt</summary>
+<details><summary>Create bolt page final</summary>
+<img src="documentation/design/final_screenshots/create_bolt_final.png">
+</details>
+<details><summary>Edit bolt wireframe</summary>
 <img src="documentation/design/wireframes/personaledit_wireframe.png">
 </details>
-<details><summary>Profile</summary>
+<details><summary>Edit bolt page final</summary>
+<img src="documentation/design/final_screenshots/edit_bolt_final.png">
+</details>
+<details><summary>Profile wireframe</summary>
 <img src="documentation/design/wireframes/profilepage_wireframe.png">
 </details>
-<details><summary>Edit profile</summary>
+<details><summary>Profile page final</summary>
+<img src="documentation/design/final_screenshots/profile_final.png">
+</details>
+<details><summary>Edit profile wireframe</summary>
 <img src="documentation/design/wireframes/profileedit_wireframe.png">
 </details>
-<details><summary>Change username</summary>
+<details><summary>Edit profile page final</summary>
+<img src="documentation/design/final_screenshots/profile_edit_final.png">
+</details>
+<details><summary>Change username wireframe</summary>
 <img src="documentation/design/wireframes/usernameedit_wireframe.png">
 </details>
-<details><summary>Change password</summary>
+<details><summary>Change username page final</summary>
+<img src="documentation/design/final_screenshots/change_username_final.png">
+</details>
+<details><summary>Change password wireframe</summary>
 <img src="documentation/design/wireframes/passwordedit_wireframe.png">
+</details>
+<details><summary>Change password page final</summary>
+<img src="documentation/design/final_screenshots/change_password_final.png">
 </details>
 
 ## Front-end
@@ -232,12 +281,12 @@ The back-end API for this project was built using the Django Rest Framework. The
 - Logged-out users cannot see all pages of the site but they can view the most recent posts and get an idea of the tone of the site and if they'd like to sign up. The sign-in and sign-up links are also clearly visible in the navbar.
 - Users can see how many comments each post has
 - User stories: 1, 2, 3, 12
-<details><summary>Homepage large screen</summary>
-<img src="documentation/features/homepage_large_screen.png">
-</details>
-<details><summary>Homepage small screen</summary>
-<img src="documentation/features/homepage_small_screen.png">
-</details>
+    <details><summary>Homepage large screen</summary>
+    <img src="documentation/features/homepage_large_screen.png">
+    </details>
+    <details><summary>Homepage small screen</summary>
+    <img src="documentation/features/homepage_small_screen.png">
+    </details>
 
 ### Navbar
 - Visible across all pages
@@ -248,24 +297,24 @@ The back-end API for this project was built using the Django Rest Framework. The
 - When collapsed on smaller screens, the create icon remains visible, enforcing the idea that the site is for content sharing and engagement
 - When logged in, the navbar displays all the available pages for the user, as well as displaying the user's profile photo (if uploaded), letting them see at a glance whether they are logged in or not
 - User stories: 2, 3, 7
-<details><summary>Navbar large screen</summary>
-<img src="documentation/features/navbar_large.png">
-</details>
-<details><summary>Navbar small screen</summary>
-<img src="documentation/features/navbar_small.png">
-</details>
-<details><summary>Navbar dropdown</summary>
-<img src="documentation/features/navbar_dropdown.png">
-</details>
+    <details><summary>Navbar large screen</summary>
+    <img src="documentation/features/navbar_large.png">
+    </details>
+    <details><summary>Navbar small screen</summary>
+    <img src="documentation/features/navbar_small.png">
+    </details>
+    <details><summary>Navbar dropdown</summary>
+    <img src="documentation/features/navbar_dropdown.png">
+    </details>
 
 ### Sign up form
 - Allows new users to create an account with a username and password
 - Contains a welcome message and a tagline further explaining to the user that the site is for cats who wish to connect with cats all over the world
 - Contains a link to the sign in page for users who already have an account
 - User stories: 4
-<details><summary>Sign up form</summary>
-<img src="documentation/features/sign_up_form.png">
-</details>
+    <details><summary>Sign up form</summary>
+    <img src="documentation/features/sign_up_form.png">
+    </details>
 
 ### Sign in form
 - Allows users with an existing account to log in
@@ -273,9 +322,9 @@ The back-end API for this project was built using the Django Rest Framework. The
 - Contains a link to sign up for users who do not already have an account
 - Brings the user to the homepage once log in is completed
 - User stories: 5
-<details><summary>Sign in form</summary>
-<img src="documentation/features/sign_in_form.png">
-</details>
+    <details><summary>Sign in form</summary>
+    <img src="documentation/features/sign_in_form.png">
+    </details>
 
 ### Post create form
 - Contains title, city, country, and content fields
@@ -283,17 +332,17 @@ The back-end API for this project was built using the Django Rest Framework. The
 - The country names are listed as full names, but displayed as two-letter country codes in the published post
 - The tagline encourages the user to start a conversation, reminding them about creating a dialogue and engaging with other users
 - User stories: 8, 9
-<details><summary>Post create form</summary>
-<img src="documentation/features/post_create.png">
-</details>
+    <details><summary>Post create form</summary>
+    <img src="documentation/features/post_create.png">
+    </details>
 
 ### Post edit form
 - Is prepopulated with the information from the original post which the user can edit as they wish
 - The tagline reminds the user that any edits they make might affect any conversation taking place in the comments on a post
 - User stories: 10
-<details><summary>Post edit form</summary>
-<img src="documentation/features/post_edit.png">
-</details>
+    <details><summary>Post edit form</summary>
+    <img src="documentation/features/post_edit.png">
+    </details>
 
 ### Post detail page
 - A page with a single post and all its details
@@ -301,12 +350,12 @@ The back-end API for this project was built using the Django Rest Framework. The
 - This page allows the owner of the post to access its' edit and delete options from a dropdown menu in the upper-right corner of the post
 - Users can create a comment on a post on this page
 - User stories: 14, 15, 16, 17
-<details><summary>Post detail page</summary>
-<img src="documentation/features/post_1.png">
-</details>
-<details><summary>Post edit menu</summary>
-<img src="documentation/features/post_2.png">
-</details>
+    <details><summary>Post detail page</summary>
+    <img src="documentation/features/post_1.png">
+    </details>
+    <details><summary>Post edit menu</summary>
+    <img src="documentation/features/post_2.png">
+    </details>
 
 ### Comments
 - Users can comment on any post by navigating to the post's detail page
@@ -314,15 +363,15 @@ The back-end API for this project was built using the Django Rest Framework. The
 - Users can update or delete their comments via a dropdown menu
 - Users can see the owner of each comment from the avatar and username on each comment
 - User stories: 15, 16, 17
-<details><summary>Comment</summary>
-<img src="documentation/features/comment.png">
-</details>
-<details><summary>Comment edit menu</summary>
-<img src="documentation/features/comment_edit_menu.png">
-</details>
-<details><summary>Comment edit</summary>
-<img src="documentation/features/comment_edit.png">
-</details>
+    <details><summary>Comment</summary>
+    <img src="documentation/features/comment.png">
+    </details>
+    <details><summary>Comment edit menu</summary>
+    <img src="documentation/features/comment_edit_menu.png">
+    </details>
+    <details><summary>Comment edit</summary>
+    <img src="documentation/features/comment_edit.png">
+    </details>
 
 
 ### Bolt create form
@@ -330,36 +379,36 @@ The back-end API for this project was built using the Django Rest Framework. The
 - Instead of location, users choose a category from a list of cat-related topics
 - The tagline asks the question "something on your mind?" suggesting the idea of putting out a quick thought or idea
 - User stories: 19, 20
-<details><summary>Bolt create</summary>
-<img src="documentation/features/bolt_create.png">
-</details>
+    <details><summary>Bolt create</summary>
+    <img src="documentation/features/bolt_create.png">
+    </details>
 
 ### Bolt edit form
 - Is prepopulated with the information from the original bolt which the user can edit as they wish
 - User stories: 21
-<details><summary>Bolt edit</summary>
-<img src="documentation/features/bolt_edit.png">
-</details>
+    <details><summary>Bolt edit</summary>
+    <img src="documentation/features/bolt_edit.png">
+    </details>
 
 ### Bolt detail page
 - A single bolt page where the bolt owner can access the edit and delete options
 - User stories: 21, 22
-<details><summary>Bolt</summary>
-<img src="documentation/features/bolt.png">
-</details>
-<details><summary>Bolt edit menu</summary>
-<img src="documentation/features/bolt_dropdown.png">
-</details>
+    <details><summary>Bolt</summary>
+    <img src="documentation/features/bolt.png">
+    </details>
+    <details><summary>Bolt edit menu</summary>
+    <img src="documentation/features/bolt_dropdown.png">
+    </details>
 
 ### Bolts page
 - Lists all the recently created bolts
 - User stories: 23
-<details><summary>Bolt large screen</summary>
-<img src="documentation/features/bolt_large_screen.png">
-</details>
-<details><summary>Bolt small screen</summary>
-<img src="documentation/features/bolt_small_screen.png">
-</details>
+    <details><summary>Bolt large screen</summary>
+    <img src="documentation/features/bolt_large_screen.png">
+    </details>
+    <details><summary>Bolt small screen</summary>
+    <img src="documentation/features/bolt_small_screen.png">
+    </details>
 
 ### Likes
 - A user can like a bolt in order to express their appreciation for its content
@@ -368,32 +417,32 @@ The back-end API for this project was built using the Django Rest Framework. The
 - Likes and unlikes can be performed on the bolts page and the bolt detail page
 - A paw icon from FontAwesome is used in place of a heart icon for likes
 - User stories: 25, 26
-<details><summary>Liking a bolt</summary>
-<img src="documentation/features/like_bolt.png">
-</details>
-<details><summary>Liking own bolt</summary>
-<img src="documentation/features/like_own_bolt.png">
-</details>
+    <details><summary>Liking a bolt</summary>
+    <img src="documentation/features/like_bolt.png">
+    </details>
+    <details><summary>Liking own bolt</summary>
+    <img src="documentation/features/like_own_bolt.png">
+    </details>
 
 ### Liked page
 - A page displaying all the bolts a user has liked
 - User stories: 27
-<details><summary>Liked page large screen</summary>
-<img src="documentation/features/liked_page_large.png">
-</details>
-<details><summary>Liked page small screen</summary>
-<img src="documentation/features/liked_page_small.png">
-</details>
+    <details><summary>Liked page large screen</summary>
+    <img src="documentation/features/liked_page_large.png">
+    </details>
+    <details><summary>Liked page small screen</summary>
+    <img src="documentation/features/liked_page_small.png">
+    </details>
 
 ### Feed page
 - A page displaying all the posts from profiles that the user is following
 - User stories: 35
-<details><summary>Feed page large screen</summary>
-<img src="documentation/features/feed_large.png">
-</details>
-<details><summary>Feed page small screen</summary>
-<img src="documentation/features/feed_small.png">
-</details>
+    <details><summary>Feed page large screen</summary>
+    <img src="documentation/features/feed_large.png">
+    </details>
+    <details><summary>Feed page small screen</summary>
+    <img src="documentation/features/feed_small.png">
+    </details>
 
 ### Profile page
 - Displays the profile owner's name, their avatar, their statistics of content published and how many people they are following and being followed by
@@ -402,33 +451,33 @@ The back-end API for this project was built using the Django Rest Framework. The
 - Displays a list of the profile owner's recent posts
 - Contains a follow/unfollow on other profiles
 - User stories: 32, 33, 34
-<details><summary>Profile</summary>
-<img src="documentation/features/profile_1.png">
-</details>
-<details><summary>Profile edit menu</summary>
-<img src="documentation/features/profile_2.png">
-</details>
+    <details><summary>Profile</summary>
+    <img src="documentation/features/profile_1.png">
+    </details>
+    <details><summary>Profile edit menu</summary>
+    <img src="documentation/features/profile_2.png">
+    </details>
 
 ### Profile edit form
 - Allows a user to upload a profile picture, to enter their location, and to write some personal text in the about section
 - User stories: 28, 29
-<details><summary>Profile edit form</summary>
-<img src="documentation/features/profile_edit.png">
-</details>
+    <details><summary>Profile edit form</summary>
+    <img src="documentation/features/profile_edit.png">
+    </details>
 
 ### Username edit form
 - Allows a user to update their username
 - User stories: 30
-<details><summary>Username edit form</summary>
-<img src="documentation/features/username_edit.png">
-</details>
+    <details><summary>Username edit form</summary>
+    <img src="documentation/features/username_edit.png">
+    </details>
 
 ### Password change form
 - Allows a user to update their login password
 - User stories: 31
-<details><summary>Password change form</summary>
-<img src="documentation/features/password_edit.png">
-</details>
+    <details><summary>Password change form</summary>
+    <img src="documentation/features/password_edit.png">
+    </details>
 
 ### Popular profiles
 - Displays the four most-followed profiles from the site
@@ -436,52 +485,49 @@ The back-end API for this project was built using the Django Rest Framework. The
 - On larger screens it contains follow/unfollow buttons
 - Users can click on the profiles avatars or names to navigate to their profile pages
 - User stories: 36
-<details><summary>Popular profiles large screen</summary>
-<img src="documentation/features/popularprofiles_1.png">
-</details>
-<details><summary>Popular profiles small screen</summary>
-<img src="documentation/features/popularprofiles_2.png">
-</details>
+    <details><summary>Popular profiles large screen</summary>
+    <img src="documentation/features/popularprofiles_1.png">
+    </details>
+    <details><summary>Popular profiles small screen</summary>
+    <img src="documentation/features/popularprofiles_2.png">
+    </details>
 
 ### Follow/unfollow
 - Users can follow profiles so that any posts from those profiles will appear in the user's feed page
 - Follow/unfollow buttons appear in the most followed profiles component on larger screen and on profile pages
 - User stories: 35
-<details><summary>Profile follow</summary>
-<img src="documentation/features/profile_follow.png">
-</details>
-<details><summary>Popular profiles follow</summary>
-<img src="documentation/features/popularprofiles_1.png">
-</details>
+    <details><summary>Profile follow</summary>
+    <img src="documentation/features/profile_follow.png">
+    </details>
+    <details><summary>Popular profiles follow</summary>
+    <img src="documentation/features/popularprofiles_1.png">
+    </details>
 
 ### Search bar
 - Users can filter the page's content based on keywords, e.g. username, location, title, etc.
 - The search bar is available on the home, feed, liked, and bolts pages
 - If no results are found, a message with accompanying image is displayed
 - User stories: 18, 24
-<details><summary>Search bar</summary>
-<img src="documentation/features/searchbar_1.png">
-</details>
-<details><summary>Search bar no results</summary>
-<img src="documentation/features/searchbar_2.png">
-</details>
+    <details><summary>Search bar</summary>
+    <img src="documentation/features/searchbar_1.png">
+    </details>
+    <details><summary>Search bar no results</summary>
+    <img src="documentation/features/searchbar_2.png">
+    </details>
 
 ### Infinite scroll
 - Allows the user to keep scrolling through content without having to change to a different page, improving user experience
 - Used for posts, bolts, comments, bolts, and liked pages
 - User stories: 13
+
 ### Feedback messages
 - Provides the user with feedback messages telling them their attempted action was successful or failed
 - Provides confirmation when the user creates, edits or deletes a post, bolt, comment, profile, username, and password 
 - Appears in the upper-right corner of the screen and disappears after five seconds
 - User stories: 37
-<details><summary>Feedback message</summary>
-<img src="documentation/features/feedback_message.png">
-</details>
-
-
-### Future Features
-
+    <details><summary>Feedback message</summary>
+    <img src="documentation/features/feedback_message.png">
+    </details>
 
 ## Technologies Used
 ### Languages
@@ -621,7 +667,10 @@ W3C Jigsaw CSS validation was used to validate the CSS of the site. Results scre
 </details>
 
 ### JSX
-JSX code was validated using ESLint. The screenshots provided below show ESLint running error-free following some corrections.
+JSX code was validated using ESLint. The screenshots provided below show ESLint running error-free following some corrections. Common errors included:
+- Apostrophes, which had to be replaced with `&apos;`.
+- Missing React imports
+- Empty block statements
 <details><summary>Api, Components & Contexts validation results</summary>
 <img src="documentation/validation/jsx/api_components_contexts_validation.png">
 </details>
@@ -671,7 +720,6 @@ Project Goals: 1, 2, 7
 **Action** | **Expectation** | **Result**
 ------------ | ------------ | ------------ |
 I showed the site to two family members and asked them what kind of site did they understand this to be from looking at the main page. | They will surmise the site to be a content-sharing and social platform. | PASS |
-
 <details><summary>User story 1</summary>
 <img src="documentation/testing_user_stories/user_story_1.png">
 </details>
@@ -794,7 +842,7 @@ Project Goals: 3
 ------------ | ------------ | ------------ |
 Clicked on post title created by user, and on post detail page, selected and selected delete. | Post will be deleted and user will receive confirmation message and be returned to the home page. | PASS
 
-<details><summary></summary>
+<details><summary>User story 11</summary>
 <img src="documentation/testing_user_stories/user_story_11.1.png">
 <img src="documentation/testing_user_stories/user_story_11.2.png">
 </details>
@@ -836,7 +884,7 @@ Project Goals: 4, 5
 ------------ | ------------ | ------------ |
 Navigated to a post's detail page and entered a comment. | Comment will be published beneath the post. | PASS
 
-<details><summary></summary>
+<details><summary>User story 15</summary>
 <img src="documentation/testing_user_stories/user_story_15.1.png">
 <img src="documentation/testing_user_stories/user_story_15.2.png">
 </details>
@@ -1115,10 +1163,41 @@ Created a bolt, deleted a comment, changed password. | Confirmation messages wil
 - Android 11 Oxygen 11 (Chrome 112.0.5414.85): Website performed as expected. 
 
 ## Deployment
+Please see the Deployment section of the back-end API [here](https://github.com/wayne-AF/hissr-drf-api) for setting up ElephantSQL as a database, and Cloudinary for static file storage. 
 
+1. To create a new app, navigate to Heroku.
+2. From the Dashboard, click the "New" button in the top right and then "Create new app".
+    <details><summary>Heroku dashboard</summary>
+    <img src="documentation/deployment/heroku_1.png">
+    </details>
+3. Choose a unique name for your project, select your region, and then click "Create app".
+    <details><summary>Heroku create app</summary>
+    <img src="documentation/deployment/heroku_2.png">
+    </details>
+4. From the Deploy tab, click on "GitHub" in the Deployment method section.
+    <details><summary>Heroku deploy tab</summary>
+    <img src="documentation/deployment/heroku_3.png">
+    </details>
+5. Search for the GitHub repository name and click "connect".
+    <details><summary>Connecting to GitHub</summary>
+    <img src="documentation/deployment/heroku_4.png">
+    </details>
+6. In the Automatic deploys section, you can click "Enable Automatic Deploys" if you wish deploys to occur whenever the source code is pushed to GitHub (it is already selected in the screenshot). Below this, select "Deploy branch" and then "view build log" so you can watch the logs as the app builds. 
+    <details><summary>Manual deploy</summary>
+    <img src="documentation/deployment/heroku_5.png">
+    </details>
+7. When the build has completed and you see "Build succeeded", navigate to and click the "Open app" button at the top of the page. 
+    <details><summary>Heroku build logs</summary>
+    <img src="documentation/deployment/heroku_6.png">
+    </details><details><summary>Open app button</summary>
+    <img src="documentation/deployment/heroku_7.png">
+    </details>
 
 ## Notes
 ### Kanban board numbering of user stories
-Upon starting this project, I used a Kanban board for user stories and task organisation. At a later point in the project, I was attempting to map user stories to sprints, and through my inexperience with Issues in Github, I mistakenly deleted them, believing that I could reset the numbering. Issues does not allow for renumbering, so issues on the Kanban board now start from #34 instead of #1. 
+Upon starting this project, I used a [Kanban board](https://github.com/users/wayne-AF/projects/9) for user stories and task organisation. At a later point in the project, I was attempting to map user stories to sprints, and through my inexperience with Issues in Github, I mistakenly deleted them, believing that I could reset the numbering. Issues does not allow for renumbering, so issues on the Kanban board now start from #34 instead of #1. 
+
+## Acknowledgements
+Thanks to my mentor Mo Shami for his advice and encouragement!
 
 
